@@ -1,0 +1,80 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+After initialization, but before game start.
+  File "game/phone/apps/relationships/relationships.rpy", line 6, in prepare_screen
+    screen phone_relationships():
+  File "game/phone/apps/relationships/relationships.rpy", line 6, in prepare
+    screen phone_relationships():
+  File "game/phone/apps/relationships/relationships.rpy", line 7, in prepare
+    use _phone():
+  File "game/phone/apps/relationships/relationships.rpy", line 7, in prepare
+    use _phone():
+  File "game/phone/apps/relationships/relationships.rpy", line 15, in prepare
+    viewport:
+  File "game/phone/apps/relationships/relationships.rpy", line 15, in prepare
+    viewport:
+  File "game/phone/apps/relationships/relationships.rpy", line 20, in prepare
+    frame:
+  File "game/phone/apps/relationships/relationships.rpy", line 20, in prepare
+    frame:
+  File "game/phone/apps/relationships/relationships.rpy", line 21, in prepare
+    vbox:
+  File "game/phone/apps/relationships/relationships.rpy", line 21, in prepare
+    vbox:
+  File "game/phone/apps/relationships/relationships.rpy", line 23, in prepare
+    for char_id in relationship_system.get_unlocked_characters():
+  File "game/phone/apps/relationships/relationships.rpy", line 23, in prepare
+    for char_id in relationship_system.get_unlocked_characters():
+  File "game/phone/apps/relationships/relationships.rpy", line 25, in prepare
+    if char_info:
+  File "game/phone/apps/relationships/relationships.rpy", line 25, in prepare
+    if char_info:
+Exception: A screen named relationship_character_card does not exist.
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "C:\Users\User\Desktop\renpy-8.3.7-sdk\renpy\bootstrap.py", line 359, in bootstrap
+    renpy.main.main()
+  File "C:\Users\User\Desktop\renpy-8.3.7-sdk\renpy\main.py", line 652, in main
+    run(restart)
+  File "C:\Users\User\Desktop\renpy-8.3.7-sdk\renpy\main.py", line 94, in run
+    renpy.display.screen.prepare_screens()
+  File "C:\Users\User\Desktop\renpy-8.3.7-sdk\renpy\display\screen.py", line 1027, in prepare_screens
+    s.ast.prepare_screen()
+  File "game/phone/apps/relationships/relationships.rpy", line 6, in prepare_screen
+    screen phone_relationships():
+  File "game/phone/apps/relationships/relationships.rpy", line 6, in prepare
+    screen phone_relationships():
+  File "game/phone/apps/relationships/relationships.rpy", line 7, in prepare
+    use _phone():
+  File "game/phone/apps/relationships/relationships.rpy", line 7, in prepare
+    use _phone():
+  File "game/phone/apps/relationships/relationships.rpy", line 15, in prepare
+    viewport:
+  File "game/phone/apps/relationships/relationships.rpy", line 15, in prepare
+    viewport:
+  File "game/phone/apps/relationships/relationships.rpy", line 20, in prepare
+    frame:
+  File "game/phone/apps/relationships/relationships.rpy", line 20, in prepare
+    frame:
+  File "game/phone/apps/relationships/relationships.rpy", line 21, in prepare
+    vbox:
+  File "game/phone/apps/relationships/relationships.rpy", line 21, in prepare
+    vbox:
+  File "game/phone/apps/relationships/relationships.rpy", line 23, in prepare
+    for char_id in relationship_system.get_unlocked_characters():
+  File "game/phone/apps/relationships/relationships.rpy", line 23, in prepare
+    for char_id in relationship_system.get_unlocked_characters():
+  File "game/phone/apps/relationships/relationships.rpy", line 25, in prepare
+    if char_info:
+  File "game/phone/apps/relationships/relationships.rpy", line 25, in prepare
+    if char_info:
+  File "C:\Users\User\Desktop\renpy-8.3.7-sdk\renpy\sl2\slast.py", line 2030, in prepare
+    raise Exception("A screen named {} does not exist.".format(self.target))
+Exception: A screen named relationship_character_card does not exist.
+
+Windows-10-10.0.19041 AMD64
+Ren'Py 8.3.7.25031702
+¿Cut-Team Novel? - One More Time DEMO 1.0
+Fri Oct 10 23:10:10 2025
