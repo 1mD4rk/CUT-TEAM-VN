@@ -178,8 +178,13 @@ label day1:
     l "¡TU NO TE METAS, BLAZE!"
     "Las palabras salieron con una fuerza que no sabía que todavía tenía, pero en lugar de alivio, solo sentí el vacío expandirse en mi pecho."
     "El tono irritado con el que me dirigí a Blaze hizo que mis palabras resonaran por todo el salón."
+    $ enfocar("blaze")
+    show blaze 1desinteresada3t
+    b "Igual yo no seré la que se lleve un reporte"
+    show blaze 1desinteresada3
+    $ normal("blaze")
     "Llamando aún más la atención de todos."
-    "Ella solo me clava la mirada, paralizada, y en sus ojos veo reflejado exactamente lo que temía: la confirmación de que soy todo lo que siempre creí ser."
+    "Ella solo me clava la mirada, enojada, y en sus ojos veo reflejado exactamente lo que temía: la confirmación de que soy todo lo que siempre creí ser."
 
     l_thought "Lo siento... Lo siento... Lo siento..."
     "Las palabras se repiten en mi mente pero no salen, atrapadas en esta garganta que se cierra."
@@ -201,7 +206,7 @@ label day1:
     $ inac("blaze")
     l_thought "¿QUÉ CARAJOS ESTOY DICIENDO?"
 
-    "Vi cómo el rostro de Blaze no se llenaba de ira, sino de una herida profunda y silenciosa. En lugar de contestar, simplemente aprieta los labios."
+    "Vi cómo el rostro de Blaze de repente se quiebra un poco, esas palabras le dolieron. En lugar de contestar, simplemente aprieta los labios."
 
     "Al mirarla, mi propio corazón se encogió, y el vacío en mi estómago se transformó en una culpa tan pesada que casi me dobla por la mitad."
 
@@ -1467,8 +1472,8 @@ label whatremainsofday1:
     show dark 2desafiante
     $ normal("dark")
     "Dice eso con una soberbia muy absurda. Irritandome."
-    show blaze 3neutral
-    "Blaze, volteando por curiosidad, me ve. Su expresión cambia instantáneamente. Su sonrisa se congela y sus ojos se abren ligeramente."
+    show blaze 3seria
+    "Blaze, volteando por curiosidad, me ve. Su expresión cambia instantáneamente. Su sonrisa se borra lentamente,  sus ojos se entrecierran y ligeramente frunce el ceño, mierda sí parece decepcionada."
     "Me quedo completamente quieta, atrapada en el acto."
     "No digo nada. El silencio se espesa entre nosotros, pesado e incómodo."
     show dark 2juzga2
@@ -1530,20 +1535,20 @@ label whatremainsofday1:
     l "B-Blaze."
     show blaze 3neutral at shake
     "Ella no responde."
-    extend " Noto que se tensa ligeramente al empezar la conversación y presiona levemente la correa de su mochila."
+    extend " Noto que está un poco a la defensiva al empezar la conversación, simplemente presiona levemente la correa de su mochila."
     l "Oye...{w} yo..."
     "Las palabras no salen. Se atoran en mi garganta, junto con el nudo de llanto que me he tragado todo el día."
-    show blaze 2neutralt
+    show blaze 2seria2t
     $ enfocar("blaze")
-    b "No hace falta que digas nada."
-    show blaze 2neutral
+    b "Ya sé que quieres disculparte… no hace falta que lo digas."
+    show blaze 2seria2
     $ normal("blaze")
     l "Sí hace falta. Yo... lo que dije... no lo pensé."
     show blaze 2compadecer at sigh_animation
     "Ella suspira."
     show blaze 2compadecert
     $ enfocar("blaze")
-    b "¿Estás bien?"
+    b "¿Al menos estás bien?"
     show blaze 2compadecer
     $ normal("blaze")
     l "..."
@@ -1555,7 +1560,7 @@ label whatremainsofday1:
     "Miro hacia el concreto en el cual estoy parada. No la puedo mirar a los ojos."
     show blaze 3desinteresada3t
     $ enfocar("blaze")
-    b "Lo que dijiste... dolió. Duele."
+    b "Es verdad que estoy furiosa contigo..."
     show blaze 3desinteresada2t
     extend " No voy a mentirte."
     show blaze 2compadecer
@@ -1563,9 +1568,9 @@ label whatremainsofday1:
     "Se acerca un paso, lentamente, como si se acercara a un animal asustado."
     show blaze 2compadecert
     $ enfocar("blaze")
-    b "Pero también sé que esas no eran tus palabras."
-    b"Eran... el dolor, el cansancio, esa cosa negra que a veces te come por dentro hablando por ti."
-    extend " ¿Me equivoco?"
+    b "Pero también sé que no quisiste herirme."
+    b"Fue... el dolor, el cansancio, esos pensamientos que a veces te consumen por dentro."
+    extend " ¿Correcto?"
     show blaze 2compadecer
     $ normal("blaze")
     "Niego con la cabeza, incapaz de articular palabras."
@@ -1575,7 +1580,7 @@ label whatremainsofday1:
     $ enfocar("blaze")
     b "Yo te conozco, Laila. Te conozco desde que éramos niñas y te escondías en el armario cuando mamá y papá discutían."
     show blaze 1compadecert
-    b"Eres mi hermana. Aunque no compartamos sangre. Eres mi hermana. Y eso no lo cambia un mal día, ni una palabra dicha en la ira."
+    b"Eres mi hermana. Aunque no compartamos sangre. Eres mi hermana. Y eso no lo cambia un mal día, ni una palabra dicha por frustración."
     show blaze 1neutral
     $ normal("blaze")
     l "¿Por qué no me odias? Deberías odiarme. Yo... yo te lo dije delante de todos. Te grité. Te humillé."
@@ -1597,19 +1602,19 @@ label whatremainsofday1:
     "Pero, sintiendo el peso de todo el día en mi espalda. Me derrumbo contra ella, Me aferro a su camisa como si fuera un salvavidas."
     l "Tú... ¿por qué? Tú no hiciste nada malo. Yo fui la... la..."
     show blaze 3compadecert
-    b "Lo siento por no haber manejado mejor la situación. Lo siento no haber sabido cómo alcanzarte antes de que explotaras. Siento que te sientas así. Siento no poder arreglarlo."
+    b "Lamento haberte respondido así... Todo ha sido tan difícil..."
     b "Pero sobre todo, siento que hayas tenido que cargar con todo esto sola."
     show blaze 3desinteresadat
     b "{outlinecolor=#da0303}Dark{/outlinecolor} me contó lo de la dirección... y que casi te metes en otro problema en la azotea. Apenas me pude enterar por él."
     show blaze 3desinteresada
-    "Siento cómo se ríe levemente."
+    "Siento cómo se muestra más compasiva."
     show blaze 3compadecert
     b "Sé que la muerte de mamá te ha afectado mucho. Te entiendo. A mi también me ha afectado."
     show blaze 3compadecer
     l "¿Cómo... cómo puedes ser así? Después de lo que hice..."
     show blaze 3felizt
-    b "Porque {i}te amo{/i}."
-    b "Porque no tienes la culpa de eso. Te disculpo."
+    b "Porque {i}te amo{/i}. No tienes la culpa de eso y…"
+    b "Porque no quiero que te sientas sola... Te disculpo."
     show blaze 3feliz
     "El peso en mi pecho se alivia un poco, solo un poco, pero es el primer respiro de aire fresco que tengo en todo el día."
     $ renpy.pause(1.8, hard=True)
@@ -1730,16 +1735,16 @@ label whatremainsofday1:
     dad "Hola, niñas. ¿Cómo estuvo el día?"
     show counter 1feliz
     $ normal("counter")
-    "Yo me retuerzo un poco al escuchar eso. Blaze lo nota y responde primero."
+    "Yo me retuerzo un poco al escuchar eso. Blaze lo nota y responde primero sonriendo."
     show blaze 1felizt at center_flip
     $ enfocar_flip("blaze")
-    b "¿La verdad? Nos fue muy bien.{w} Nada que destacar, jaja."
+    b "¡Bastante bien!"
     show blaze 1feliz at flip
     $ normal_flip("blaze")
     "Yo sigo sin soltar ninguna palabra, solo espero que Blaze resuelva un poco."
     show blaze 1juzga2t at flip
     $ enfocar_flip("blaze")
-    b "Y a ti, papá, ¿cómo te fue?{w} Pareces muy cansado. ¿El trabajo estuvo pesado?"
+    b "Y a ti, papá, ¿cómo te fue?{w} Te ves cansado. ¿El trabajo estuvo pesado?"
     show blaze 1juzga2 at flip
     $ normal_flip("blaze")
     show counter 1nosurpriset
