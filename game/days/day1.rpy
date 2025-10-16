@@ -1,7 +1,6 @@
 label day1: 
     $ discord.set(details="Monday - (15/02/2066)", state="Day 1")
     $ phone.system.battery_level = 100
-    $ relationship_system.register_character("blaze", "Blaze", "images/characters/blaze/1.png")
     #$ phone.system.date = datetime.date(2066, 2, 15)
 
     $ contador = 0
@@ -180,10 +179,11 @@ label day1:
     "El tono irritado con el que me dirigí a Blaze hizo que mis palabras resonaran por todo el salón."
     $ enfocar("blaze")
     show blaze 1desinteresada3t
-    b "Igual yo no seré la que se lleve un reporte"
+    b "Igual yo no seré la que se lleve un reporte."
     show blaze 1desinteresada3
     $ normal("blaze")
     "Llamando aún más la atención de todos."
+    show blaze 1seria
     "Ella solo me clava la mirada, enojada, y en sus ojos veo reflejado exactamente lo que temía: la confirmación de que soy todo lo que siempre creí ser."
 
     l_thought "Lo siento... Lo siento... Lo siento..."
@@ -205,7 +205,7 @@ label day1:
     "Las palabras salieron como cuchillas, y al instante de darme cuenta de lo que dije, me quedé callada." 
     $ inac("blaze")
     l_thought "¿QUÉ CARAJOS ESTOY DICIENDO?"
-
+    show blaze 1desinteresada3
     "Vi cómo el rostro de Blaze de repente se quiebra un poco, esas palabras le dolieron. En lugar de contestar, simplemente aprieta los labios."
 
     "Al mirarla, mi propio corazón se encogió, y el vacío en mi estómago se transformó en una culpa tan pesada que casi me dobla por la mitad."
