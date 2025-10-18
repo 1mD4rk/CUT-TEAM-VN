@@ -1937,8 +1937,8 @@ label final_day1:
     "Como si su voz y ese rostro de él fuera a tener algo dulce y agradable en la cual sentir."
     scene black with Fade(1.0, 0.5, 1.0)
     $ renpy.pause(5.0, hard=True)
-    "Cuando terminamos de comer, me levanto de la mesa. Dejo mi plato en el fregadero y me dirijo a mi habitación."
-    "Apenas volteo a verlos, apenas y logro escuchar un “Buenas noches” de parte de Blaze."
+    "Me voy a mi habitación. Volteo a ver a Blaze, apenas y logro escuchar un “Buenas noches”."
+    "Siento como mi estómago se retuerce del hambre por no comer. Pero no le presto atención."
     "Subo las escaleras paso a paso, cada peldaño parece demandar el doble de esfuerzo."
     $ renpy.pause(2.5, hard=True)
     play sound closet_open
