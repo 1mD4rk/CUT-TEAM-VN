@@ -1,12 +1,3 @@
-####################### REPUTACION ##########################
-
-default relacion_counter = 0 
-default relacion_blaze = 0
-default relacion_dark = 0 
-default relacion_jeremy = 0 
-default relacion_steve = 0 
-default relacion_mani = 0 
-
 ####################### TEXT SOUNDS ######################### CREDITOS: Bamboo Calculator
 init python:
     import random
@@ -141,8 +132,8 @@ define d = Character("Dark",
 
 define je = Character("Jeremy", 
     who_bold=True,
-    who_outlines=[(4, "#039dda", 0, 0)],  
-    what_outlines = [(2, "#039dda", 3, 3)],
+    who_outlines=[(4, "#2A70A4", 0, 0)],  
+    what_outlines = [(2, "#2A70A4", 3, 3)],
     color="#ffffff")
 
 define b = Character("Blaze", 
@@ -218,7 +209,8 @@ init python:
                         "feli", "felit",
                         "incomodo", "incomodot", "incomodo2", "incomodo2t",
                         "juzga", "juzgat", "juzga2", "juzga2t", "juzga3",
-                        "serio", "seriot", "serio2", "serio2t"]
+                        "serio", "seriot", "serio2", "serio2t",
+                        "metiche"]
     for base in dark_bases:
         for expr in dark_expressions:
             renpy.image(
@@ -260,7 +252,7 @@ init python:
                         "seria", "seria2", "seriat", "seria2t",
                         "sonriente", "sonrientet",
                         "compadecer", "compadecert",
-                        "preocupada"]
+                        "preocupada", "preocupadat"]
 
     for base in bleis_bases:
         for expr in bleis_expressions:

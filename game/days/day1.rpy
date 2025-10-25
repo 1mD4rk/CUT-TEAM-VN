@@ -627,13 +627,11 @@ label dark_scene:
 
         "Decirle.":
             $ rutaCanon += 1
-            $ relacion_dark += 1
             l_thought "Mejor... le digo, así tengo alguna garantía de no tener otro problema."
             l_thought "Aunque, la verdad, un problema más o menos ya no parece importar mucho."
 
         "No decirle.":
             $ rutaSuicida += 1
-            $ relacion_dark -= 1
             l_thought "No es problema suyo. Créete que te lo voy a decir."
             l_thought "Nada es realmente problema de nadie excepto mío."
 

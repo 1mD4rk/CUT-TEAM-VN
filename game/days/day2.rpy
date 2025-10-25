@@ -201,224 +201,260 @@ label aula_day2:
     $ persistent.quick_menu_visible = True
     show screen phone_button
     with Dissolve(1.5)
-    "Las horas pasaron sin que lo notara"
-    play sound bell
-    extend ", hasta que llegó el receso... me tomó completamente por sorpresa."
-    "Estaba tan perdida en mis pensamientos que ni siquiera percibí cómo las clases se desvanecen a mi alrededor.{w} Ni la campana, ni las voces, nada. Es como si todo hubiera desaparecido de un segundo a otro."
-    "Lo extraño es que ningún profesor me pidió participar, cuando suelen aprovechar cualquier silencio para hacerlo.{w} Por una vez, agradezco que me hayan dejado en paz."
     scene class3A with dissolve_scene_full2
-    "Cuando levanto la vista, descubro que el salón está vacío."
-    "Absolutamente vacío."
-    l_thought "¿En qué momento se fueron todos?"
-    l_thought "¿Acaso me quedé dormida sin notarlo?"
-    "Me froto los ojos, incrédula."
-    $ renpy.pause(2.0, hard=True)
-    "Decido no darle demasiada importancia."
-    "Reviso la hora en el celular, pero la pantalla parpadea un instante y vuelve en negro.{w} Maldigo en voz baja."
-    $ renpy.pause(2.0, hard=True)
-    "Me levanto del pupitre y salgo al pasillo."
-    scene pasillo with Fade(0.5, 1.0, 0.5)
-    $ renpy.pause(3.0, hard=True)
-    "Ahí es cuando la incomodidad comienza a crecer"
-    extend ": todo está demasiado limpio, demasiado callado.{w} Ni un papel en el piso, ni un murmullo lejano.{w} Es un silencio grueso, que parece pegarse en la piel."
-    l_thought "¿Acaso me perdí de una asamblea importante en la escuela?{w} ¿O peor... hubo un maldito tiroteo y yo sigo aquí tan tranquila?"
-    $ renpy.pause(3.0, hard=True)
-    "Camino despacio, los pasos resonando como golpes huecos en la losa."
-    $ renpy.pause(3.0, hard=True)
-    show vignette at vineta_organico zorder 100
-    "El aire se siente pesado, como si costara respirar."
-    "Trato de convencerme de que es paranoia, pero no lo logro.{w} Cada sombra parece más alargada de lo normal, cada puerta cerrada parece ocultar un par de ojos detrás."
-    $ renpy.pause(3.0, hard=True)
-    "No puedo evitarlo: siento que alguien me observa."
-    "La nuca se me enfría, y el impulso de voltear me gana{w}.{w}.{w}.{w} Pero no hay nada."
-    "Solo pasillos interminables, vacíos, demasiado perfectos para ser reales."
-    l_thought "¿Qué demonios está pasando aquí?"
-    $ renpy.pause(3.0, hard=True)
-    play sound drop
-    "Y de pronto—un sonido seco."
-    extend " Un golpe, como si algo cayera detrás de mí.{w} Mi corazón se acelera, volteo de inmediato...{w} nada."
-    "Solo el eco se ríe de mí."
-    "La tensión se estira tanto que apenas puedo pensar."
-    show layer master: 
-        function apply_blur_gradually2  
-    "Mis manos tiemblan, siento que la vista se me nubla."
-    "Y entonces solo parpadeo."
-    scene black with Fade(1.5, 0.5, 1.5)
-    $ renpy.pause(5.0, hard=True)
-    scene class3A
-    play ambient classroom
-    "Estoy otra vez en mi pupitre."
-    show screen pulse_black
-    "El salón lleno, mis compañeros hablando, el ruido de siempre alrededor.{w} El profesor sigue dando clase como si nada."
-    "Me quedo helada, mirando a todos con el corazón desbocado."
-    l_thought "¿Soñé despierta? ¿Fue una alucinación? ¿O de verdad estuve... en otro lugar?"
-    "Volteo a ver a Blaze"
-    show blaze 1desinteresada3 with Dissolve(0.5):
+    "Llegó al salón, simplemente estoy distraída ante todo. Como si estuviera en modo automático, voy y dejo mis cosas en mi asiento. Y me siento."
+    show blaze 1sonriente with Dissolve(0.5):
         center2 
-    extend ", y me alivio que solo era una simple pesadilla."
-    show blaze 1seria
-    "Pero ella me mira con el ceño ligeramente fruncido."
-    l_thought "Supongo que noto que me acabo de despertar..."
-    $ inac2("blaze")
-    "Tomo un largo suspiro, tratando de entender que era {i}eso{/i}."
-    $ renpy.pause(2.5, hard=True)
-    hide screen pulse_black
-    l_thought "No, no entiendo el significado de eso.{w=1.0} Realmente esta vez necesito que alguien me lo explique con manzanas y peras."
-    "En eso, escucho a dos personas hablando detrás de mí. Se ríen bastante fuerte. O bueno, Dark se ríe muy fuerte."
-    l_thought "Realmente, nunca me han importado quienes se ríen atrás, pero sabiendo de quién es, ahora me irrita el doble."
-    "Volteo, para decirle que se calle la puta boca."
-    show dark 1feli with Dissolve(0.5):
-        left
-    show jeremy 1juzga with Dissolve(0.5):
+    play music bgm8
+    queue music bgm82
+    "Blaze nota que ya llegué."
+    show blaze 1sonrientet
+    $ enfocar("blaze")
+    b "¡Hey! ¿Cómo te fue con el reporte?"
+    show blaze 1sonriente 
+    $ normal("blaze")
+    "Suspiro."
+    show blaze 1compadecer
+    l "No estaba. Dejé el reporte con la secretaria."
+    show blaze 1compadecert
+    $ enfocar("blaze")
+    b "¿Y ella dijo algo? ¿Parecía...{nw=0.5}"
+    show blaze 2preocupadat
+    extend " enojada?"
+    show blaze 2preocupada
+    $ normal("blaze")
+    l "Solo tomó el papel."
+    show blaze 1compadecer
+    extend " Ni me miró."
+    show blaze 1compadecert
+    $ enfocar("blaze")
+    b "Bueno, ya tienes una cosa menos, supongo que ya se acabó el problema."
+    $ normal("blaze")
+    show blaze 1compadecer
+    "Eso lo dice con un tono alivida. Simplemente asiento.{w} No sé que decirle."
+    l_thought "No creo que los problemas desaparezcan así de fácil..."
+    $ renpy.pause(1.5, hard=True)
+    "Mis ojos se posan hacia el asiento de atrás de ella. Dándome cuenta que..."
+    show jeremy 2incomodo with Dissolve(0.5):
         flip
         right5
-    l "Por el amor de dios, podrías callarte y dar el ejemplo de vice president–{nw}"
-    "Dark, Blaze y..."
-    l_thought "¿Y quién es este?"
-    show dark 1felit
-    $ enfocar("dark")
-    d "Oh, hola, mujer con bolas."
-    show dark 2desafiantet
-    extend " ¿Amaneciste en el lado correcto de la cama hoy?"
-    show dark 2desafiante
-    $ normal("dark")
-    "No le respondo, dejando mi mirada posada en el otro chico."
-    l_thought "¿Y quien es este? genuinamente a este NUNCA lo he visto por aquí."
-    l_thought "O bueno... Puede ser que tampoco le preste mucha atención."
-    l_thought "Como sea. Ahora estoy conociendo a extraños, que espectacular."
-    $ renpy.pause(2.5, hard=True)
-    show jeremy 1incomodo2
-    "El chico solo parece incómodo con mi mirada fija y me ignora."
-    show blaze 1juzga
-    $ normal("blaze")
-    show jeremy 1incomodo2t
-    $ enfocar("jeremy")
-    idk1 "Y Blaze... ¿Qué hicieron ayer?"
-    show jeremy 1seriot
-    extend " Dark no me pasó nada."
-    show jeremy 1serio3
-    $ normal("jeremy")
-    show dark 1distraido
-    $ inac("blaze")
-    $ inac("dark")
-    $ inac("jeremy")
-    show blaze 1felizt
-    l_thought "..."
-    show blaze 1feliz
-    show jeremy 1surpriset
-    l_thought "¿Conoce a Blaze?"
-    show jeremy 1surpriset
-    l_thought "Puede ser que este sea “Jeremy”... Blaze lo mencionó en el camino."
-    show jeremy 1juzga2
-    show blaze 1sonrientet
-    l_thought "Claro que la conoce. Todos la conocen.{w} Ella es... normal. Sociable."
-    show blaze 1sonriente
-    l_thought "probablemente sea otro de sus amigos perfectos que me va a juzgar en silencio."
-    show dark 1juzga2
-    $ renpy.pause(2.5, hard=True)
-    show jeremy 1felizt
-    show dark 1juzga2t
-    $ enfocar("dark")
-    d "Ya puedes dejar de mirarlo{w}, das miedo."
-    show jeremy 1feliz
-    show blaze 3juzga2t
-    $ normal("dark")
-    show dark 1juzga2
-    l "Jodete, realmente jodete."
-    show dark 1seriot
-    show blaze 3juzga
-    $ enfocar("dark")
-    d "No comiences otro altercado en el salón."
-    show dark 2distraidot
-    show blaze 2desinteresada2
-    show jeremy 2incomodo
-    extend " Ya el director me regañó ayer porque te deje ir."
-    show dark 2desafiantet
-    d "Realmente me debes una."
-    show dark 2desafiante
-    $ normal("dark")
-    show screen red_effect2
-    l_thought "¿Qué? ¿Le regañaron...{w} por mi culpa?"
-    "Una punzada de culpa se clavó en mi estómago. La tensión se apoderó de mí."
-    show jeremy 1neutral
-    show blaze 2preocupada
-    show dark 1neutral at boo2
-    l "¿P-por mi culpa...?"
-    nobody "{sc=3}Hasta TUS actos les afectan a los demás.{/sc}"
-    nobody "{sc=4}Solo conseguirás que te odie.{/sc}"
-    nobody "{sc=5}Como todos en esta escuela.{/sc}{sc=6} Si es que no te odia ya.{/sc}"
-    show jeremy 1feliz
-    show blaze 2compadecer
-    show dark 1incomodot
-    $ enfocar("dark")
-    d "Realmente fue más mía, te deje ir y eso."
-    show dark 1incomodo
-    $ normal("dark")
-    hide screen red_effect2 with Dissolve(3.5)
+    l_thought "Eh... ¿Q-Quién es este?"
+    l_thought "¿Ese asiento no estaba vacío ayer?"
+    show dark 1distraido2 with Dissolve(0.5):
+        left
+    "Al lado de Dark y detrás de Blaze, está un chico con un aspecto algo... desaliñado.{w} Por decirlo de forma bonita."
+    "Entre cierro los ojos, tratando de entender quien es."
     $ renpy.pause(1.5, hard=True)
-    show dark 1neutral
-    l "..."
-    l "Gracias."
-    "A pesar de mis pensamientos intrusivos{w}, me fuerzo a decir eso."
-    "Dark se queda anonadado al escuchar eso."
-    show dark 1neutralt
+    l_thought "Por qué..."
+    extend " ¿Por qué tiene la manga de su sudadera en su camisa?"
+    l_thought "Genuinamente, a este NUNCA lo he visto por aquí."
+    l_thought "O bueno... Puede ser que tampoco le preste mucha atención."
+    l_thought "Como sea. Ahora estoy conociendo a extraños.{w} Justo lo que necesitaba para el inicio de esta semana de mierda."
+    show jeremy 1juzga 
+    "El chico desaliñado voltea hacia mí sintiendo su mirada. Sus ojos me examinan con la misma curiosidad con que yo lo examino a él."
+    show dark 1metiche
+    "Dark, desde su asiento, al parecer notó mi mirada curiosa por el chico, sonríe como un gato que ve jugar a dos ratones."
+    show dark 1desafiantet
     $ enfocar("dark")
-    d "Eh..."
-    show dark 1incomodot
-    extend " Tranquila, realmente no es nada."
-    show dark 1incomodo
+    d "¿Y bueno, Blaze?"
+    show jeremy 1serio
+    show blaze 1enojada
+    extend " ¿No nos vas a presentar a tu nuevo novio?"
+    show dark 1desafiante
     $ normal("dark")
-    "Dice mientras fuerza una sonrisa, pero se nota la sinceridad."
-    $ renpy.pause(2.5, hard=True)
-    show screen red_effect2
-    nobody "{sc=3}Eres como una plaga.{/sc}"
-    show screen pulse_black
-    "Pero ellos vuelven."
-    nobody "{sc=3}Dondequiera que vas, destruyes la tranquilidad de los que te rodean.{/sc}"
-    nobody "{sc=3}Y aún así, te atreves a ponerte esa cara de víctima.{/sc}"
-    nobody "{sc=5}No eres más que una egoísta.{/sc}"
-    nobody "{sc=7}Tarde o temprano, todos se cansarán de ti.{/sc}"
-    show blaze 1sonriente
-    $ inac2("blaze")
-    show dark 2distraido
-    $ inac2("dark")
-    show jeremy 1felizt
-    $ inac2("jeremy")
-    "Me volteo en silencio, procesando lo que me dijo esa voz."
-    show jeremy 1feliz
-    show blaze 3desinteresadat
-    "{cps=5.0}Creyendole.{/cps}"
-    $ renpy.pause(5.0, hard=True)
-    show blaze 3desinteresada
+    "El random y Blaze lo fulminan con la mirada.{w} A Dark solo se le ve disfrutando la situación."
+    show blaze 1seria2t
+    $ enfocar("blaze")
+    b "Jaja, muy gracioso..."
+    show blaze 1seria2
+    $ normal("blaze")
+    l_thought "Puede ser que este sea “Jeremy”... Blaze lo mencionó en el camino."
+    show jeremy 1incomodot
+    $ enfocar("jeremy")
+    idk1 "Vaya que tu sabes como anime el día, eh."
+    show jeremy 2seriot
+    show dark 2desafiante
+    idk1 "Creeme que tú necesidad de atención es patética, Dark."
+    show jeremy 2serio
+    $ normal("jeremy")
+    l_thought "¿...?"
+    $ renpy.pause(2.9, hard=True)
     show jeremy 1juzgat
-    show dark 2juzga2
-    $ renpy.pause(8.0, hard=True)
+    $ enfocar("jeremy")
+    idk1 "Y, bro, literalmente me conoces desde hace años, cabron."
     show jeremy 1juzga
-    show blaze 3neutralt
+    $ normal("jeremy")
+    "Blaze acomoda su voz antes de hablar."
+    show blaze 1seriat
+    $ enfocar("blaze")
+    b "Y no solamente eres tú quien dice que somos pareja."
+    b "Ya nos cansa eso..."
+    show blaze 3desinteresada2t
+    extend " TV, Strike, Manu..."
+    show blaze 3desinteresada2
+    $ normal("blaze")
+    l_thought "Supongo que TV es Steve... Pero...{w} ¿Manu?"
+    show dark 1desafiantet
+    $ enfocar("dark")
+    d "Piensalo mejor. Y eso ni es un cuarto de la secundaria."
+    show dark 1desafiante
+    $ normal("dark")
+    show blaze 3juzga
+    show jeremy 1juzga
+    "Los dos miran extrañados a Dark, en busca de respuestas ante ese comentario."
+    show jeremy 1juzgat
+    $ enfocar("jeremy")
+    idk1 "No es mi problema si la gente no tiene nada mejor que hacer que inventar cosas."
+    show jeremy 1juzga
+    $ normal("jeremy")
+    l_thought "Vaya. Este... ¿Jeremy? Como sea... Le devuelve el sarcasmo a Dark sin inmutarse.{w} Interesante."
+    show blaze 1desinteresada3 at sigh_animation
+    "Blaze suspira y se masajea las sienes. Ya agotada por los comentarios de Dark."
+    show blaze 1desinteresada2t
+    $ enfocar("blaze")
+    b "Como sea..."
+    b "¿No tenemos cosas más importantes que hacer?"
+    show blaze 1desinteresada2
+    $ normal("blaze")
     show dark 2desafiantet
     $ enfocar("dark")
-    d "Laila, ¿Qué piensas del amor?"
-    show blaze 3neutral
-    show jeremy 1incomodot
+    d "Creo que deberías presentarlos, aún no se conocen."
     show dark 2desafiante
     $ normal("dark")
-    hide screen pulse_black
-    hide screen red_effect2
-    "Me quita de mi niebla del pensamiento, pero me extraña su pregunta."
-    l_thought "¿Como? ¿A qué vino eso?"
-    show jeremy 1incomodo
-    show blaze 1sonrientet
-    show dark 2juzgat
+    "Dice mientras me apunta a mi y a Jeremy. Me estoy empezando a sentir un poco incómoda."
+    l_thought "Realmente... No quiero estar aquí. En ningún lado la verdad."
+    show blaze 1desinteresada2t
+    $ enfocar("blaze")
+    b "Ya que..."
+    b "Laila...{w} él es Jeremy, un amigo que conocí hace tiempo y es el presidente del consejo estudiantil."
+    show blaze 1desinteresada2
+    $ normal("blaze")
+    l_thought "Eh...{w} ¿Él? ¿Con su estilo tan... desaliñado?"
+    l_thought "Pues, no soy nadie para criticar, estoy peor. Pero..."
+    show blaze 1desinteresada2t
+    $ enfocar("blaze")
+    b "Y Jeremy, ella es mi hermana adoptiva, Laila."
+    show blaze 1desinteresada2
+    $ normal("blaze")
+    "Asiente brevemente hacia mí. Su mirada me analiza rápida y prácticamente."
+    show jeremy 1seriot
+    $ enfocar("jeremy")
+    je "Ya tuve el... Placer de leer sobre ti."
+    show jeremy 1serio
+    $ normal("jeremy")
+    $ renpy.pause(1.8, hard=True)
+    show jeremy 1juzga
+    l "El sentimiento es mutuo. Aunque yo solo tuve el placer de ver tu...{w} Interesante estilo al vestir."
+    l_thought "Bien, Laila.{w} Insulta al presidente del consejo en nuestro primer intercambio de palabras. Eso no va a traer consecuencias en absoluto.{w} Para nada."
+    show blaze 1seria
+    "Blaze hace una ligera cara además de un ligero codazo. Su cara dice: “¡No me dejes mal!”."
+    show jeremy 1serio2
+    show dark 2incomodot
     $ enfocar("dark")
-    d "No es necesario que respondas. Cosas que pienso."
-    show dark 2juzga
-    show blaze 1sonriente
-    show jeremy 1felizt
+    d "Vaya. Directo a la yugular, Laila. Interesante, Interesante."
+    show dark 2desafiante
     $ normal("dark")
-    "Me quedo extrañada, pero prefiero no darle importancia."
-    "Volteo a ver a Blaze, la veo algo entretenida en su conversación con ese chico."
-    l_thought "Que facilidad tiene ella para hablar. Ojalá poder ser así."
-    "Volteo a ver mi asiento, sin nada interesante."
+    "Al parecer Jeremy ignora por completo el comentario sobre su ropa y cambia de tema."
+    show jeremy 1serio2t
+    $ enfocar("jeremy")
+    je "Y Blaze... ¿Qué hicieron ayer? Dark no me pasó nada."
+    show jeremy 1juzgat
+    extend " Y no creo que haya copiado algo."
+    show jeremy 1juzga
+    $ normal("jeremy")
+    show blaze 1desinteresada2t
+    $ enfocar("blaze")
+    b "Bueno...{w} pasamos por una mala racha ayer...{w} pero nada tan grave por ahora."
+    show blaze 1desinteresada2
+    $ normal("blaze")
+    show dark 2felit
+    $ enfocar("dark")
+    d "Una “mala racha” es perder todo en el casino, lo de ustedes fue un espectáculo total."
+    show dark 2desafiantet
+    show blaze 3nerviosa
+    extend "Y eso que yo ni estuve aquí."
+    show dark 2desafiante
+    $ normal("dark")
+    "Siento la punzada de culpar volver como un peso cargado en mi espalda."
+    show jeremy 1serio
+    "Jeremy mira fijamente a Dark, su desconfianza natural se intensifica."
+    show jeremy 1seriot
+    $ enfocar("jeremy")
+    je "¿Espect-{nw}"
+    show jeremy 2surprise
+    $ normal("jeremy")
+    show dark 2neutral
+    show blaze 3nerviosat
+    $ enfocar("blaze")
+    b "EL PUNTO ES QUE AL MENOS TENEMOS ESTE DÍA PARA PASARLA BIEN."
+    show blaze 3nerviosa
+    $ normal("blaze")
+    show dark 2seriot
+    $ enfocar("dark")
+    d "Sin gritar, Blaze, no me quiero llevar otro regaño del Director."
+    show dark 2serio
+    $ normal("dark")
+    show jeremy 2serio
+    show blaze 2desinteresada2 at sigh_animation
+    "Blaze suspira, frustrada."
+    show blaze 2desinteresada2t
+    $ enfocar("blaze")
+    b "Eso fue tu culpa ayer."
+    show blaze 2desinteresada2
+    show jeremy 2neutral
+    $ normal("blaze")
+    show dark 2seriot
+    $ enfocar("dark")
+    d "Creeme que Laila me debe una por eso."
+    show dark 2serio
+    $ normal("dark")
+    l_thought "¿Qué? ¿Le regañaron... por mi culpa?"
+    show screen red_effect2
+    "Una punzada de culpa se clavó en mi estómago. La tensión se apoderó de mí."
+    $ renpy.pause(1.9, hard=True)
+    
+    if rutaSuicida == 0:
+        show dark 1neutral at boo2
+        show blaze 2preocupada
+        show jeremy 1juzga
+        l "¿P-por mi culpa...?"
+        nobody "{sc=3}Hasta TUS actos les afectan a los demás.{/sc}"
+        nobody "{sc=4}Solo conseguirás que te odie.{/sc}"
+        nobody "{sc=5}Como todos en esta escuela.{/sc}{sc=6} Si es que no te odia ya.{/sc}"
+        show jeremy 1feliz
+        show blaze 2compadecer
+        show dark 2distraido2t
+        $ enfocar("dark")
+        d "Aunque, también fue mi responsabilidad, te deje ir y eso."
+        show dark 2distraido2
+        $ normal("dark")
+        show dark 2desafiante
+        show jeremy 1felizt
+        $ enfocar("jeremy")
+        je "Por fin, asumes la responsabilidad en algo. Te felicito, amigo."
+        show jeremy 1feliz
+        $ normal("jeremy")
+        "Dark solo se ríe de su comentario. Al parecer era un chiste."
+        l "..."
+        show dark 1neutral
+        l "Gracias."
+        hide screen red_effect2 with Dissolve(2.5)
+        "A pesar de mis pensamientos intrusivos me fuerzo a decir eso. A él se le ve la sorpresa en su cara."
+        show dark 1neutralt
+        $ enfocar("dark")
+        d "Eh..."
+        show dark 1distraido2t
+        extend " No te acostumbres mucho. Yo debo mantener mi reputación..."
+        show dark 1distraido2
+        $ normal("dark")
+        show jeremy 1juzga2t
+        $ enfocar("jeremy")
+        je "¿Reputación? ¿Tú?"
+        je "¿No nos vas a contar otro chiste?"
 
+    if rutaSuicida == 1:
+        d "Bueno, técnicamente sí. No voy a disfrazar la verdad. Pero ya no te preocupes ya tengo una advertencia escrita por dejar escapar estudiantes problemáticos."
+
+    scene black with Fade(3.5, 0.0, 3.5) 
 
     return

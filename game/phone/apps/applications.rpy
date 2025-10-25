@@ -408,16 +408,6 @@ init -10 python in phone.application:
         PhoneMenu("phone_dialogue_history")
     )
 
-    relationships_app = Application(
-        _("Relaciones"),
-        Icon(
-            config.basedir + "relationships_icon.png",  # Necesitarás crear este icono
-            0.9,
-            GradientBackground("#E91E63", "#AD1457")  # Rosa/Rojo
-        ),
-        PhoneMenu("phone_relationships")
-    )
-
     add_application(save_app, page=None)
     add_application(carga_app, page=None)
     add_application(config_app, page=None)

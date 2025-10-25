@@ -17,7 +17,6 @@ init 100 python in phone.application:
     add_app_to_all_characters(calendar_app)
     add_app_to_all_characters(dialogue_history_app)
     add_app_to_all_characters(close_app)
-    #add_app_to_all_characters(relationships_app)
 
 init 100 python in phone.calendar:
     add_calendar_to_all_characters(2066, 2, MONDAY)
