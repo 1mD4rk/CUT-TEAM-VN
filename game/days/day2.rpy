@@ -453,7 +453,45 @@ label aula_day2:
         je "¿No nos vas a contar otro chiste?"
 
     if rutaSuicida == 1:
+        show dark 2seriot
+        $ enfocar("dark")
         d "Bueno, técnicamente sí. No voy a disfrazar la verdad. Pero ya no te preocupes ya tengo una advertencia escrita por dejar escapar estudiantes problemáticos."
+        show dark 2serio
+        $ normal("dark")
+        stop music
+        show screen pulse_black
+        l "¿Eso se supone que me debe tranquilizar o como? Para eso no digas ni mierda."
+        "Dark solo se ríe, pero esta vez es una risa cortante, casi de desafío."
+        show dark 2desafiantet
+        $ enfocar("dark")
+        d "¿Estás segura de querer sacar los trapos sucios al sol?"
+        show dark 2desafiante
+        $ normal("dark")
+        show jeremy 1seriot
+        $ enfocar("jeremy")
+        je "Dark, un poco de tacto."
+        show jeremy 1serio
+        $ normal("jeremy")  
+        show dark 2seriot
+        $ enfocar("dark")
+        d "¿Tacto? Yo solo digo lo que todos piensan. Es una chica problemática, literalmente le cuesta decir un simple “gracias”."
+        show dark 2serio
+        $ normal("dark")
+        l_thought "Ahí está. La verdad sin adornos, como un puñetazo en el estómago. Duele, pero al menos es honesto."
+        "Mis nudillos se ponen blancos al apretar los puños. La culpa que sentía se transforma en algo más familiar, más manejable: rabia pura."
+        l "¿Y qué quieres? ¿Que me arrodillara y decirte gracias? Ni lo pienses. Ni estando drogada haría esa puta estupidez."
+        show dark 2desafiantet
+        $ enfocar("dark")
+        d "Y ahí lo tienen, damas y caballeros. La verdadera Laila."
+        show dark 2desafiante
+        $ normal("dark")
+        show blaze 1enojada2t
+        $ enfocar("blaze")
+        b "Basta. Esto no lleva a ningún lado."
+        show blaze 1enojada2
+        $ normal("blaze")
+
+
 
     scene black with Fade(3.5, 0.0, 3.5) 
 
