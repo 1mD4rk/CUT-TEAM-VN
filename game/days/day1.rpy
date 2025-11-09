@@ -773,10 +773,8 @@ label azotea:
     play sound ear_ringing volume 0.5 
     "Y como si alguien estuviera hablando frente mio, escucho alguien decir algo... Mientras escucho como un pitido resuena en mi oído, incrementando."
     pause 1.0
-    $ _history = False
     nobody "{sc=3}¿Crees que no es tu culpa? Aw, ternura.{/sc}"
     nobody "{sc=4}Eso mismo dirán cuando encuentren tu cuerpo sin vida:{/sc} {sc=6}'Ahora tiene lo que se merecía'{/sc}"
-    $ _history = True
     pause 1.5
     stop sound fadeout 1.8
     l_thought "..."
@@ -1442,11 +1440,17 @@ label whatremainsofday1:
     $ normal("dark")
     show dark 1distraidot at outwalk_right3
     #play sound miedomujere
-    d " Nos vemos, Blaze. Nos vemos, Laila."
+
+    if (rutaCanon-rutaSuicida)>=0:
+        d "Nos vemos, Blaze. Nos vemos, Laila."
+        l_thought "¿Es genuino? ¿O es una huida elegante para no profundizar en lo que acaba de insinuar?"
+    else:
+        d "Nos vemos, Blaze. Tú... cuídate. O lo que sea."
+        l_thought "Por fin se fue. Su sola presencia me exaspera. Cada palabra suena falsa, cada mirada es un juicio."
+
     hide dark
     stop music
     show blaze 3desinteresada3 at anim_center
-    l_thought "¿Es genuino? ¿O es una huida elegante para no profundizar en lo que acaba de insinuar?"
     "No volteo. Me quedo paralizada, escuchando cómo sus pasos se alejan. cada una de sus pisadas un eco que resuena en el silencio que deja atrás."
     "Cada paso que se aleja debería ser un alivio, pero solo siento el vacío que deja su partida repentina, y la inquietante sensación de que esto está lejos de terminar."
     "Mis pies parecen pesar una tonelada mientras me arrastro hasta el lado de Blaze, cada paso una batalla perdida contra la gravedad de mi propia culpa."
@@ -1540,10 +1544,29 @@ label whatremainsofday1:
     show blaze 3compadecert
     b "Lamento haberte respondido así... Todo ha sido tan difícil..."
     b "Pero sobre todo, siento que hayas tenido que cargar con todo esto sola."
-    show blaze 3desinteresadat
-    b "{outlinecolor=#da0303}Dark{/outlinecolor} me contó lo de la dirección... y que casi te metes en otro problema en la azotea. Apenas me pude enterar por él."
-    show blaze 3desinteresada
-    "Siento cómo se muestra más compasiva."
+
+    if (rutaCanon-rutaSuicida)>=0:
+        show blaze 3desinteresadat
+        b "Dark me contó lo de la dirección... y que casi te metes en otro problema en la azotea. Apenas me pude enterar por él. Parece preocupado por ti."
+        show blaze 3desinteresada
+        "Siento cómo su tono se vuelve más compasivo, más comprensivo."
+        l_thought "¿Preocupado? ¿De verdad?{w} No sé por qué, pero esa idea... Duele de una manera diferente."
+        l_thought " Como si alguien hubiera visto a través de mi armadura sin que yo lo notara."
+    else:
+        show blaze 3desinteresadat
+        b "Dark me contó lo de la dirección... y que estuviste en la azotea. Parece preocupado por ti."
+        show blaze 3desinteresada
+        l "¿Preocupado?"
+        "Una risa amarga escapa de mis labios."
+        l "Ese finge preocupación mejor de lo que yo finjo estar bien."
+        show blaze 1preocupadat
+        b "Laila, no seas así. Él sol-{nw}"
+        show blaze 1preocupada
+        l '¿Solo QUÉ, Blaze? ¿Quiere "ayudar"?'
+        "Hago comillas en el aire con los dedos."
+        l "Nadie quiere ayudar, Blaze.{w} Déjame adivinar: ¿quieres que crea que le importo? ¿Que a ALGUIEN le importo?"
+        l_thought "La verdad es que soy un caso perdido y todos lo saben. Solo están esperando a que me rinda por completo."
+
     show blaze 3compadecert
     b "Sé que la muerte de mamá te ha afectado mucho. Te entiendo. A mi también me ha afectado."
     show blaze 3compadecer
@@ -1619,7 +1642,7 @@ label whatremainsofday1:
     $ enfocar("blaze")
     b "Realmente, lo sospeché. Después de lo de la dirección... era lo lógico."
     show blaze 2seria2t
-    b "Y bueno... Durante nuestra conversación {outlinecolor=#da0303}Dark{/outlinecolor}... mencionó algo."
+    b "Y bueno... Durante nuestra conversación Dark... mencionó algo."
     show blaze 2seria
     $ normal("blaze")
     l_thought "Claro que sí. {i}El vicepresidente metiche{/i}."
@@ -1723,6 +1746,11 @@ label whatremainsofday1:
     "Dice eso con una sonrisa genuina que casi parece real, y me guiña un ojo."
     "Por un segundo, un segundo estúpidamente frágil, casi le creo."
     l_thought "En verdad... No te merezco, Blaze."
+
+    if (rutaCanon-rutaSuicida)<=-1:
+        "Su sonrisa parece forzada, como si estuviera siguiendo un guión. Sus ojos no se sonríen como antes."
+        l_thought '¿Es en serio?{w} ¿O solo quieres asegurarte de que papá vea que la "hermana buena" está haciendo su parte?'
+
     show screen red_effect
     nobody "{sc=3}¿Crees que es así de simple?{/sc}"
     nobody "{sc=3}¿Que un guiño y una sonrisa borran lo que hiciste?{/sc}"
@@ -1831,8 +1859,15 @@ label final_day1:
     "El suelo parece ceder bajo mis pies. Levanté la vista, sorprendida y aterrada por esa última frase."
     "Sus ojos no son fríos, pero sí pesados, como si cargaran con algo que yo misma puse ahí."
     l_thought "Sola..."
-    "La palabra resuena en mi cabeza, vacía y enorme. “No voy a interferir. No… No va a ayudarme”."
+    "La palabra resuena en mi cabeza, vacía y enorme. “No voy a interferir. No... No va a ayudarme”."
     l_thought "¿Y si el director me expulsa? ¿Y si Todd insiste en suspender? ¿Y si...?"
+
+    if (rutaCanon-rutaSuicida)<=-1:
+        show screen red_effect2
+        nobody "{sc=3}Es lo que mereces. Un ensayo para el abandono final.{/sc}"
+        nobody "{sc=3}¿Crees que se quedará cuando vea lo rota que estás por dentro?{/sc}"
+        hide screen red_effect2 with Dissolve(1.0)
+
     l_thought "Me va a dejar ahogarme. Él, que es el único que... que..."
     "Sacudo mi cabeza, echando para atrás cualquier pensamiento intrusivo. Y le presto atención a papá."
     show counter 1seriot
@@ -1990,6 +2025,11 @@ label final_day1:
     l_thought "Por una parte no quiero, ni siquiera salir..."
     l_thought "Pero por otra quiero aceptar la idea de mi padre, quiero desconectarme de todo...{w} de la escuela, de los problemas... aún si son muy insignificantes..."
     $ renpy.pause(3.0, hard=True)
+
+    if (rutaCanon-rutaSuicida)<=-1:
+        l_thought "¿Tiempo juntos? ¿Para qué?"
+        l_thought "¿Para que vea de cerca lo defectuosa que estoy?{w} ¿Para que la decepción sea aún más palpable?"
+
     "Abrumada, asiento con la cabeza, incapaz de formar palabras. Es un movimiento pequeño, casi imperceptible, pero él lo ve."
     show counter 1nosurpriset
     $ enfocar("counter")
