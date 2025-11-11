@@ -187,7 +187,7 @@ label rutacanon_choice2:
         $ normal("blaze")
         l_thought "“Por mí”.{w} Las dos palabras más pesadas del universo."
         l_thought "Porque significan que mi dolor ya no es solo mío.{w} Significa que cada vez que elijo el vacío, elijo herirla a ella también."
-        "Jeremy solo me da una mirada con una sonrisa. Sin decir nada."
+        "Jeremy solo me da una sonrisa. Sin decir nada."
 return
 
 label rutasuicida_choice2:
