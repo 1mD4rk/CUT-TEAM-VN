@@ -171,6 +171,13 @@ define st = Character("Strike",
     color="#ffffff",
     callback=strike_sound)
 
+define ma = Character("Mani", 
+    who_bold=True,  
+    who_outlines = [(4, "#2634aa", 0, 0)],
+    what_outlines = [(2, "#2634aa", 3, 3)],
+    color="#ffffff",
+    callback=strike_sound)
+
 define ptod = Character("Prof. Todd", 
     who_bold=True,  
     who_outlines = [(4, "#5e5353", 0, 0)],
@@ -229,7 +236,8 @@ init python:
                         "juzga", "juzgat", "juzga2", "juzga2t",
                         "neutral", "neutralt",
                         "serio", "seriot", "serio2", "serio2t", "serio3", "serio3t",
-                        "surprise", "surpriset"]
+                        "surprise", "surpriset",
+                        "sonriente", "sonrientet"]
     for base in jeremy_bases:
         for expr in jeremy_expressions:
             renpy.image(
@@ -321,6 +329,27 @@ init python:
                     (864, 1152),
                     (0, 0), f"images/characters/strike/{base}.png",
                     (0, 0), f"images/characters/strike/{expr}.png"
+                )
+            )
+
+    # Configuración para Strike
+    mani_bases = ["1", "2", "3"]
+    mani_expressions = ["neutral", "neutralt", "pinguino",
+                        "confiado", "confiadot",
+                        "feliz", "felizt",
+                        "juzga", "juzgat", "juzgapinguin",
+                        "serio", "seriot",
+                        "nervioso", "nervioso2", "nerviosot",
+                        "desanimado", "desanimadot",
+                        "triste", "tristepinguin", "tristet"]
+    for base in mani_bases:
+        for expr in mani_expressions:
+            renpy.image(
+                f"mani {base}{expr}",
+                im.Composite(
+                    (864, 1152),
+                    (0, 0), f"images/characters/mani/{base}.png",
+                    (0, 0), f"images/characters/mani/{expr}.png"
                 )
             )
 

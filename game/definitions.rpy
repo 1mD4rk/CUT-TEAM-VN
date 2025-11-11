@@ -50,6 +50,9 @@ transform shake1:
 transform hug_on:
         linear 0.4 zoom 1.9 xalign 0.5 yalign 0.45
 
+transform hug2_on:
+        linear 0.2 zoom 1.9 xalign 0.5 yalign 0.45
+
 transform hug_off:
         linear 0.4 zoom 1.0 yalign 0.9
         center

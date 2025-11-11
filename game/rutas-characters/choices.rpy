@@ -111,3 +111,209 @@ label rutasuicida_nochoice1:
         l_thought "Wow, viniendo de ti, eso casi suena a proyección."
         jump dark_scene_afterchoice1
 return
+
+label rutacanon_choice2:
+        "Con movimientos torpes, abro la bolsa."
+        $ renpy.pause(2.0, hard=True)
+        " El olor a... Panqueques... Simple, casero, hecha por papá.{w} Me golpea como una bofetada.{w} Un recordatorio de otra persona a la que estoy defraudando."
+        show dark 2enojao
+        show jeremy 1juzga
+        l "No...{w} No pongas esa cara. No es para tanto."
+        show dark 2seriot
+        $ enfocar("dark")
+        d "Laila, por el amor de Dios."
+        show dark 2serio2t
+        extend " Come y callate. Deja de pelear."
+        show dark 2enojao
+        $ normal("dark")
+        $ renpy.pause(3.0, hard=True)
+        show blaze 1compadecer
+        show dark 2desafiante
+        show jeremy 1sonriente
+        "Tomo el primer bocado."
+        $ renpy.pause(3.0, hard=True)
+        "Sabe a culpa.{w} Sabe a preocupación.{w} Sabe a tres pares de ojos observándome como si en cualquier momento pudiera romperme."
+        $ renpy.pause(2.4, hard=True)
+        "Y lo peor es que tal vez tengan razón."
+        $ renpy.pause(2.4, hard=True)
+        "Cada mordisco que le doy es más pesado que el anterior."
+        $ renpy.pause(2.4, hard=True)
+        "Siento como mi estomago se revuelve.{w} Como mi bilis sube hasta mi garganta."
+        $ renpy.pause(3.5, hard=True)
+        "Pero aguanto.{w=0.5} {i}Por ella.{/i}"
+        $ renpy.pause(2.4, hard=True)
+        l_thought "Ellos no entienden. No es el hambre. Es el peso de saber que mi propio cuerpo se ha convertido en otra batalla que estoy perdiendo."
+        l_thought "Comer esto, que me preparaba ella...{w} Se siente como un castigo."
+        show blaze 1compadecer at sigh_animation
+        "Blaze suspira aliviada."
+        show blaze 1compadecert
+        b "Al fin..."
+        show blaze 1compadecer
+        show jeremy 1sonrientet
+        $ enfocar("jeremy")
+        je "Eso pasa rápido. Pero si quieres seguir sufriendo, vale. No juzgar."
+        show jeremy 1sonriente
+        $ normal("jeremy")
+        "Blaze gira la silla del puesto de Dark y se sienta al frente mio."
+        show blaze 1preocupada
+        extend " Con una mirada... Triste."
+        show blaze 1preocupadat
+        b "Papá...{w} se quedó hasta tarde anoche haciéndolos. Dijo que eran tus favoritos."
+        show blaze 1preocupada
+        l_thought "Otra daga.{w} Otra persona a la que estoy defraudando con mi miseria silenciosa."
+        extend " ¿Por qué no pueden entender que a veces el vacío es más seguro que llenarlo con expectativas?"
+        $ renpy.pause(4.0, hard=True)
+        "Trago.{w} Con dificultad.{w} Trato de evitar sus miradas. Mientras siento como el bilis me quema mi garganta."
+        hide screen pulse_black
+        l "Ya está.{w} ¿Contentos?"
+        show dark 2desafiantet
+        $ enfocar("dark")
+        d "Contentos no."
+        show dark 2felit
+        extend " Pero menos propensos a llamar una ambulancia. Lo tomo como un éxito."
+        show dark 2feli
+        $ normal("dark")
+        show blaze 1preocupadat
+        b "No se trata de estar contentos, Laila."
+        show blaze 1compadecert
+        extend " Se trata de que no queremos perderte."
+        show blaze 1compadecer at hug_off
+        "Se aleja y exhala profundamente, el peso en sus hombros se aligera un poco."
+        show blaze 1compadecert:
+                center
+        $ enfocar("blaze")
+        b "Prométeme que lo intentarás de nuevo en la cena. Por mí."
+        show blaze 1compadecer
+        $ normal("blaze")
+        l_thought "“Por mí”.{w} Las dos palabras más pesadas del universo."
+        l_thought "Porque significan que mi dolor ya no es solo mío.{w} Significa que cada vez que elijo el vacío, elijo herirla a ella también."
+        "Jeremy solo me da una mirada con una sonrisa. Sin decir nada."
+return
+
+label rutasuicida_choice2:
+        show dark 2serio2
+        show jeremy 1serio2
+        l "No tengo hambre."
+        "Mis dedos se cierran débilmente alrededor de la bolsa, pero no la abro."
+        l_thought "Otra expectativa que no puedo cumplir.{w} Otra decepción que estoy cocinando."
+        show blaze 1compadecert
+        b "Laila, aunque no tengas hambre, necesitas comer algo."
+        show blaze 1compadecer
+        "Acerca su mano como para ayudarme a abrirla. Pero yo retiro la bolsa hacia mi pecho."
+        l "Déjalo...{w} Para después."
+        "Mi voz apenas es un hilo de sonido, pero firme en mi negativa."
+        $ renpy.pause(3.0, hard=True)
+        show blaze 1preocupada
+        show jeremy 1serio2t
+        $ enfocar("jeremy")
+        je "“Para después” suele convertirse en “para nunca”."
+        show jeremy 1serio2
+        $ normal("jeremy")
+        show dark 2seriot
+        $ enfocar("dark")
+        d "Vamos, no seas dramática."
+        show dark 2serio2t
+        extend " Son panqueques, no veneno."
+        show dark 2serio2
+        $ normal("dark")
+        "Dark lo dice con sarcasmo...{w} Pero su mirada es más aguda de lo usual."
+        show blaze 1preocupadat at sigh_animation
+        b "¿Prometes que lo intentarás más tarde? En la cena, al menos..."
+        show blaze 1preocupada
+        $ renpy.pause(3.5, hard=True)
+        "Asiento lentamente, roboticamente, sin ninguna convicción."
+        l "Lo...{w} Intentaré."
+        l_thought "Incluso para mí... Mis palabras suenan huecas."
+        $ renpy.pause(3.0, hard=True)
+        l_thought "Otra mentira. Más para la pila.{w} Pero es más fácil que seguir esta pelea."
+        "Blaze me mira, buscando en mis ojos alguna señal de verdad.{w} Me limito en evitar su mirada."
+        show blaze 2seria2 at hug_off
+        extend " Ellas se aleja, evitando mi mirada."
+        show blaze 2seria2t:
+                center
+        $ enfocar("blaze")
+        b "Está bien..."
+        "Guarda el desayuno de vuelta en mi mochila."
+        show blaze 2compadecert
+        b "Pero te lo recordaré."
+        show blaze 2seria2
+        $ normal("blaze")
+        $ renpy.pause(3.0, hard=True)
+        "El gesto final de resignación de Blaze duele más que cualquier regaño.{w} Ella sabe que estoy mintiendo, y yo sé que ella lo sabe."
+        show dark 2serio2t
+        $ enfocar("dark")
+        d "Dramatizar es fácil."
+        show dark 2distraidot
+        d "Morir también."
+        show dark 2seriot
+        d "Lo difícil es vivir, y parece que ni siquiera lo intentas."
+        show dark 2serio
+        $ normal("dark")
+        l_thought "Ahora tengo a un psicólogo profesional, no, gracias. No quiero cita para hoy."
+
+return
+
+label rutasuicida_nochoice2:
+        $ rutaSuicida += 3
+        show dark 2serio2
+        show jeremy 1serio2
+        l "No tengo hambre."
+        "Mis dedos se cierran débilmente alrededor de la bolsa, pero no la abro."
+        l_thought "Otra expectativa que no puedo cumplir.{w} Otra decepción que estoy cocinando."
+        show blaze 1compadecert
+        b "Laila, aunque no tengas hambre, necesitas comer algo."
+        show blaze 1compadecer
+        "Acerca su mano como para ayudarme a abrirla. Pero yo retiro la bolsa hacia mi pecho."
+        l "Déjalo...{w} Para después."
+        "Mi voz apenas es un hilo de sonido, pero firme en mi negativa."
+        $ renpy.pause(3.0, hard=True)
+        show blaze 1preocupada
+        show jeremy 1serio2t
+        $ enfocar("jeremy")
+        je "“Para después” suele convertirse en “para nunca”."
+        show jeremy 1serio2
+        $ normal("jeremy")
+        show dark 2seriot
+        $ enfocar("dark")
+        d "Vamos, no seas dramática."
+        show dark 2serio2t
+        extend " Son panqueques, no veneno."
+        show dark 2serio2
+        $ normal("dark")
+        "Dark lo dice con sarcasmo...{w} Pero su mirada es más aguda de lo usual."
+        show blaze 1preocupadat at sigh_animation
+        b "¿Prometes que lo intentarás más tarde? En la cena, al menos..."
+        show blaze 1preocupada
+        $ renpy.pause(3.5, hard=True)
+        "Asiento lentamente, roboticamente, sin ninguna convicción."
+        l "Lo...{w} Intentaré."
+        l_thought "Incluso para mí... Mis palabras suenan huecas."
+        $ renpy.pause(3.0, hard=True)
+        l_thought "Otra mentira. Más para la pila.{w} Pero es más fácil que seguir esta pelea."
+        "Blaze me mira, buscando en mis ojos alguna señal de verdad.{w} Me limito en evitar su mirada."
+        show blaze 2seria2 at hug_off
+        extend " Ellas se aleja, evitando mi mirada."
+        show blaze 2seria2t:
+                center
+        $ enfocar("blaze")
+        b "Está bien..."
+        "Guarda el desayuno de vuelta en mi mochila."
+        show blaze 2compadecert
+        b "Pero te lo recordaré."
+        show blaze 2seria2
+        $ normal("blaze")
+        $ renpy.pause(3.0, hard=True)
+        "El gesto final de resignación de Blaze duele más que cualquier regaño.{w} Ella sabe que estoy mintiendo, y yo sé que ella lo sabe."
+        show dark 2serio2t
+        $ enfocar("dark")
+        d "Dramatizar es fácil."
+        show dark 2distraidot
+        d "Morir también."
+        show dark 2seriot
+        d "Lo difícil es vivir, y parece que ni siquiera lo intentas."
+        show dark 2serio
+        $ normal("dark")
+        l_thought "Ahora tengo a un psicólogo profesional, no, gracias. No quiero cita para hoy."
+        $ renpy.pause(5.0, hard=True)
+        jump receso_day2_afterchoice
+return

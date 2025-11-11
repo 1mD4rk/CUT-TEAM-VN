@@ -6,13 +6,8 @@ label day3:
     play sound closet_close
     $ renpy.pause(1.0, hard=True)
     show screen pulse_black
-    show dark 1feli:
-        left
-    show jeremy 1juzga:
-        flip
-        right5
-    "si"
-    show jeremy 2juzga
-    "si"
-
+    show mani 1face
+    show blaze 1neutral:
+        right3
+    $ renpy.pause(10.0, hard=True)
     return
