@@ -66,3 +66,86 @@ init python:
     def reset_personajes():
         for tag in personajes:
             normal(tag)
+
+# Transformaciones combinadas (caminata + enfoque)
+transform walking_a_activo:
+    anchor (0.5, 1.0)
+    parallel:
+        block:
+            ease 0.35 xoffset -2 yoffset 5
+            ease 0.35 xoffset 0 yoffset -1
+            ease 0.35 xoffset 2 yoffset 5
+            ease 0.35 xoffset 0 yoffset -1
+            repeat
+    parallel:
+        linear 0.1 zoom 1.05 alpha 1.0 yoffset 0
+
+transform walking_b_activo:
+    anchor (0.5, 1.0)
+    parallel:
+        block:
+            ease 0.5 xoffset 2 yoffset 3
+            ease 0.3 xoffset 0 yoffset -1
+            ease 0.5 xoffset -2 yoffset 3
+            ease 0.3 xoffset 0 yoffset -1
+            repeat
+    parallel:
+        linear 0.1 zoom 1.05 alpha 1.0 yoffset 0
+
+transform walking_c_activo:
+    anchor (0.5, 1.0)
+    parallel:
+        block:
+            ease 0.4 xoffset 0 yoffset -1
+            ease 0.4 xoffset -3 yoffset 3
+            ease 0.4 xoffset 0 yoffset -1
+            ease 0.4 xoffset 3 yoffset 3
+            repeat
+    parallel:
+        linear 0.1 zoom 1.05 alpha 1.0 yoffset 0
+
+# Y también las versiones normales (sin zoom pero manteniendo caminata)
+transform walking_a_normal:
+    anchor (0.5, 1.0)
+    parallel:
+        block:
+            ease 0.35 xoffset -2 yoffset 5
+            ease 0.35 xoffset 0 yoffset -1
+            ease 0.35 xoffset 2 yoffset 5
+            ease 0.35 xoffset 0 yoffset -1
+            repeat
+    parallel:
+        linear 0.1 zoom 1.0 alpha 1.0 yoffset 0
+
+transform walking_b_normal:
+    anchor (0.5, 1.0)
+    parallel:
+        block:
+            ease 0.5 xoffset 2 yoffset 3
+            ease 0.3 xoffset 0 yoffset -1
+            ease 0.5 xoffset -2 yoffset 3
+            ease 0.3 xoffset 0 yoffset -1
+            repeat
+    parallel:
+        linear 0.1 zoom 1.0 alpha 1.0 yoffset 0
+
+transform walking_c_normal:
+    anchor (0.5, 1.0)
+    parallel:
+        block:
+            ease 0.4 xoffset 0 yoffset -1
+            ease 0.4 xoffset -3 yoffset 3
+            ease 0.4 xoffset 0 yoffset -1
+            ease 0.4 xoffset 3 yoffset 3
+            repeat
+    parallel:
+        linear 0.1 zoom 1.0 alpha 1.0 yoffset 0
+
+init python:
+    def enfocar_walking(tag):
+        if renpy.showing(tag):
+            renpy.show(tag, at_list=[walking_c_activo], tag=tag)
+    
+    def normal_walking(tag):
+        if renpy.showing(tag):
+            renpy.show(tag, at_list=[walking_c_normal], tag=tag)

@@ -139,9 +139,10 @@ label day2:
     stop ambient fadeout(1.5)
     window hide
     scene black with Fade(1.5, 0.0, 1.5) 
-    scene pasillo2 with dissolve_scene_full
-    show blaze 1desinteresada3 with dissolve: 
+    scene pasillo2 
+    show blaze 1desinteresada3: 
         walking_center
+    with dissolve_scene_full
     window show
     "Entramos a la escuela y caminamos por los pasillos llenos de estudiantes."
     $ renpy.pause(3.0, hard=True)
@@ -731,8 +732,162 @@ label receso_day2_afterchoice:
     d "Pero bueno..."
     show dark 1felit
     extend " Esto fue entretenido, ¿pero ya vamos a comer o no?"
-    show dark 1felit
+    show dark 1feli
     $ normal("dark")
+    show jeremy 1serio
+    "Jeremy le da una mirada enojada a Dark. Dándole a entender que no es un buen momento."
+    show blaze 1desinteresada2t
+    $ enfocar("blaze")
+    b"Sí, ya vamos..."
+    show blaze 2preocupada
+    $ normal("blaze")
+    "Ella me mira. Preocupada."
+    show blaze 2preocupadat
+    $ enfocar("blaze")
+    b "¿Puedes caminar?"
+    show blaze 2preocupada
+    $ normal("blaze")
+    "Asiento. Evitando su mirada."
+    l "D-Dame un momento."
+
+    if (rutaCanon-rutaSuicida)>=0:
+        "El panqueque se siente como una roca en mi estómago. Siento como mi pecho se aprieta."
+        l_thought "Ellos piensan que me ayudaron.{w} No entienden que solo agregué “decepcionarlos” a mi lista interminable."
+        show screen red_effect2
+        nobody "{sc=4}Mira el esfuerzo que hacen por ti.{/sc}"
+        nobody "{sc=}Tu padre cocinando hasta tarde.{/sc}"
+        nobody "{sc=6}Blaze rogándote...{/sc}"
+        nobody "{sc=4}¿Cuándo dejarás de defraudarlos?{/sc}"
+        "Tengo ganas de vomitar.{w} Más por lo que yo misma me digo.{w} Pero me aguanto.{w} Me aguanto para no decepcionar más a Blaze."
+        hide screen red_effect2 with Dissolve(0.5)
+        $ renpy.pause(2.5, hard=True)
+    else:
+        l_thought "Ellos piensan que me ayudaron.{w} No entienden que solo agregaron “decepcionarlos” a la lista de cosas por las que sentirme culpable."
+        show screen red_effect2
+        nobody "{sc=4}¿Por qué?{/sc}"
+        nobody "{sc=4}¿Porque duele escuchar la verdad?{/sc}"
+        nobody "{sc=6}Ellos estarían mejor sin ti.{/sc}"
+        nobody "{sc=4}Blaze no tendría que ser tu guardiana.{/sc}"
+        nobody "{sc=4}Tu padre no cocinaría para una hija fantasma.{/sc}"
+        nobody "{sc=4}Dark no perdería su tiempo.{/sc}"
+        nobody "{sc=4}Hasta ese Jeremy pragmático lo ve:{/sc}"
+        nobody "{sc=6}Eres un problema que consume recursos.{/sc}"
+        nobody "{sc=6}Un mal cálculo.{/sc}"
+        nobody "{sc=6}Un error.{/sc}"
+        hide screen red_effect2 with Dissolve(0.5)
+        $ renpy.pause(2.5, hard=True)
+        
+    "Suspiro. Me levanto con las pocas fuerzas que logré recuperar.{w} Tomo mis cosas y simplemente le doy un asentimiento débil a Blaze, para ir con Dark y Jeremy."
+    "Empezamos a caminar hacia los pasillos. Blaze va a mi lado, con su mano tomada con la mía."
+    show blaze 2compadecert
+    $ enfocar("blaze")
+    b "Solo hasta la cafetería. Nada más."
+    show blaze 2compadecer
+    $ normal("blaze")
+
+    if (rutaCanon-rutaSuicida)>=0:
+        "Siento como aprieta mi mano con suavidad."
+    else: 
+        "Siento como su mano se siente tensa alrededor de la mía.{w} Como si estuviera sosteniendo algo frágil."
+
+    "Salimos."
+    play sound closet_open
+    $ renpy.pause(1.5, hard=True)
+    scene black with fade 
+    $ renpy.pause(1.0, hard=True)
+    scene pasillo
+    show blaze 1seria2:
+        flip
+        right5
+    show jeremy 2serio2:
+        center2
+    show dark 1distraido:
+        left    
+    with dissolve
+    $ renpy.pause(1.5, hard=True)
+    play sound closet_close
+    "Jeremy saca varias llaves."
+    play sound keylock
+    $ renpy.pause(3.0, hard=True)
+    show jeremy 2serio2 at boo2
+    "Cierra el salón."
+    $ renpy.pause(1.5, hard=True)
+    scene pasillo_walking
+    show blaze 1seria2:
+        flip
+        right5
+        walking_a_normal
+    show jeremy 2serio2:
+        center2
+        walking_b_normal
+    show dark 1distraido:
+        left    
+        walking_c_normal
+    $ renpy.pause(2.5, hard=True)
+    "Y empezamos a caminar hacia la cafetería."
+    $ renpy.pause(7.5, hard=True)
+
+    if (rutaCanon-rutaSuicida)>=0:
+        show blaze 1juzga at walking_a_normal
+        show jeremy 1juzga at walking_b_normal
+        show dark 2desafiantet at walking_c_activo
+        $ enfocar_walking("dark")
+        d "Laila, si te caes, te juro que te dejo ahí."
+        show dark 2neutral at walking_c_normal
+        $ normal_walking("dark")
+        show blaze 1enojada2 at walking_a_normal
+        $ renpy.pause(2.5, hard=True)
+        show blaze 1feliz at walking_a_normal
+        show jeremy 1juzga2 at walking_b_normal
+        show dark 2distraidot at walking_c_activo
+        $ enfocar_walking("dark")
+        d "Mentira, Blaze me mataría."
+        show dark 2felit at walking_c_activo
+        extend " Pero me quejaré mucho."
+        show dark 2desafiante at walking_c_normal
+        $ normal_walking("dark")
+        show blaze 1juzga2 at walking_a_normal
+        show jeremy 1juzga2t at walking_b_activo
+        $ enfocar_walking("jeremy")
+        je "Dark, felicidades, si tú ser doctor, tu paciente moriría solo con mirarte."
+        show jeremy 1juzga2 at walking_b_normal
+        $ normal_walking("jeremy")
+        show dark 2desafiantet at walking_c_activo
+        $ enfocar_walking("dark")
+        d "Me gustan los halagos, gracias."
+        show dark 2desafiante at walking_c_normal
+        $ normal_walking("dark")
+    else: 
+        show blaze 1juzga at walking_a_normal
+        show jeremy 1juzga at walking_b_normal
+        show dark 2seriot at walking_c_activo
+        $ enfocar_walking("dark")
+        d "Si ella se desploma y tu Blaze sabes contar,{nw}"
+        show jeremy 1serio at walking_b_normal
+        extend " no cuentes conmigo."
+        show dark 2serio at walking_c_normal
+        $ normal_walking("dark")
+        show blaze 1enojada2t at walking_a_activo
+        $ enfocar_walking("blaze")
+        b "¿En serio no puedes guardar esos comentarios?"
+        show blaze 1enojada2 at walking_a_normal
+        $ normal_walking("blaze")
+        show dark 2seriot at walking_c_activo
+        $ enfocar_walking("dark")
+        d "¿Para qué? Ella misma lo ha dejado claro."
+        show dark 2distraido2t at walking_c_activo
+        d "Prefiere pudrirse antes que aceptar que alguien se preocupe."
+        show dark 2distraido2 at walking_c_normal
+        $ normal_walking("dark")
+        l "Exacto.{w} Así que ahórrate la falsa preocupación y preocúpate por tu propia vida."
+
+    show blaze 1seria2:
+        walking_a_normal
+    show jeremy 2serio2:
+        walking_b_normal
+    show dark 1distraido:
+        walking_c_normal
+    $ renpy.pause(5.5, hard=True)
 
 
     return

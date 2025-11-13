@@ -177,10 +177,10 @@ label rutacanon_choice2:
         b "No se trata de estar contentos, Laila."
         show blaze 1compadecert
         extend " Se trata de que no queremos perderte."
-        show blaze 1compadecer at hug_off
+        show blaze 1compadecer at hug2_off
         "Se aleja y exhala profundamente, el peso en sus hombros se aligera un poco."
         show blaze 1compadecert:
-                center
+                center2
         $ enfocar("blaze")
         b "Prométeme que lo intentarás de nuevo en la cena. Por mí."
         show blaze 1compadecer
@@ -227,7 +227,7 @@ label rutasuicida_choice2:
         $ renpy.pause(3.0, hard=True)
         l_thought "Otra mentira. Más para la pila.{w} Pero es más fácil que seguir esta pelea."
         "Blaze me mira, buscando en mis ojos alguna señal de verdad.{w} Me limito en evitar su mirada."
-        show blaze 2seria2 at hug_off
+        show blaze 2seria2 at hug2_off
         extend " Ellas se aleja, evitando mi mirada."
         show blaze 2seria2t:
                 center
@@ -291,7 +291,7 @@ label rutasuicida_nochoice2:
         $ renpy.pause(3.0, hard=True)
         l_thought "Otra mentira. Más para la pila.{w} Pero es más fácil que seguir esta pelea."
         "Blaze me mira, buscando en mis ojos alguna señal de verdad.{w} Me limito en evitar su mirada."
-        show blaze 2seria2 at hug_off
+        show blaze 2seria2 at hug2_off
         extend " Ellas se aleja, evitando mi mirada."
         show blaze 2seria2t:
                 center
@@ -315,5 +315,6 @@ label rutasuicida_nochoice2:
         $ normal("dark")
         l_thought "Ahora tengo a un psicólogo profesional, no, gracias. No quiero cita para hoy."
         $ renpy.pause(5.0, hard=True)
+        hide screen pulse_black
         jump receso_day2_afterchoice
 return

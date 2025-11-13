@@ -51,11 +51,16 @@ transform hug_on:
         linear 0.4 zoom 1.9 xalign 0.5 yalign 0.45
 
 transform hug2_on:
+        ypos 1080
         linear 0.2 zoom 1.9 xalign 0.5 yalign 0.45
 
 transform hug_off:
         linear 0.4 zoom 1.0 yalign 0.9
         center
+
+transform hug2_off:
+        linear 0.4 zoom 1.0 yalign 1.0
+        linear 0.4 center2
 
 transform boo:
     linear 0.01 yoffset -5 xoffset 0
@@ -250,6 +255,7 @@ transform walking_center:
             repeat
         yoffset 0
 
+
 ######################## CBG ###############################
 
 image math = Movie(play="cbg/math.webm")
@@ -314,6 +320,16 @@ image class3A-blur:
     "images/bg/classroom 3-A.png" 
     function waking_up_blur
 
+image pasillo_extend = "images/bg/9k2.jpg"
+
+image pasillo_walk:
+    "pasillo_extend"
+    xtile 2 subpixel True
+    xoffset 0
+    linear 30.0 xoffset -3840
+    repeat
+
+image pasillo_walking = Composite((1920, 1080), (0, 0), "pasillo_walk")
 
 ###################### EFECTOS ###############################
 
@@ -481,6 +497,7 @@ define door_knock = "audio/knock1.mp3"
 define country_radio = "audio/country.mp3"
 define radio_interference = "audio/radio-interference.mp3"
 define drop = "audio/drop.ogg"
+define keylock = "audio/key-lock-sound.wav"
 
 ## Music
 define bgm1 = "<from 0 to 198.425 loop 11.339>bgm/nude.ogg"
