@@ -74,6 +74,32 @@ transform boo2:
     linear 0.02 yoffset -5 xoffset 0
     linear 0.02 yoffset 0 xoffset 0
 
+transform slide_left_slight:
+    xanchor 0.5 yanchor 1.0
+    ease 0.4 xpos 250
+
+transform slide_center_slight:
+    xanchor 0.5 yanchor 1.0  
+    ease 0.4 xpos 750
+
+transform slide_right_slight:
+    xanchor 0.5 yanchor 1.0
+    ease 0.4 xpos 1150
+
+transform slide_in_right_fast:
+    xanchor 0.5 yanchor 1.0
+    xpos 2500 ypos 1080
+    easein 0.3 xpos 1610
+
+transform jadeo_rapido:
+    xanchor 0.5 yanchor 1.0
+    parallel:
+        block:
+            ease 0.3 yoffset 6
+            ease 0.2 yoffset 0
+            ease 0.3 yoffset 4
+            ease 0.2 yoffset 0
+            repeat
 
 ##### PARPADEO
 
@@ -163,6 +189,10 @@ transform right:
 
 transform right5:
     xpos 1555 ypos 1080 
+    xanchor 0.5 yanchor 1.0
+
+transform right6:
+    xpos 1610 ypos 1080
     xanchor 0.5 yanchor 1.0
 
 transform right2:
@@ -511,6 +541,7 @@ define bgm7 = "<from 0 to 98.863 loop 7.353>bgm/illwind.ogg"
 define bgm72 = "<from 98.863 to 209.976 loop 98.863>bgm/illwind.ogg"
 define bgm8 = "<from 0 to 172.839 loop 130.263>bgm/presenttense.ogg"
 define bgm82 = "<from 172.839 to 260.818 loop 180.981>bgm/presenttense.ogg"
+define bgm9 = "<from 0 to 146.213 loop 12.346>bgm/setmyselfonfire.ogg"
 
 ## Ambient
 define ext_day = "<loop 3.090>ambient/ext_day.ogg"

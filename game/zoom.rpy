@@ -29,7 +29,7 @@ transform paraguay2:
 
 # Sistema de manejo de personajes
 init python:
-    personajes = ["dark", "jeremy", "ptod", "blaze", "dad", "dirc", "tv", "strike"]
+    personajes = ["dark", "jeremy", "ptod", "blaze", "dad", "dirc", "tv", "strike", "mani"]
     
     def enfocar(tag):
         if renpy.showing(tag):
@@ -72,10 +72,10 @@ transform walking_a_activo:
     anchor (0.5, 1.0)
     parallel:
         block:
-            ease 0.35 xoffset -2 yoffset 5
-            ease 0.35 xoffset 0 yoffset -1
-            ease 0.35 xoffset 2 yoffset 5
-            ease 0.35 xoffset 0 yoffset -1
+            ease 0.35 xoffset -6 yoffset 9
+            ease 0.35 xoffset 0 yoffset -5
+            ease 0.35 xoffset 6 yoffset 9
+            ease 0.35 xoffset 0 yoffset -5
             repeat
     parallel:
         linear 0.1 zoom 1.05 alpha 1.0 yoffset 0
@@ -84,10 +84,10 @@ transform walking_b_activo:
     anchor (0.5, 1.0)
     parallel:
         block:
-            ease 0.5 xoffset 2 yoffset 3
-            ease 0.3 xoffset 0 yoffset -1
-            ease 0.5 xoffset -2 yoffset 3
-            ease 0.3 xoffset 0 yoffset -1
+            ease 0.5 xoffset 4 yoffset 5
+            ease 0.3 xoffset 0 yoffset -2
+            ease 0.5 xoffset -4 yoffset 5
+            ease 0.3 xoffset 0 yoffset -2
             repeat
     parallel:
         linear 0.1 zoom 1.05 alpha 1.0 yoffset 0
@@ -96,10 +96,10 @@ transform walking_c_activo:
     anchor (0.5, 1.0)
     parallel:
         block:
-            ease 0.4 xoffset 0 yoffset -1
-            ease 0.4 xoffset -3 yoffset 3
-            ease 0.4 xoffset 0 yoffset -1
-            ease 0.4 xoffset 3 yoffset 3
+            ease 0.4 xoffset 0 yoffset -3
+            ease 0.4 xoffset -5 yoffset 5
+            ease 0.4 xoffset 0 yoffset -3
+            ease 0.4 xoffset 5 yoffset 5
             repeat
     parallel:
         linear 0.1 zoom 1.05 alpha 1.0 yoffset 0
@@ -109,10 +109,10 @@ transform walking_a_normal:
     anchor (0.5, 1.0)
     parallel:
         block:
-            ease 0.35 xoffset -2 yoffset 5
-            ease 0.35 xoffset 0 yoffset -1
-            ease 0.35 xoffset 2 yoffset 5
-            ease 0.35 xoffset 0 yoffset -1
+            ease 0.35 xoffset -6 yoffset 9
+            ease 0.35 xoffset 0 yoffset -5
+            ease 0.35 xoffset 6 yoffset 9
+            ease 0.35 xoffset 0 yoffset -5
             repeat
     parallel:
         linear 0.1 zoom 1.0 alpha 1.0 yoffset 0
@@ -121,10 +121,10 @@ transform walking_b_normal:
     anchor (0.5, 1.0)
     parallel:
         block:
-            ease 0.5 xoffset 2 yoffset 3
-            ease 0.3 xoffset 0 yoffset -1
-            ease 0.5 xoffset -2 yoffset 3
-            ease 0.3 xoffset 0 yoffset -1
+            ease 0.5 xoffset 4 yoffset 5
+            ease 0.3 xoffset 0 yoffset -2
+            ease 0.5 xoffset -4 yoffset 5
+            ease 0.3 xoffset 0 yoffset -2
             repeat
     parallel:
         linear 0.1 zoom 1.0 alpha 1.0 yoffset 0
@@ -133,19 +133,45 @@ transform walking_c_normal:
     anchor (0.5, 1.0)
     parallel:
         block:
-            ease 0.4 xoffset 0 yoffset -1
-            ease 0.4 xoffset -3 yoffset 3
-            ease 0.4 xoffset 0 yoffset -1
-            ease 0.4 xoffset 3 yoffset 3
+            ease 0.4 xoffset 0 yoffset -3
+            ease 0.4 xoffset -5 yoffset 5
+            ease 0.4 xoffset 0 yoffset -3
+            ease 0.4 xoffset 5 yoffset 5
             repeat
     parallel:
         linear 0.1 zoom 1.0 alpha 1.0 yoffset 0
 
-init python:
-    def enfocar_walking(tag):
-        if renpy.showing(tag):
-            renpy.show(tag, at_list=[walking_c_activo], tag=tag)
-    
-    def normal_walking(tag):
-        if renpy.showing(tag):
-            renpy.show(tag, at_list=[walking_c_normal], tag=tag)
+transform jadeo_activo:
+    anchor (0.5, 1.0)
+    parallel:
+        block:
+            ease 0.6 yoffset 8
+            ease 0.4 yoffset 0
+            ease 0.8 yoffset 5
+            ease 0.6 yoffset 0
+            repeat
+    parallel:
+        # Efecto de enfoque
+        linear 0.1 zoom 1.05 alpha 1.0
+
+transform jadeo_normal:
+    anchor (0.5, 1.0)
+    parallel:
+
+        block:
+            ease 0.6 yoffset 8
+            ease 0.4 yoffset 0
+            ease 0.8 yoffset 5
+            ease 0.6 yoffset 0
+            repeat
+    parallel:
+        # Sin efecto de enfoque
+        linear 0.1 zoom 1.0 alpha 1.0
+
+transform jadeo_off:
+    anchor (0.5, 1.0)
+    parallel:
+        ease 1.0 yoffset 0
+    parallel:
+        linear 0.1 zoom 1.0 alpha 1.0
+

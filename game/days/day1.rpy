@@ -332,7 +332,7 @@ label dark_scene:
 
     show dark 1distraido2
     $ normal("dark")
-    play music bgm1 volume 0.75
+    play music bgm1
 
     "Al chico negr-{nw}"
     "El chico me mira curiosamente indiferente."
@@ -865,7 +865,7 @@ label azotea:
     $ enfocar("steve")
     tv "¿De qué hablas ahora Struk-{nw=0.1}"
     $ normal("steve")
-    play music bgm2 volume 0.75
+    play music bgm2 
     show steve 1enamorao
     "Se queda paralizado al verme, pareciera que {i}NUNCA{/i} había visto una mujer... o no se por su expresión tan asombrada al verme."
 
@@ -1280,7 +1280,7 @@ label whatremainsofday1:
     $ renpy.pause(6.0, hard=True)
     $ persistent.quick_menu_visible = True
     with Dissolve(0.5)
-    play music bgm3 volume 0.75
+    play music bgm3
     "Hay algo que siempre me ha gustado hacer... aunque suene patético: recapitular mi día."
     "Sí, ya sé, suena deprimente porque mis días son un bucle de la misma mierda, pero no sé..."
     "Me gusta pasarlo, como si fuera una forma de recordarme que todavía estoy aquí."
@@ -1470,7 +1470,7 @@ label whatremainsofday1:
     l_thought "Si yo fuera la víctima... Creeme que ni siquiera me hubiera quedado a esperarla."
     $ renpy.pause(3.0, hard=True)
     "Respiro hondo. Siento como la culpa me sube poco a poco por la espalda."
-    play music bgm4 volume 0.75
+    play music bgm4 
     l "..."
     l "B-Blaze."
     show blaze 3neutral at shake

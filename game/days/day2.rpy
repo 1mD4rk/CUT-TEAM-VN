@@ -831,54 +831,40 @@ label receso_day2_afterchoice:
         show blaze 1juzga at walking_a_normal
         show jeremy 1juzga at walking_b_normal
         show dark 2desafiantet at walking_c_activo
-        $ enfocar_walking("dark")
         d "Laila, si te caes, te juro que te dejo ahí."
         show dark 2neutral at walking_c_normal
-        $ normal_walking("dark")
         show blaze 1enojada2 at walking_a_normal
         $ renpy.pause(2.5, hard=True)
         show blaze 1feliz at walking_a_normal
         show jeremy 1juzga2 at walking_b_normal
         show dark 2distraidot at walking_c_activo
-        $ enfocar_walking("dark")
         d "Mentira, Blaze me mataría."
         show dark 2felit at walking_c_activo
         extend " Pero me quejaré mucho."
         show dark 2desafiante at walking_c_normal
-        $ normal_walking("dark")
         show blaze 1juzga2 at walking_a_normal
         show jeremy 1juzga2t at walking_b_activo
-        $ enfocar_walking("jeremy")
         je "Dark, felicidades, si tú ser doctor, tu paciente moriría solo con mirarte."
         show jeremy 1juzga2 at walking_b_normal
-        $ normal_walking("jeremy")
         show dark 2desafiantet at walking_c_activo
-        $ enfocar_walking("dark")
         d "Me gustan los halagos, gracias."
         show dark 2desafiante at walking_c_normal
-        $ normal_walking("dark")
     else: 
         show blaze 1juzga at walking_a_normal
         show jeremy 1juzga at walking_b_normal
         show dark 2seriot at walking_c_activo
-        $ enfocar_walking("dark")
         d "Si ella se desploma y tu Blaze sabes contar,{nw}"
         show jeremy 1serio at walking_b_normal
         extend " no cuentes conmigo."
         show dark 2serio at walking_c_normal
-        $ normal_walking("dark")
         show blaze 1enojada2t at walking_a_activo
-        $ enfocar_walking("blaze")
         b "¿En serio no puedes guardar esos comentarios?"
         show blaze 1enojada2 at walking_a_normal
-        $ normal_walking("blaze")
         show dark 2seriot at walking_c_activo
-        $ enfocar_walking("dark")
         d "¿Para qué? Ella misma lo ha dejado claro."
         show dark 2distraido2t at walking_c_activo
         d "Prefiere pudrirse antes que aceptar que alguien se preocupe."
         show dark 2distraido2 at walking_c_normal
-        $ normal_walking("dark")
         l "Exacto.{w} Así que ahórrate la falsa preocupación y preocúpate por tu propia vida."
 
     show blaze 1seria2:
@@ -888,6 +874,220 @@ label receso_day2_afterchoice:
     show dark 1distraido:
         walking_c_normal
     $ renpy.pause(5.5, hard=True)
+
+    "Cada paso hacia la cafetería se siente como caminar a través de cemento fresco."
+
+    if (rutaCanon-rutaSuicida)>=0:
+        extend " Pero el peso del panqueque en tu estómago, aunque incómodo, es un recordatorio tangible de que alguien se preocupó lo suficiente como para obligarte a vivir un momento más."
+
+    show screen red_effect2
+    nobody "{sc=4}Un momento más de miseria.{/sc}"
+    nobody "{sc=4}Un respiro temporal en tu inevitable fracaso.{/sc}"
+    nobody "{sc=6}¿Realmente crees que esto cambia algo?{/sc}"
+    l_thought "No.{w} Pero por ahora, el dolor en mi garganta es un sentimiento más sencillo.{w} Y eso ya es suficiente."
+    if (rutaCanon-rutaSuicida)>=0:
+        hide screen red_effect2 with Dissolve(0.5)
+    else:
+        l_thought "Cada paso es un recordatorio..."
+        extend "Que ocupo un espacio que no merezco.{w} Respiro un aire que debería ser para alguien más."
+        nobody "{sc=4}Ellos lo saben.{/sc}"
+        nobody "{sc=4}Por eso Dark evita hacer algo por ti.{/sc}"
+        nobody "{sc=4}Por eso Blaze te vigila como a un animal herido.{/sc}"
+        nobody "{sc=6}Eres su lástima, no su hermana.{/sc}"
+
+    $ renpy.pause(2.5, hard=True)
+    "Tomo aire y suspiro.{w} Tratando de alejar el ruido de mi mente y prestar atención a mi alrededor.{w} Solo para distraerme."
+    show jeremy 1juzga2t at walking_b_activo
+    show dark 2juzga2
+    show blaze 1neutral
+    je "Perfecto, Dark, felicitarte... {nw}"
+    window show
+    show jeremy 2serio3 
+    $ renpy.pause(1.0, hard=True)
+    show dark 2desafiante
+    show jeremy 1juzga2t
+    extend " debo!"
+    show jeremy 1felizt
+    je "Terminaste todas mis responsabilidades en un día."
+    show dark 2serio
+    show jeremy 1juzga2t
+    extend " ¿Qué tan poco tenías que hacer?"
+    show jeremy 1juzga2 at walking_b_normal
+    show dark 2distraidot at walking_c_activo
+    d "Ni tanto, no quería estar en clases. Nada más que eso."
+    show dark 2desafiantet
+    extend " Allí vi la oportunidad."
+    show dark 2desafiante at walking_c_normal
+    show jeremy 1juzga2t at walking_b_activo
+    je "Saltas de una responsabilidad a otra."
+    show jeremy 1sonriente2t
+    show blaze 1juzga2
+    extend " ¿Quién te entiende, Dark?"
+    show jeremy 1juzga at walking_b_normal
+    show dark 2felit at walking_c_activo
+    d "Pero el Sr. Presidente no estuvo aquí para cumplir sus responsabilidades."
+    show dark 2desafiante at walking_c_normal
+    show blaze 1neutral
+    show jeremy 1juzgat at walking_b_activo
+    je "¿Qué dices?"
+    show jeremy 1juzga at walking_b_normal
+    show dark 1metiche
+    "Dark pone una risa burlona."
+    show dark 1felit at walking_c_activo
+    d "Oh, nada."
+    show blaze 3desinteresada2
+    show dark 2juzgat
+    extend " Solo sugiero que un presidente ausente no tiene moral para criticar mis métodos de gestión."
+    show dark 2juzga at walking_c_normal
+    "Jeremy levanta una ceja, dudando de esos “métodos” improvisados para realizar tareas."
+    show blaze 3desinteresada2t at walking_a_activo
+    b "¿Pueden dejar de medir las responsabilidades por un segundo?"
+    show blaze 1sonrientet
+    extend " Ambos son buenos y ya."
+    show blaze 1sonriente at walking_a_normal
+    show dark 1distraidot
+    d "De todas formas..."
+    show dark 1distraido
+    stop music fadeout 1.8
+    scene black with fade 
+    $ renpy.pause(1.0, hard=True)
+    scene pasillo2 
+    show blaze 1seria2:
+        flip
+        right5
+    show jeremy 2serio2:
+        center2
+    show dark 1distraido:
+        left   
+    with dissolve 
+    $ renpy.pause(2.5, hard=True)
+    "Todos nos quedamos en silencio. Nadie dice nada. solo caminamos."
+    $ renpy.pause(7.8, hard=True)
+    idk1 "{size=18}¡Jeremy!{/size}"
+    $ renpy.pause(2.5, hard=True)
+    "Se escucha que alguien grita el nombre de Jeremy."
+    l_thought "¿Eh?"
+    $ renpy.pause(2.5, hard=True)
+    idk1 "¡Jeeeeeeeeeeeereeeeeeeemyyyyyyyyy!"
+    show dark 2juzga2
+    show jeremy 1juzga
+    show blaze 1juzga
+    "Blaze, Jeremy y Dark se detienen y voltean a ver quien es."
+    $ enfocar("jeremy")
+    je "¿...?"
+    show jeremy 1juzgat
+    je "¿Manuel?"
+    show jeremy 1juzga
+    $ normal("jeremy")
+    $ renpy.pause(0.5, hard=True)
+    
+    show dark 2juzga2 at slide_left_slight
+    show jeremy 1juzga at slide_center_slight
+    show blaze 1juzga at slide_right_slight
+    show mani 2feliz:
+        flip
+        slide_in_right_fast
+        jadeo_normal
+    $ renpy.pause(1.0, hard=True)
+    play music bgm9 
+    show mani 2felizt:
+        right6
+        jadeo_activo 
+    ma1 "¡Jeremy! ¡Por fin...!{nw=1.0}"
+    show mani 1cansado
+    $ renpy.pause(1.0, hard=True)
+    show mani 2felizt
+    extend " Te he buscado...{nw=1.0}"
+    show dark 2enojao
+    show blaze 3desinteresada2
+    show mani 1cansado
+    $ renpy.pause(1.0, hard=True)
+    show mani 2felizt
+    extend " Por toda la maldita escuela...!"
+    show mani 1cansado:
+        jadeo_normal
+    "El chico apoyándose en sus rodillas, sin aliento, habla entrecortado.{w} Pareciera que hubiera corrido un maratón."
+    show jeremy 2serio2t
+    $ enfocar("jeremy")
+    je "Claro..."
+    show jeremy 2juzgat
+    extend " ¿Qué es ahora, Manuel?"
+    show jeremy 1juzgat
+    extend " ¿Otra falta que tengo que firmar, o querer hacerme perder el tiempo correr?"
+    show jeremy 1juzga
+    $ normal("jeremy")
+    show dark 2seriot
+    $ enfocar ("dark")
+    d "Excelente."
+    show dark 2serio2t
+    extend " ¿Ya no podemos ir a comer? ¿Siempre nos van a interrumpir?"
+    show dark 2enojao
+    $ normal ("dark")
+    $ enfocar ("blaze")
+    show blaze 3desinteresada2t
+    b "Hola, Manu..."
+    show blaze 3desinteresada2
+    $ normal ("blaze")
+    if (rutaCanon-rutaSuicida)>=0:
+        "Siento como su mano se tensa levemente alrededor de la mía."
+
+    l_thought "¿Y este quién demonios es? Parece un maldito golden retriever al borde de un ataque de nervios."
+    l_thought "La energía que desprende es...{w} Agotadora..."
+    $ renpy.pause(2.5, hard=True)
+    show mani 2feliz:
+        jadeo_off
+    "El random logra enderezarse después de su maratón.{w} Y señala a Jeremy."
+    show mani 2felizt
+    $ enfocar ("mani")
+    ma2 "IDEA. Tengo una idea. ¡Se me olvido comentarlas antes que faltaras ayer!"
+    show mani 2feliz
+    $ normal ("mani")
+    show jeremy 2serio
+    "Jeremy entrecierra los ojos. Parece que intenta analizar acertar que podría decir Manu considerando “ideas”."
+    $ enfocar("jeremy")
+    show jeremy 2seriot
+    je "Ok..."
+    show jeremy 1juzgat
+    show mani 1desanimado
+    extend " ¿Y se te ocurrió contar ahora en vez del viernes?"
+    show jeremy 1juzga
+    $ normal("jeremy")
+    show mani 1desanimadot
+    $ enfocar ("mani")
+    ma2 "Es que...{w} pasó una cosa, luego otra, y luego un pájaro chocó con la ventana de la biblioteca y fui a ver si estaba bien, y..."
+    show mani 1desanimado
+    $ normal ("mani")
+    l_thought "Parece un podcast con pausas incómodas hecho persona."
+    show dark 2seriot
+    $ enfocar ("dark")
+    d "Mani. Al punto. Ahora."
+    show dark 2distraidot
+    extend " No estamos para escuchar tus estúpidas historias."
+    show dark 2serio
+    $ normal ("dark")
+    show mani 3neutralt
+    $ enfocar ("mani")
+    ma "¡Ah, cierto!"
+    show mani 2felizt
+    ma "Bueno, la primera idea es buenísima, les va a encantar."
+    show mani 2feliz
+    $ normal ("mani")
+    l_thought "Creo que este es el chico...{w} ¿Mani? del que hablaban ayer en la azotea..."
+    show dark 2juzga2
+    show jeremy 1juzga
+    show blaze 1juzga
+    "Los tres se miran entre sí. Como prediciendo que estupidez va a decir."
+    show jeremy 2serio
+    "Aunque Jeremy se le queda viendo más tiempo... Supongo que por algo que dijo..."
+    show mani 2felizt
+    $ enfocar ("mani")
+    ma "¿Y si... hacemos clubs en la prepa? ¡Como uno de videojuegos, o de literatura, o de... de cocina!"
+    show mani 2neutralt
+    extend " ¡A Blaze le encantaría ese!"
+    show mani 3neutral
+    $ normal ("mani")
+
+
 
 
     return

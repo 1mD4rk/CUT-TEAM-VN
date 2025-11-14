@@ -151,12 +151,6 @@ define dad = Character("Papá",
     color="#ffff",
     callback=counter_sound)
 
-define m = Character("Manu", 
-    who_bold=True,
-    who_outlines = [(4, "#d3d3d3", 0, 0)],
-    what_outlines = [(2, "#d3d3d3", 3, 3)],
-    color="#ffffff")
-
 define tv = Character("Steve", 
     who_bold=True,  
     who_outlines = [(4, "#805d12", 0, 0)],
@@ -173,10 +167,21 @@ define st = Character("Strike",
 
 define ma = Character("Mani", 
     who_bold=True,  
-    who_outlines = [(4, "#2634aa", 0, 0)],
-    what_outlines = [(2, "#2634aa", 3, 3)],
-    color="#ffffff",
-    callback=strike_sound)
+    who_outlines = [(4, "#414249", 0, 0)],
+    what_outlines = [(2, "#414249", 3, 3)],
+    color="#ffffff")
+
+define ma1 = Character("Manuel", 
+    who_bold=True,  
+    who_outlines = [(4, "#414249", 0, 0)],
+    what_outlines = [(2, "#414249", 3, 3)],
+    color="#ffffff")
+
+define ma2 = Character("Manu", 
+    who_bold=True,  
+    who_outlines = [(4, "#414249", 0, 0)],
+    what_outlines = [(2, "#414249", 3, 3)],
+    color="#ffffff")
 
 define ptod = Character("Prof. Todd", 
     who_bold=True,  
@@ -237,7 +242,7 @@ init python:
                         "neutral", "neutralt",
                         "serio", "seriot", "serio2", "serio2t", "serio3", "serio3t",
                         "surprise", "surpriset",
-                        "sonriente", "sonrientet"]
+                        "sonriente", "sonrientet", "sonriente2t"]
     for base in jeremy_bases:
         for expr in jeremy_expressions:
             renpy.image(
@@ -332,7 +337,7 @@ init python:
                 )
             )
 
-    # Configuración para Strike
+    # Configuración para Mani
     mani_bases = ["1", "2", "3"]
     mani_expressions = ["neutral", "neutralt", "pinguino",
                         "confiado", "confiadot",
@@ -341,7 +346,8 @@ init python:
                         "serio", "seriot",
                         "nervioso", "nervioso2", "nerviosot",
                         "desanimado", "desanimadot",
-                        "triste", "tristepinguin", "tristet"]
+                        "triste", "tristepinguin", "tristet",
+                        "cansado"]
     for base in mani_bases:
         for expr in mani_expressions:
             renpy.image(
