@@ -344,7 +344,7 @@ init python:
                         "feliz", "felizt",
                         "juzga", "juzgat", "juzgapinguin",
                         "serio", "seriot",
-                        "nervioso", "nervioso2", "nerviosot",
+                        "nervioso", "nervioso2", "nervioso3", "nerviosot", "nervioso3t",
                         "desanimado", "desanimadot",
                         "triste", "tristepinguin", "tristet",
                         "cansado"]

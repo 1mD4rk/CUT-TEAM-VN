@@ -74,9 +74,19 @@ transform boo2:
     linear 0.02 yoffset -5 xoffset 0
     linear 0.02 yoffset 0 xoffset 0
 
+transform boo3:
+    linear 0.02 yoffset -7 xoffset 0
+    linear 0.02 yoffset -9 xoffset 0
+    linear 0.02 yoffset -7 xoffset 0
+    linear 0.02 yoffset 0 xoffset 0    
+
 transform slide_left_slight:
     xanchor 0.5 yanchor 1.0
     ease 0.4 xpos 250
+
+transform slow_slide_left_slight:
+    xanchor 0.5 yanchor 1.0
+    ease 0.4 xpos 300
 
 transform slide_center_slight:
     xanchor 0.5 yanchor 1.0  
@@ -91,6 +101,11 @@ transform slide_in_right_fast:
     xpos 2500 ypos 1080
     easein 0.3 xpos 1610
 
+transform slide_out_right_fast:
+    xanchor 0.5 yanchor 1.0
+    xpos 1610 ypos 1080
+    easein 0.3 xpos 2500
+
 transform jadeo_rapido:
     xanchor 0.5 yanchor 1.0
     parallel:
@@ -100,6 +115,14 @@ transform jadeo_rapido:
             ease 0.3 yoffset 4
             ease 0.2 yoffset 0
             repeat
+
+transform mani_left:
+    flip_off
+    pause 0.5
+    boo3
+    pause 0.2
+    slide_out_right_fast
+
 
 ##### PARPADEO
 
@@ -165,6 +188,9 @@ image parpadeo_off2:
 
 transform flip:
         xzoom -1.0
+
+transform flip_off:
+        xzoom 1.0
 
 transform left:
     xpos 400 ypos 1080
@@ -528,6 +554,7 @@ define country_radio = "audio/country.mp3"
 define radio_interference = "audio/radio-interference.mp3"
 define drop = "audio/drop.ogg"
 define keylock = "audio/key-lock-sound.wav"
+define phone_quiet = "audio/phone_quiet.ogg"
 
 ## Music
 define bgm1 = "<from 0 to 198.425 loop 11.339>bgm/nude.ogg"
