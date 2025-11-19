@@ -59,7 +59,7 @@ screen phone_saveload(which):
                                 add FileScreenshot(slot):
                                     xalign 0
                                     zoom 0.3
-                                text FileSlotName(slot, 30):
+                                text str(slot):
                                     style "phone_page_label_text"
                                     xalign 0.06
                                     yalign 0.11

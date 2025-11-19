@@ -703,7 +703,7 @@ label dark_scene_afterchoice1:
     l_thought "Ese collar con forma de corazón... Raro."
     pause 1.0
     "Suspiro para mis adentros. Ya agotada."
-    l_thought "¿Pero ¿qué puedo decir yo?"
+    l_thought "¿Pero qué puedo decir yo?"
     l_thought "Como si el mío fuera mejor."
     l_thought "Claramente no lo es."
     l_thought "..."
@@ -774,7 +774,8 @@ label azotea:
     "Y como si alguien estuviera hablando frente mio, escucho alguien decir algo... Mientras escucho como un pitido resuena en mi oído, incrementando."
     pause 1.0
     nobody "{sc=3}¿Crees que no es tu culpa? Aw, ternura.{/sc}"
-    nobody "{sc=4}Eso mismo dirán cuando encuentren tu cuerpo sin vida:{/sc} {sc=6}'Ahora tiene lo que se merecía'{/sc}"
+    nobody "{sc=4}Eso mismo dirán cuando encuentren tu cuerpo sin vida:{/sc}"
+    nobody "{sc=6}“Ahora tiene lo que se merecía”{/sc}"
     pause 1.5
     stop sound fadeout 1.8
     l_thought "..."
@@ -782,7 +783,7 @@ label azotea:
     "Eso logra sacarme de mis pensamientos rápidamente. Volteando a todos lados quien fue el que me dijo esas...{w=0.5} Palabras."
     extend " Pero aún siento como aplastan mi pecho al oír eso."
     hide screen red_effect2 with Dissolve(1.0)
-    "Logré sentirme bastante extraña... Por esas palabras... Pareciera que alguien conocido me lo hubiera dicho en mi oído..."
+    l_thought "Logré sentirme bastante extraña... Por esas palabras... Pareciera que alguien conocido me lo hubiera dicho en mi oído..."
     pause 1.5
     "Al no encontrar a nadie decidí tomar un bocado de aire para tratar de calmarme nuevamente."
     'Tal vez estoy bastante nerviosa de lo que vaya a suceder con mi "aventura".'
@@ -1050,7 +1051,7 @@ label azotea:
     $ enfocar("strike")
     st "No estaba pensando en esa idea. Pero tampoco voy a ignorar que hay un mentiroso."
     show strike 1seriot
-    extend "Por no decir {i}mentirosa{/i}."
+    extend " Por no decir {i}mentirosa{/i}."
     show strike 1juzga
     $ normal("strike")
     l_thought "Este furro con complejo de sheriff no me va a dejar ir ni aunque me meé aquí mismo."
@@ -1189,10 +1190,13 @@ label director:
     show screen red_effect2
     nobody "{sc=3}“Eres una basura humana. El pedazo que nadie quiere, que nadie usa.”{/sc}"
     nobody "{sc=3}“Lo que queda después de que todos ya eligieron lo bueno.”{/sc}"
-    nobody "{sc=3}“Te pones tu máscara dura, pero en el fondo lo sabes: ¿para qué carajos sigues acá?”{/sc}"
-    nobody "{sc=3}“Nadie te aguanta. Nadie te quiere. TODOS te desprecian. Cheryl, Blaze, tu vieja amiga Arain...”{/sc}"
+    nobody "{sc=3}“Te pones tu máscara dura, pero en el fondo lo sabes:”{/sc}"
+    nobody "{sc=3}“¿Para qué carajos sigues acá?”{/sc}"
+    nobody "{sc=3}“Nadie te aguanta. Nadie te quiere. TODOS te desprecian.”{/sc}"
+    nobody "{sc=3}“Cheryl, Blaze, tu vieja amiga Arain...”{/sc}"
     nobody "{sc=3}“Todas ellas lo piensan.”{/sc}"
-    nobody "{sc=6}“Y tu padre... Tu padre está decepcionado. Siempre lo estuvo. Siempre lo estará.”{/sc}"
+    nobody "{sc=6}“Y tu padre... Tu padre está decepcionado. Siempre lo estuvo.”{/sc}"
+    nobody "{sc=6}“Siempre lo estará.”{/sc}"
     nobody "{sc=3}“Nada de lo que perdiste va a volver.”{/sc}"
     nobody "{sc=4}“¿Sabés por qué? Porque tu vida es una maldición.”{/sc}"
     nobody "{sc=4}“Porque naciste para ser esto: un error, un 'qué pena'. Nada más.”{/sc}"
