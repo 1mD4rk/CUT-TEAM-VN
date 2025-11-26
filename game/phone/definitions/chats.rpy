@@ -57,8 +57,17 @@ label chat_dad_day2:
         "dad" "Emergencia en el trabajo. No podremos ir hoy. Hablamos de eso en casa. Quédate con Blaze."
         "dad" "Las paso recogiendo más tarde. En tal caso que no pueda, váyanse a casa ustedes solas."
    
-   
-   
+    if (rutaCanon-rutaSuicida)>=0:
+        l_thought "¿Emergencia? ¿O es solo otra excusa? ¿O... quizás un alivio?"
+
+    else:
+        l_thought "¿Emergencia? Claro. La emergencia de no querer lidiar con su hija rota. Como siempre"
+        show screen red_effect2
+        nobody "{sc=3}Por supuesto.{/sc}"
+        nobody "{sc=3}Prefiere cualquier crisis laboral...{/sc}"
+        nobody "{sc=3}Antes que una hora contigo.{/sc}"
+        nobody "{sc=3}¿En serio te sorprende?{/sc}"
+        hide screen red_effect2 with Dissolve(0.5)
    
    
    
