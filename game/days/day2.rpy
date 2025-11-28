@@ -1038,7 +1038,6 @@ label receso_day2_afterchoice:
     show mani 2feliz:
         jadeo_off
     "El random logra enderezarse después de su maratón.{w} Y señala a Jeremy."
-    call chat_dad_day2
     show mani 2felizt
     $ enfocar ("mani")
     ma2 "IDEAS. Tengo unas ideas. ¡Se me olvido comentarlas antes que faltaras ayer!"
