@@ -248,32 +248,32 @@ screen quick_menu():
             xalign 0.5
             yalign 1.0
 
-            #textbutton _("Historial"): 
-            #    activate_sound "audio/select.ogg" 
+            #textbutton _("Historial"):
+            #    activate_sound "audio/select.ogg"
             #    action ShowMenu('history')
 
-            textbutton _("Saltar"): 
-                activate_sound "audio/select.ogg" 
+            textbutton _("Saltar"):
+                activate_sound "audio/select.ogg"
                 action Skip() alternate Skip(fast=True, confirm=True)
 
-            textbutton _("Auto"): 
-                activate_sound "audio/select.ogg" 
+            textbutton _("Auto"):
+                activate_sound "audio/select.ogg"
                 action Preference("auto-forward", "toggle")
 
-            #textbutton _("Guardar"): 
-            #    activate_sound "audio/select.ogg" 
+            #textbutton _("Guardar"):
+            #    activate_sound "audio/select.ogg"
             #    action ShowMenu('save')
 
-            #textbutton _("Cargar"): 
-            #    activate_sound "audio/select.ogg" 
+            #textbutton _("Cargar"):
+            #    activate_sound "audio/select.ogg"
             #    action ShowMenu('load')
 
-            #textbutton _("Prefs."): 
-            #   activate_sound "audio/select.ogg" 
+            #textbutton _("Prefs."):
+            #   activate_sound "audio/select.ogg"
             #   action ShowMenu('preferences')
-            
+
             #textbutton _("Cel."):
-            #    activate_sound "audio/select.ogg" 
+            #    activate_sound "audio/select.ogg"
             #    action If(
             #        not persistent.phone_tutorial_seen,
             #        Call("celu_tutorial"),
@@ -316,7 +316,7 @@ transform fade_to_black:
 screen fade_to_game:
     modal True
     zorder 200
-    add "#000" at fade_to_black 
+    add "#000" at fade_to_black
     timer 1.0 action [Hide("fade_to_game"), Start()]
 
 screen navigation():
@@ -333,8 +333,13 @@ screen navigation():
 
             textbutton _("Iniciar"):
                 hover_sound "audio/hover.ogg"
-                activate_sound "audio/select.ogg"   
+                activate_sound "audio/select.ogg"
                 action Show("fade_to_game")
+
+            textbutton _("Changelog"):
+                hover_sound "audio/hover.ogg"
+                activate_sound "audio/select.ogg"
+                action ShowMenu("changelog")
 
             #textbutton _("Calendario"):
             #    hover_sound "audio/hover.ogg"
@@ -350,12 +355,12 @@ screen navigation():
 
             textbutton _("Guardar"):
                 hover_sound "audio/hover.ogg"
-                activate_sound "audio/select.ogg" 
+                activate_sound "audio/select.ogg"
                 action ShowMenu("save")
 
         textbutton _("Cargar"):
                 hover_sound "audio/hover.ogg"
-                activate_sound "audio/select.ogg" 
+                activate_sound "audio/select.ogg"
                 action ShowMenu("load")
 
         textbutton _("Opciones"):
@@ -368,14 +373,14 @@ screen navigation():
 
             textbutton _("Finaliza repetición"):
                 hover_sound "audio/hover.ogg"
-                activate_sound "audio/select.ogg" 
+                activate_sound "audio/select.ogg"
                 action EndReplay(confirm=True)
 
         elif not main_menu:
 
             textbutton _("Menú principal"):
                 hover_sound "audio/hover.ogg"
-                activate_sound "audio/select.ogg" 
+                activate_sound "audio/select.ogg"
                 action MainMenu()
 
             textbutton _("Acerca de"):
@@ -473,13 +478,76 @@ style main_menu_title:
 style main_menu_version:
     properties gui.text_properties("version")
 
+################# PANTALLA CHANGELOG ##################################################
+
+screen changelog():
+    tag menu
+    add gui.main_menu_background
+    use game_menu(_("Changelog"), scroll="viewport"):
+
+        vbox:
+            spacing 20
+
+            # Contenido del changelog
+            vbox:
+                spacing 30
+
+                vbox:
+                    label "[config.version!t]" style "changelog_version"
+                    vbox:
+                        spacing 5
+                        text "Nuevas características:" style "changelog_category"
+                        text "  • Día 2 Completo" style "changelog_item"
+                        text "  • Diseño Padre de Laila (dejó de ser un placeholder)" style "changelog_item"
+                        text "  • Diseño Strike (dejó de ser un placeholder)" style "changelog_item"
+                        text "  • Diseño Mani" style "changelog_item"
+
+
+                        null height 10
+
+                        text "Mejoras:" style "changelog_category"
+                        text "  • Nuevo sistema de elección" style "changelog_item"
+                        text "  • Mejora de Rutas + Dialogo de c/u" style "changelog_item"
+                        text "  • Nuevos Dialogos por ruta en Día 1" style "changelog_item"
+
+                vbox:
+                    label "v0.1 - Alpha" style "changelog_version"
+                    vbox:
+                        spacing 5
+                        text "Lanzamiento inicial:" style "changelog_category"
+                        text "  • Día 1 completo" style "changelog_item"
+                        text "  • Sistema básico de elecciones" style "changelog_item"
+                        text "  • Sistema de ruta" style "changelog_item"
+
+# Estilos
+style changelog_version:
+    xpos 20
+
+style changelog_version_text:
+    size 40
+    color "#ffcc00"
+    bold True
+    outlines [(2, "#000", 0, 0)]
+
+style changelog_category:
+    size 32
+    color "#ffffff"
+    bold True
+    xpos 40
+
+style changelog_item:
+    size 28
+    color "#e0e0e0"
+    xpos 60
+    line_leading 8
+
 ################# PANTALLA CALENDARIO ##################################################
 
 #screen day_select():
 #    tag menu
-#    
+#
 #    add gui.main_menu_background
-#    
+#
 #    use game_menu(_("Calendario"), scroll="viewport"):
 #        vbox:
 #            xfill True
@@ -488,18 +556,18 @@ style main_menu_version:
 #            text "Selecciona un día.":
 #                xalign 0.475
 #                size 50.0
-#            
+#
 #            if persistent.day > 0:
 #                text "(Progreso: Día [persistent.day])":
 #                    xalign 0.47
 #                    size 30.0
 #                    color "#dad7d0"
-#                
+#
 #            if persistent.day == 0:
 #                text "Empieza el juego para desbloquear los días.":
 #                    xalign 0.48
 #                    size 25.0
-#            
+#
 #            # Botón del día 1
 #            if persistent.day >= 1:
 #                textbutton _("   Miércoles (20/02/2066)"):
@@ -516,7 +584,7 @@ style main_menu_version:
 #
 #            # Botón del día 2
 #            if persistent.day >= 2:
-#                textbutton _("     Jueves (21/02/2066)"):   
+#                textbutton _("     Jueves (21/02/2066)"):
 #                    action [
 #                        Play("sound", "audio/select.ogg"),
 #                        Show("fade_to_day", day_label="day2")
@@ -528,20 +596,20 @@ style main_menu_version:
 #                    sensitive False
 #                    style "day_select_button"
 
-style day_select_button is button:
-    hover_sound "audio/hover.ogg"
-    xalign 0.5
-    xsize 300
+# style day_select_button is button:
+#     hover_sound "audio/hover.ogg"
+#     xalign 0.5
+#     xsize 300
 
-transform fade_to_black:
-    alpha 0.0
-    linear 0.8 alpha 1.0
+# transform fade_to_black:
+#     alpha 0.0
+#     linear 0.8 alpha 1.0
 
-screen fade_to_day(day_label):
-    modal True
-    zorder 200
-    add "#000" at fade_to_black
-    timer 1.0 action [Hide("fade_to_day"), Start(day_label)]
+# screen fade_to_day(day_label):
+#     modal True
+#     zorder 200
+#     add "#000" at fade_to_black
+#     timer 1.0 action [Hide("fade_to_day"), Start(day_label)]
 
 ## Pantalla del menú del juego #################################################
 ##
@@ -1300,12 +1368,12 @@ screen confirm(message, yes_action, no_action):
 
                 textbutton _("Sí"):
                     hover_sound "audio/hover.ogg"
-                    activate_sound "audio/select.ogg" 
+                    activate_sound "audio/select.ogg"
                     action yes_action
 
                 textbutton _("No"):
                     hover_sound "audio/hover.ogg"
-                    activate_sound "audio/select.ogg" 
+                    activate_sound "audio/select.ogg"
                     action no_action
 
     ## Clic derecho o escape responden "no".
