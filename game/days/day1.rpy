@@ -30,7 +30,6 @@ label day1:
 
     scene class3A-blur with Dissolve(2.0)
     show ptod cruzado at center, fade_in
-
     "Una vez escuché esa advertencia... me levanto de mi dulce y reparador sueño."
     "Nótese el sarcasmo."
     "Levanto a mis músculos que protestaron al empujar mi cuerpo hacia arriba. El mundo giró levemente, una náusea familiar se instaló en mi estómago vacío."
