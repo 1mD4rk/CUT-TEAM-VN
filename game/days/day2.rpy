@@ -1655,19 +1655,19 @@ label reunionconsejo_day2:
     $ enfocar("jeremy")
     je "Por Dios, Dark... No ser tan exagerado. Solo vinimos a firmar el reporte de Laila y ponerlo en su expediente"
     show jeremy 2serio
-    $ enfocar("jeremy")
+    $ normal("jeremy")
     l_thought "Expediente... Eso ya debe parecer un caso para llevarme a algún juzgado."
     "Blaze toca suavemente mi brazo."
     show blaze 1compadecert
     $ enfocar("blaze")
-    B "No te preocupes, es solo papeleo. Una firma y nos vamos."
+    b "No te preocupes, es solo papeleo. Una firma y nos vamos."
     show blaze 1compadecer
-    $ enfocar("blaze")
+    $ normal("blaze")
     show jeremy 1juzgat
     $ enfocar("jeremy")
     je "¿Y tienes el reporte, Dark?"
     show jeremy 1juzga
-    $ enfocar("jeremy")
+    $ normal("jeremy")
     show dark 1distraido2t
     $ enfocar("dark")
     d "Sí, sí. Lo busqué cuando me escapé de clases de Matemáticas."
@@ -1675,9 +1675,8 @@ label reunionconsejo_day2:
     $ normal("dark")
     "Rebusca en su bolsillo y saca mi reporte, un poco descuidado."
     show jeremy 2serio2:
-        flip
+        left_littemoveon
         
-    
     "Jeremy busca en un cajón donde al parecer tienen los expedientes de toda la escuela."
 
 
