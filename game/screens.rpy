@@ -493,7 +493,7 @@ screen changelog():
         vbox:
             spacing 20
 
-            # Contenido del changelog
+            # Contenido
             vbox:
                 spacing 30
 
