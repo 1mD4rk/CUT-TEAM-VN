@@ -196,6 +196,26 @@ transform left:
     xpos 400 ypos 1080
     xanchor 0.5 yanchor 1.0
 
+transform left_littemove:
+    xanchor 0.5 yanchor 1.0
+    xpos 400 ypos 1080
+    easein 0.3 xpos 450
+
+transform left_littemove1:
+    xanchor 0.5 yanchor 1.0
+    xpos 450 ypos 1080
+    easein 0.3 xpos 400
+
+transform left_littemoveon:
+    flip
+    pause 0.5
+    left_littemove
+
+transform left_littemoveoff:
+    flip_off
+    pause 0.5
+    left_littemove1
+
 transform center:
     xpos 960 ypos 1080  
     xanchor 0.5 yanchor 1.0
