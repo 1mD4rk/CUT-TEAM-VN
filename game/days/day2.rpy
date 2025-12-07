@@ -1465,6 +1465,7 @@ label reunionconsejo_day2:
     l_thought "Bueno... Ya era hora de usar el celular para algo bueno, en cierto modo, nunca lo uso."
     "Saco mi celular y abro la app de mensajes, mis dedos tiemblan, trago saliva, pero es necesario."
     $ renpy.pause(1.5, hard=True)
+
     call chat_dad_day2
 
     l_thought "Pensé que sentiría alivio al no salir... Y hablar sobre cosas que no quiero. Pero no, me siento extraña."
@@ -1538,7 +1539,7 @@ label reunionconsejo_day2:
         nobody "{sc=3}Porque es lo único para lo que sirves.{/sc}"
         nobody "{sc=3}Para caer. Para fracasar.{/sc}"
         nobody "{sc=3}Para recorrer este camino una y otra vez...{/sc}"
-        nobody "{sc=5}Hasta que te rindas por completo{/sc}"
+        nobody "{sc=5}Hasta que te rindas por completo.{/sc}"
         hide screen red_effect2 with Dissolve(0.5)
 
     l "No me queda de otra...{w} ¿Verdad?"
@@ -1556,19 +1557,19 @@ label reunionconsejo_day2:
         show dark 2desafiantet
         $ enfocar("dark")
         d "¿Su carruaje, señorita Problemática? Acompañémonos al infierno de la burocracia escolar."
-        show dark 2desafiantet
+        show dark 2desafiante
         $ normal("dark")
         show blaze 1juzga2
         show jeremy 1juzga2
         "Lo dice con evidente tono de burla."
         $ renpy.pause(2.5, hard=True)
-        show dark 1desafiantet
+        show dark 1desafiante
         "Me limito a mirarlo de arriba a abajo con evidente asco. Y le dejo con el brazo colgando. Poniéndome al lado de Blaze."
         show blaze 1juzga2t
         $ enfocar("blaze")
         b "¿Dark siendo caballeroso?"
         show blaze 1sonrientet
-        extend "Esto sí es un milagro..."
+        extend " Esto sí es un milagro..."
         show blaze 1juzga2t
         b "¿También le abrirás la puerta o solo es por el momento?"
         show blaze 1juzga2
@@ -1578,6 +1579,9 @@ label reunionconsejo_day2:
         $ enfocar("dark")
         d "Para ti, Blaze, abriría hasta la puerta del infier-{nw=0.1}"
         show dark 1neutral
+        show blaze 1neutral:
+            flip
+            afternoon_character
         $ normal("dark")
         show jeremy 1serio2t
         $ enfocar("jeremy")
@@ -1586,14 +1590,95 @@ label reunionconsejo_day2:
         $ normal("jeremy")
         "Jeremy lo corta con sequedad casi inconfundible, desviando la mirada."
         show dark 1metiche
-        extend "Dark esboza una sonrisa de satisfacción, al parecer su pequeño plan funcionó."
-
-
-
-
+        extend " Dark esboza una sonrisa de satisfacción, al parecer su pequeño plan funcionó."
+        show dark 1sarcasmo
+        "Guarda sus manos en su bolsillo y alza los hombros con indiferencia. Fingiendo un aire de derrota."
+        show dark 1sarcasmot
+        $ enfocar("dark")
+        d "Ella lo rechazó..."
+        show dark 2desafiantet
+        extend "Luego no digan que la caballerosidad está muerta."
+        show dark 2desafiante
+        $ normal("dark")
 
     else:
-        d "si"
+        "Dark camina frente a mí, sin voltear."
+        $ enfocar("dark")
+        show dark 1distraido2t
+        d "Vamos, Problemática."
+        show dark 1distraidot
+        extend " No tenemos todo el día para tus dramas existenciales."
+        show dark 1distraido
+        $ normal("dark")
+        "Su voz suena distante, como si ya estuviera aburrido de mi presencia."
+        l_thought "Ni siquiera se molesta en fingir interés ahora. ¿Por qué lo haría?"
+        show screen red_effect2
+        nobody "{sc=3}Porque ya te conoce. Sabe que eres un caso perdido.{/sc}"
+        nobody "{sc=5}Como todos.{/sc}"
+        hide screen red_effect2 with Dissolve(0.5)
+
+    scene black with Dissolve(3.0)
+    $ renpy.pause(2.5, hard=True)
+    "Salimos del aula y empezamos nuestra caminata."
+    play sound closet_close
+    $ renpy.pause(2.5, hard=True)
+    "En los pasillos quedan algunos que otros estudiantes.{w} Yo solo me limito a caminar al lado de Blaze y desconectarme."
+    $ renpy.pause(7.5, hard=True)
+    "Subimos al segundo piso y vamos al final del pasillo, donde se ve una puerta que arriba dice “Salón del Consejo”{w}, realmente no queda tan lejos de donde está el director."
+    play sound keylock
+    "Jeremy saca las famosas llaves y abre el aula. Y entramos."
+    play sound closet_open
+    $ renpy.pause(1.8, hard=True)
+    scene consejo_afternoon at afternoon_filter
+    show blaze 1sonriente:
+        right5
+        afternoon_character
+    show jeremy 1serio2:
+        left
+        afternoon_character
+    show dark 1distraido:
+        center2
+        afternoon_character
+    with fade
+    "Es como alguien se lo espera. La sala del consejo, mesas llenas de papeles, pizarrones con diagramas, y un aire de caos controlado."
+    l_thought "Vaya. Esto parece el cuarto de limpieza de una oficina de correos. ¿Y se supone que aquí toman decisiones importantes?"
+    show dark 1desafiante at sigh_animation
+    "Dark toma aire exageradamente."
+    show jeremy 1juzga
+    show blaze 1neutral
+    show dark 1desafiantet
+    $ enfocar("dark")
+    d "Ahhh... El olor a papel y al abuso de poder. Dulce segundo hogar."
+    show dark 1desafiante
+    $ normal("dark")
+    show jeremy 2seriot
+    $ enfocar("jeremy")
+    je "Por Dios, Dark... No ser tan exagerado. Solo vinimos a firmar el reporte de Laila y ponerlo en su expediente"
+    show jeremy 2serio
+    $ enfocar("jeremy")
+    l_thought "Expediente... Eso ya debe parecer un caso para llevarme a algún juzgado."
+    "Blaze toca suavemente mi brazo."
+    show blaze 1compadecert
+    $ enfocar("blaze")
+    B "No te preocupes, es solo papeleo. Una firma y nos vamos."
+    show blaze 1compadecer
+    $ enfocar("blaze")
+    show jeremy 1juzgat
+    $ enfocar("jeremy")
+    je "¿Y tienes el reporte, Dark?"
+    show jeremy 1juzga
+    $ enfocar("jeremy")
+    show dark 1distraido2t
+    $ enfocar("dark")
+    d "Sí, sí. Lo busqué cuando me escapé de clases de Matemáticas."
+    show dark 1distraido2
+    $ normal("dark")
+    "Rebusca en su bolsillo y saca mi reporte, un poco descuidado."
+    show jeremy 2serio2:
+        flip
+        
+    
+    "Jeremy busca en un cajón donde al parecer tienen los expedientes de toda la escuela."
 
 
 return
