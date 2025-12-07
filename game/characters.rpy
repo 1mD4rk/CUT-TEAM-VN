@@ -222,7 +222,8 @@ init python:
                         "incomodo", "incomodot", "incomodo2", "incomodo2t",
                         "juzga", "juzgat", "juzga2", "juzga2t", "juzga3",
                         "serio", "seriot", "serio2", "serio2t",
-                        "metiche"]
+                        "metiche",
+                        "sarcasmo", "sarcasmot"]
     for base in dark_bases:
         for expr in dark_expressions:
             renpy.image(
