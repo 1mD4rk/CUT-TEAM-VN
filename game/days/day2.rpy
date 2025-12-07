@@ -1319,168 +1319,281 @@ label receso_day2_afterchoice:
 #### REUNION CONSEJO MOMENT ####
 label reunionconsejo_day2:
 
-"Pasaron horas. Horas demasiado agotadoras y aburridas de clases. Nada a destacar. Solamente tratar de entender a un profesor que repite lo mismo 7 veces al día."
-scene class3A at afternoon_filter with dissolve
-$ renpy.pause(3.0, hard=True)
-play audio bell
-$ renpy.pause(3.0, hard=True)
-"Una vez suena la última campana del día, veo como mis “compañeros” empiezan a irse."
-show blaze 1desinteresada3:
-    center2 
-    afternoon_character
-show jeremy 1serio2:
-    flip
-    right5
-    afternoon_character
-show dark 1distraido:
-    left
-    afternoon_character
-with Dissolve(0.5)
-extend " Pero veo cómo estos 2 y Blaze se quedan aquí."
-l_thought "..."
-l_thought "¿Por que no se van? ¿Qué esperan? ¿Me juzgan por algo?"
-"Cada uno guarda sus cosas lentamente, dejando que hasta la última alma de aquí se vaya."
-$ renpy.pause(4.0, hard=True)
-"Dark es el primero en levantarse y estirarse."
-play music bgm1
-show jeremy 2juzga
-show blaze 3neutral
-show dark 1desafiantet
-$ enfocar("dark")
-d "Creo que estar en un campo de guerra es más productivo que estar por aquí."
-show jeremy 1serio
-show blaze 2desinteresada2
-show dark 2desafiantet
-extend " Con ustedes."
-show dark 2desafiante
-$ normal("dark")
-show blaze 2desinteresada
-show jeremy 1seriot
-$ enfocar("jeremy")
-je "Tan...{w} Tan buen amigo, como siempre."
-show jeremy 1serio
-$ normal("jeremy")
-"Jeremy y Blaze también se levantan. Y se ajustan sus mochilas."
-show blaze 1juzgat
-$ enfocar("blaze")
-b "¿Y qué les toca hacer hoy? ¿Por qué se tienen que quedar?"
-show blaze 1juzga
-$ normal("blaze")
-"Me quedo en blanco."
-l_thought "N-No entiendo. ¿Qué está pasando?"
-show dark 1neutral
-show jeremy 2neutral
-l "Eh... Blaze"
-show blaze 1neutral
-extend " ¿También te vas a quedar?"
-show dark 2desafiantet
-$ enfocar("dark")
-d "Pregunta filosófica del día, Laila:"
-show dark 2juzgat
-d "¿Qué hacen tres personas con horarios y responsabilidades similares y que están en el consejo, decidan quedarse después de la escuela?"
-show dark 2desafiante
-$ normal("dark")
-"Lo dice con una sonrisa enigmática."
-l_thought "Ah... Creo que Blaze se tenía que quedar a ayudarlos en cosas del consejo..."
-show blaze 1compadecer
-l "Cierto que te tienes que quedar Blaze. No lo recordaba."
-show blaze 1compadecert
-$ enfocar("blaze")
-b "Sí..."
-show blaze 1juzga2t
-show jeremy 1neutral
-b "A estás alturas, me debería convertir en secretaria del consejo. Últimamente me han estado pidiendo mucha ayuda."
-show blaze 1juzga2
-$ normal("blaze")
-"Ella lo dice con obviamente tono de broma, pero como que Jeremy no lo entiende. O eso observo en su expresión."
-show jeremy 1juzgat
-$ enfocar("jeremy")
-je "Siendo honesto, no... mala idea como parecer. Tal vez considere que te conviertan en la secretaría."
-show dark 2juzga
-show jeremy 1juzga
-$ normal("jeremy")
-show blaze 2nerviosa
-"Blaze se sonroja, pero no se le ven ganas de reprochar."
-show dark 2juzgat
-$ enfocar("dark")
-d "Y así, es como cualquiera entra a un gobierno corrupto. ¿Anotaste, Laila?"
-show dark 2juzga
-$ normal("dark")
-l "Prefiero mantener mis crímenes en el sector privado, gracias."
-l_thought "Al menos el sarcasmo sigue siendo un refugio seguro."
-"Me levanto, sintiendo el peso de un día entero en cada hueso."
-$ renpy.pause(3.0, hard=True)
-show blaze 2preocupada
-"Blaze me mira con esa expresión de preocupación."
-show blaze 2compadecert
-$ enfocar("blaze")
-b "Y... Laila...{w} ¿Al final irás con papá?"
-show blaze 2compadecer
-$ normal("blaze")
-show dark 1neutral
-show jeremy 1neutral
-l_thought "Ya suponía  que iba a preguntar eso...{w} El elefante en la habitación."
-l "Bueno... Ya debería estar en camino para aca.{w} Eso creo."
-"Le digo eso esquivando su mirada mientras guardo mis últimos útiles."
-show dark 2desafiante
-"Dark se inclina contra un pupitre, observándonos como si fuéramos su telenovela personal."
-show dark 2juzgat
-$ enfocar("dark")
-d "Vaya, un drama familiar. ¿Apuestan a que termine en llanto o en portazo?"
-show dark 2juzga
-$ normal("dark")
-show blaze 2desinteresada2
-show jeremy 1seriot
-$ enfocar("jeremy")
-je "Dark, por una vez en tu vida, callate."
-show jeremy 1serio
-$ normal("jeremy")
-show blaze 2desinteresadat
-$ enfocar("blaze")
-b "Sí, Dark...{w} Cállate."
-show blaze 2desinteresada2
-$ normal("blaze")
-show dark 2juzgat
-$ enfocar("dark")
-d "Pero no se molesten..."
-show dark 1felit
-d "Amor y paz."
-show dark 1desafiante
-$ normal("dark")
-"Aun así, lo dice con su tono burlón. Que siempre me irrita."
-l_thought "Ese fastidioso tono de diversión... como si mi tormento existencial fuera su entretenimiento personal."
-l_thought "Pero hoy, incluso su cinismo se siente preferible al silencio que me espera afuera."
-"Termino de guardar mis cosas con movimientos lentos, deliberados.{w} Cada segundo extra en este salón es un segundo menos de esa conversación inevitable."
-$ renpy.pause(2.5, hard=True)
-l "..."
-l "Blaze, le enviare un mensaje, me parece raro que no haya llamado, ya es el horario de la salida."
-show blaze 2preocupada
-"Blaze me mira preocupada, como si tuviera miedo de algo, o bueno, de su {i}trabajo{/i}."
-show blaze 2compadecert
-$ enfocar("blaze")
-b "Me parece bien, tienes razón, siempre está atento a esas cosas. Y más si va a salir con alguna de nosotras."
-show blaze 2compadecer
-$ normal("blaze")
-"Eso lo dice con su tono reconfortante de siempre."
-l_thought "Bueno... Ya era hora de usar el celular para algo bueno, en cierto modo, nunca lo uso."
-"Saco mi celular y abro la app de mensajes, mis dedos tiemblan, trago saliva, pero es necesario."
-$ renpy.pause(1.5, hard=True)
-call chat_dad_day2
+    "Pasaron horas. Horas demasiado agotadoras y aburridas de clases. Nada a destacar. Solamente tratar de entender a un profesor que repite lo mismo 7 veces al día."
+    scene class3A at afternoon_filter with dissolve
+    $ renpy.pause(3.0, hard=True)
+    play audio bell
+    $ renpy.pause(3.0, hard=True)
+    "Una vez suena la última campana del día, veo como mis “compañeros” empiezan a irse."
+    show blaze 1desinteresada3:
+        center2 
+        afternoon_character
+    show jeremy 1serio2:
+        flip
+        right5
+        afternoon_character
+    show dark 1distraido:
+        left
+        afternoon_character
+    with Dissolve(0.5)
+    extend " Pero veo cómo estos 2 y Blaze se quedan aquí."
+    l_thought "..."
+    l_thought "¿Por que no se van? ¿Qué esperan? ¿Me juzgan por algo?"
+    "Cada uno guarda sus cosas lentamente, dejando que hasta la última alma de aquí se vaya."
+    $ renpy.pause(4.0, hard=True)
+    "Dark es el primero en levantarse y estirarse."
+    play music bgm1
+    show jeremy 2juzga
+    show blaze 3neutral
+    show dark 1desafiantet
+    $ enfocar("dark")
+    d "Creo que estar en un campo de guerra es más productivo que estar por aquí."
+    show jeremy 1serio
+    show blaze 2desinteresada2
+    show dark 2desafiantet
+    extend " Con ustedes."
+    show dark 2desafiante
+    $ normal("dark")
+    show blaze 2desinteresada
+    show jeremy 1seriot
+    $ enfocar("jeremy")
+    je "Tan...{w} Tan buen amigo, como siempre."
+    show jeremy 1serio
+    $ normal("jeremy")
+    "Jeremy y Blaze también se levantan. Y se ajustan sus mochilas."
+    show blaze 1juzgat
+    $ enfocar("blaze")
+    b "¿Y qué les toca hacer hoy? ¿Por qué se tienen que quedar?"
+    show blaze 1juzga
+    $ normal("blaze")
+    "Me quedo en blanco."
+    l_thought "N-No entiendo. ¿Qué está pasando?"
+    show dark 1neutral
+    show jeremy 2neutral
+    l "Eh... Blaze"
+    show blaze 1neutral
+    extend " ¿También te vas a quedar?"
+    show dark 2desafiantet
+    $ enfocar("dark")
+    d "Pregunta filosófica del día, Laila:"
+    show dark 2juzgat
+    d "¿Qué hacen tres personas con horarios y responsabilidades similares y que están en el consejo, decidan quedarse después de la escuela?"
+    show dark 2desafiante
+    $ normal("dark")
+    "Lo dice con una sonrisa enigmática."
+    l_thought "Ah... Creo que Blaze se tenía que quedar a ayudarlos en cosas del consejo..."
+    show blaze 1compadecer
+    l "Cierto que te tienes que quedar Blaze. No lo recordaba."
+    show blaze 1compadecert
+    $ enfocar("blaze")
+    b "Sí..."
+    show blaze 1juzga2t
+    show jeremy 1neutral
+    b "A estás alturas, me debería convertir en secretaria del consejo. Últimamente me han estado pidiendo mucha ayuda."
+    show blaze 1juzga2
+    $ normal("blaze")
+    "Ella lo dice con obviamente tono de broma, pero como que Jeremy no lo entiende. O eso observo en su expresión."
+    show jeremy 1juzgat
+    $ enfocar("jeremy")
+    je "Siendo honesto, no... mala idea como parecer. Tal vez considere que te conviertan en la secretaría."
+    show dark 2juzga
+    show jeremy 1juzga
+    $ normal("jeremy")
+    show blaze 2nerviosa
+    "Blaze se sonroja, pero no se le ven ganas de reprochar."
+    show dark 2juzgat
+    $ enfocar("dark")
+    d "Y así, es como cualquiera entra a un gobierno corrupto. ¿Anotaste, Laila?"
+    show dark 2juzga
+    $ normal("dark")
+    l "Prefiero mantener mis crímenes en el sector privado, gracias."
+    l_thought "Al menos el sarcasmo sigue siendo un refugio seguro."
+    "Me levanto, sintiendo el peso de un día entero en cada hueso."
+    $ renpy.pause(3.0, hard=True)
+    show blaze 2preocupada
+    "Blaze me mira con esa expresión de preocupación."
+    show blaze 2compadecert
+    $ enfocar("blaze")
+    b "Y... Laila...{w} ¿Al final irás con papá?"
+    show blaze 2compadecer
+    $ normal("blaze")
+    show dark 1neutral
+    show jeremy 1neutral
+    l_thought "Ya suponía  que iba a preguntar eso...{w} El elefante en la habitación."
+    l "Bueno... Ya debería estar en camino para aca.{w} Eso creo."
+    "Le digo eso esquivando su mirada mientras guardo mis últimos útiles."
+    show dark 2desafiante
+    "Dark se inclina contra un pupitre, observándonos como si fuéramos su telenovela personal."
+    show dark 2juzgat
+    $ enfocar("dark")
+    d "Vaya, un drama familiar. ¿Apuestan a que termine en llanto o en portazo?"
+    show dark 2juzga
+    $ normal("dark")
+    show blaze 2desinteresada2
+    show jeremy 1seriot
+    $ enfocar("jeremy")
+    je "Dark, por una vez en tu vida, callate."
+    show jeremy 1serio
+    $ normal("jeremy")
+    show blaze 2desinteresadat
+    $ enfocar("blaze")
+    b "Sí, Dark...{w} Cállate."
+    show blaze 2desinteresada2
+    $ normal("blaze")
+    show dark 2juzgat
+    $ enfocar("dark")
+    d "Pero no se molesten..."
+    show dark 1felit
+    d "Amor y paz."
+    show dark 1desafiante
+    $ normal("dark")
+    "Aun así, lo dice con su tono burlón. Que siempre me irrita."
+    l_thought "Ese fastidioso tono de diversión... como si mi tormento existencial fuera su entretenimiento personal."
+    l_thought "Pero hoy, incluso su cinismo se siente preferible al silencio que me espera afuera."
+    "Termino de guardar mis cosas con movimientos lentos, deliberados.{w} Cada segundo extra en este salón es un segundo menos de esa conversación inevitable."
+    $ renpy.pause(2.5, hard=True)
+    l "..."
+    l "Blaze, le enviare un mensaje, me parece raro que no haya llamado, ya es el horario de la salida."
+    show blaze 2preocupada
+    "Blaze me mira preocupada, como si tuviera miedo de algo, o bueno, de su {i}trabajo{/i}."
+    show blaze 2compadecert
+    $ enfocar("blaze")
+    b "Me parece bien, tienes razón, siempre está atento a esas cosas. Y más si va a salir con alguna de nosotras."
+    show blaze 2compadecer
+    $ normal("blaze")
+    "Eso lo dice con su tono reconfortante de siempre."
+    l_thought "Bueno... Ya era hora de usar el celular para algo bueno, en cierto modo, nunca lo uso."
+    "Saco mi celular y abro la app de mensajes, mis dedos tiemblan, trago saliva, pero es necesario."
+    $ renpy.pause(1.5, hard=True)
+    call chat_dad_day2
 
-l_thought "Pensé que sentiría alivio al no salir... Y hablar sobre cosas que no quiero. Pero no, me siento extraña."
-l "No viene."
-"Mi voz sale densa. Casi cortante. No era mi intención"
-l_thought "¿Y qué más da? Al final, todos se cansan de cargar conmigo."
-if (rutaCanon-rutaSuicida)<=-1: 
-    show screen red_effect2
-    nobody "{sc=3}Exactamente.{/sc}"
-    nobody "{sc=3}Hoy fue él, mañana será Blaze.{/sc}"
-    nobody "{sc=3}Pasado mañana hasta ese idiota de Dark.{/sc}"
-    nobody "{sc=3}La pregunta no es si te abandonarán, sino cuándo.{/sc}"
-    hide screen red_effect2 with Dissolve(0.5)
-    l_thought "Maldita sea, cállate por una puta buena vez."
+    l_thought "Pensé que sentiría alivio al no salir... Y hablar sobre cosas que no quiero. Pero no, me siento extraña."
+    l "No viene."
+    "Mi voz sale densa. Casi cortante. No era mi intención"
+    l_thought "¿Y qué más da? Al final, todos se cansan de cargar conmigo."
+    if (rutaCanon-rutaSuicida)<=-1: 
+        show screen red_effect2
+        nobody "{sc=3}Exactamente.{/sc}"
+        nobody "{sc=3}Hoy fue él, mañana será Blaze.{/sc}"
+        nobody "{sc=3}Pasado mañana hasta ese idiota de Dark.{/sc}"
+        nobody "{sc=3}La pregunta no es si te abandonarán, sino cuándo.{/sc}"
+        hide screen red_effect2 with Dissolve(0.5)
+        l_thought "Maldita sea, cállate por una puta buena vez."
+
+    show dark 2distraidot
+    $ enfocar("dark")
+    d "Vaya..."
+    show dark 1distraido2t
+    d "Esperaba un “¡Bien!” o un “¡Mierda!”, pero cualquier otra reacción sirve."
+    show dark 1distraido2
+    $ normal("dark")
+    "Blaze se acerca y me pone la mano en el hombro."
+    show blaze 2preocupadat
+    $ enfocar("blaze")
+    b "¿Estás... bien? Sé que querías evitarlo, pero...{nw=0.1}"
+    show blaze 2preocupada
+    $ normal("blaze")
+    l "Estoy perfecta. Menos drama para hoy."
+
+    if (rutaCanon-rutaSuicida)<=-1: 
+        show screen red_effect2
+        nobody "{sc=5}“Perfecta”.{/sc}"
+        nobody "{sc=3}Qué palabra tan vacía para describir este vacío.{/sc}"
+        nobody "{sc=3}Pero sigue mintiendo, es lo único que se te da bien.{/sc}"
+        hide screen red_effect2 with Dissolve(0.5)
+
+    "Mi voz sale cortante, pero más firme."
+    l_thought "Mentira. ¿Por qué carajos me importa? ¿Acaso quería que viniera?"
+
+    if (rutaCanon-rutaSuicida)<=-1: 
+        show screen red_effect2
+        nobody "{sc=3}Porque en el fondo...{/sc}"
+        nobody "{sc=3}Todavía eres esa niña estúpida que cree que si se porta bien.{/sc}"
+        nobody "{sc=5}Papá vendrá a salvarla.{/sc}"
+        nobody "{sc=6}Despierta.{/sc}"
+        hide screen red_effect2 with Dissolve(0.5)
+
+    show jeremy 2juzgat
+    $ enfocar("jeremy")
+    je "Que casualidad...{w} Ya que tienes extra tiempo..."
+    show jeremy 1seriot
+    je "Tu reporte necesita la firma del consejo. Podrías acelerar ese último proceso si ayudas."
+    show jeremy 1serio
+    $ normal("jeremy")
+    l_thought "Ah, perfecto. Intercambia una tortura por otra. Al menos esta viene con la ilusión de productividad."
+    show dark 2desafiantet
+    $ enfocar("dark")
+    d "Una clásica extorsión, Laila. Donde tus problemas se resuelven creándote más trabajo."
+    show dark 2desafiante
+    $ normal("dark")
+    l "¿A qué hora cierran esta prisión?"
+    show blaze 1compadecert
+    $ enfocar("blaze")
+    b "Te ayudo. No será tan malo."
+    show blaze 1compadecer
+    $ normal("blaze")
+    l_thought "¿Por qué todo se siente como una trampa? ¿Y por qué sigo cayendo?"
+    if (rutaCanon-rutaSuicida)<=-1: 
+        show screen red_effect2
+        nobody "{sc=3}Porque es lo único para lo que sirves.{/sc}"
+        nobody "{sc=3}Para caer. Para fracasar.{/sc}"
+        nobody "{sc=3}Para recorrer este camino una y otra vez...{/sc}"
+        nobody "{sc=5}Hasta que te rindas por completo{/sc}"
+        hide screen red_effect2 with Dissolve(0.5)
+
+    l "No me queda de otra...{w} ¿Verdad?"
+    show jeremy 1serio2t
+    $ enfocar("jeremy")
+    je "Si deseas seguir estirando ese reporte hasta la graduación, sí te queda de otra. Pero si quieres evitar una suspensión…"
+    show jeremy 1serio
+    $ normal("jeremy")
+    "Suspiro, derrotada."
+    $ renpy.pause(2.5, hard=True)
+    "Asiento. Tomamos nuestras mochilas y empezamos el camino."
+
+    if (rutaCanon-rutaSuicida)>=0:
+        "Dark me ofrece su brazo exageradamente."
+        show dark 2desafiantet
+        $ enfocar("dark")
+        d "¿Su carruaje, señorita Problemática? Acompañémonos al infierno de la burocracia escolar."
+        show dark 2desafiantet
+        $ normal("dark")
+        show blaze 1juzga2
+        show jeremy 1juzga2
+        "Lo dice con evidente tono de burla."
+        $ renpy.pause(2.5, hard=True)
+        show dark 1desafiantet
+        "Me limito a mirarlo de arriba a abajo con evidente asco. Y le dejo con el brazo colgando. Poniéndome al lado de Blaze."
+        show blaze 1juzga2t
+        $ enfocar("blaze")
+        b "¿Dark siendo caballeroso?"
+        show blaze 1sonrientet
+        extend "Esto sí es un milagro..."
+        show blaze 1juzga2t
+        b "¿También le abrirás la puerta o solo es por el momento?"
+        show blaze 1juzga2
+        $ normal("blaze")
+        "Lo dice con tono de broma, como buscando de irritarlo."
+        show dark 2desafiantet
+        $ enfocar("dark")
+        d "Para ti, Blaze, abriría hasta la puerta del infier-{nw=0.1}"
+        show dark 1neutral
+        $ normal("dark")
+        show jeremy 1serio2t
+        $ enfocar("jeremy")
+        je "Dark, por el amor a Dios, basta. Ya vamos."
+        show jeremy 1serio
+        $ normal("jeremy")
+        "Jeremy lo corta con sequedad casi inconfundible, desviando la mirada."
+        show dark 1metiche
+        extend "Dark esboza una sonrisa de satisfacción, al parecer su pequeño plan funcionó."
 
 
+
+
+
+    else:
+        d "si"
 
 
 return
