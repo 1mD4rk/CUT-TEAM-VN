@@ -336,11 +336,6 @@ screen navigation():
                 activate_sound "audio/select.ogg"
                 action Show("fade_to_game")
 
-            textbutton _("Changelog"):
-                hover_sound "audio/hover.ogg"
-                activate_sound "audio/select.ogg"
-                action ShowMenu("changelog")
-
             #textbutton _("Calendario"):
             #    hover_sound "audio/hover.ogg"
             #    activate_sound "audio/select.ogg"
@@ -387,6 +382,16 @@ screen navigation():
                 hover_sound "audio/hover.ogg"
                 activate_sound "audio/select.ogg"
                 action ShowMenu("about")
+
+        textbutton _("Changelog"):
+            hover_sound "audio/hover.ogg"
+            activate_sound "audio/select.ogg"
+            action ShowMenu("changelog")
+
+        textbutton _("Créditos"):
+            hover_sound "audio/hover.ogg"
+            activate_sound "audio/select.ogg"
+            action ShowMenu("credits")
 
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
@@ -511,6 +516,7 @@ screen changelog():
                         text "  • Nuevos Dialogos por ruta en Día 1" style "changelog_item"
 
                 vbox:
+                    text "---------------------------------------------------------------------"
                     label "v0.1 - Alpha" style "changelog_version"
                     vbox:
                         spacing 5
@@ -540,6 +546,149 @@ style changelog_item:
     color "#e0e0e0"
     xpos 60
     line_leading 8
+
+################# PANTALLA CRÉDITOS ##################################################
+
+screen credits():
+    tag menu
+    add gui.main_menu_background
+    use game_menu(_("Créditos"), scroll="viewport"):
+        vbox:
+            spacing 20
+            xfill True
+
+            # Título
+            text "CRÉDITOS":
+                size 60
+                color "#ffffff"
+                bold True
+                outlines [(4, "#5b1e99", 0, 0)]
+                xalign 0.45
+
+            null height 30
+
+            # Grid 2x2: fila superior = Desarrollo | Música, fila inferior = Agradecimientos | Herramientas
+            grid 2 2:
+                spacing 80
+                xalign 0.43
+
+                # Celda (0,0): Desarrollo
+                vbox:
+                    spacing 20
+                    xalign 0.5
+
+                    text "DESARROLLO":
+                        size 36
+                        color "#ffcc00"
+                        bold True
+                        outlines [(2, "#000", 0, 0)]
+
+                    vbox:
+                        spacing 6
+                        text "Guión y diseño:" style "credits_item"
+                        text "- Dark" style "credits_name"
+                        text "- JasperW" style "credits_name"
+                        text "- Sergio Viale" style "credits_name"
+                        text "Programación:" style "credits_item"
+                        text "- Dark" style "credits_name"
+                        text "- Sergio Viale" style "credits_name"
+                        text "Arte:" style "credits_item"
+                        text "- Dark" style "credits_name"
+                        text "- JasperW" style "credits_name"
+
+                # Celda (1,0): Música & Sonido (al lado de Desarrollo)
+                vbox:
+                    spacing 20
+                    xalign 0.5
+
+                    text "MÚSICA & SONIDO":
+                        size 36
+                        color "#ffcc00"
+                        bold True
+                        outlines [(2, "#000", 0, 0)]
+
+                    vbox:
+                        spacing 6
+                        text "Composición:" style "credits_item"
+                        text "- Nombre Apellido" style "credits_name"
+                        text "Efectos de sonido:" style "credits_item"
+                        text "- Nombre Apellido" style "credits_name"
+
+                # Celda (0,1): Agradecimientos (debajo de Desarrollo)
+                vbox:
+                    spacing 20
+                    xalign 0.5
+
+                    text "AGRADECIMIENTOS ESPECIALES":
+                        size 28
+                        color "#ffffff"
+                        bold True
+
+                    vbox:
+                        spacing 6
+                        text "• Persona 1" style "credits_name"
+                        text "• Persona 2" style "credits_name"
+                        text "• Persona 3" style "credits_name"
+
+                # Celda (1,1): Herramientas (debajo de Música)
+                vbox:
+                    spacing 10
+                    xalign 0.5
+
+                    text "HERRAMIENTAS Y RECURSOS":
+                        size 28
+                        color "#e0e0e0"
+                        bold True
+
+                    vbox:
+                        spacing 4
+                        text "- Ren'Py" style "credits_name"
+                        text "- Elckarow#8399: " style "credits_name2"
+                        text "  Better EMR Phone" style "credits_asset"
+                        text "- CuteShadow:" style "credits_name2"
+                        text "  Timed Choice Menu" style "credits_asset"
+                        text "- Bamboo Calculator:" style "credits_name2"
+                        text "  Randomized and Continuous text sounds" style "credits_asset"
+                        text "- min-chi.material.jp" style "credits_name2"
+
+            null height 20
+
+            # Pie de página centrado
+            vbox:
+                spacing 6
+                xalign 0.5
+                text "Gracias por jugar." style "credits_footer"
+                text "Hecho con {a=https://www.renpy.org/}Ren'Py{/a}." style "credits_footer"
+
+style credits_item:
+    size 28
+    color "#e0e0e0"
+
+style credits_item2:
+    size 28
+    color "#e0e0e0"
+    bold True
+
+style credits_name:
+    size 26
+    color "#ffffff"
+    line_leading 4
+
+style credits_name2:
+    size 26
+    color "#ffffff"
+    line_leading 4
+    outlines [(4, "#5b1e99", 0, 0)]
+
+style credits_asset:
+    size 24
+    color "#ffffff"
+
+style credits_footer:
+    size 20
+    color "#bdbdbd"
+    xalign 0.5
+    ypadding 10
 
 ################# PANTALLA CALENDARIO ##################################################
 
