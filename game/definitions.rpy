@@ -351,6 +351,9 @@ image stairs_2dopiso = "images/bg/escaleras-piso2.png"
 image azotea = "images/bg/azotea.png"
 image azotea_stairs = "images/bg/escalerasazotea.png"
 image despacho_dirc = "images/bg/principals_office.png"
+image consejo_day = "images/bg/consejo_day.jpg"
+image consejo_afternoon = "images/bg/consejo_afternoon.jpg"
+
 
 image pasillo-blur:
         "images/bg/9k.jpg"
