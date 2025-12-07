@@ -520,6 +520,12 @@ transform night_cold:
     matrixcolor TintMatrix("#6B82B5") * BrightnessMatrix(-0.35) * SaturationMatrix(0.85)
     blur 0.3
 
+transform afternoon_filter:
+    matrixcolor TintMatrix("#ffb347") * BrightnessMatrix(-0.10) * SaturationMatrix(0.7)
+
+transform afternoon_character:
+    matrixcolor TintMatrix("#FFA94D") * BrightnessMatrix(-0.08) * SaturationMatrix(0.85)
+
 define dissolve_scene_full = MultipleTransition([
     False, Dissolve(1.0),
     Solid("#000"), Pause(1.0),
