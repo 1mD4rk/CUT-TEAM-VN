@@ -1409,17 +1409,20 @@ $ normal("dark")
 l "Prefiero mantener mis crímenes en el sector privado, gracias."
 l_thought "Al menos el sarcasmo sigue siendo un refugio seguro."
 "Me levanto, sintiendo el peso de un día entero en cada hueso."
-$ renpy.pause(2.5, hard=True)
+$ renpy.pause(3.0, hard=True)
+show blaze 2preocupada
 "Blaze me mira con esa expresión de preocupación."
 show blaze 2compadecert
 $ enfocar("blaze")
 b "Y... Laila...{w} ¿Al final irás con papá?"
 show blaze 2compadecer
 $ normal("blaze")
+show dark 1neutral
 show jeremy 1neutral
 l_thought "Ya suponía  que iba a preguntar eso...{w} El elefante en la habitación."
 l "Bueno... Ya debería estar en camino para aca.{w} Eso creo."
 "Le digo eso esquivando su mirada mientras guardo mis últimos útiles."
+show dark 2desafiante
 "Dark se inclina contra un pupitre, observándonos como si fuéramos su telenovela personal."
 show dark 2juzgat
 $ enfocar("dark")
