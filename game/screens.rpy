@@ -4,6 +4,27 @@
 
 init offset = -1
 
+init python:
+    def block_input():
+        # config.keymap['game_menu'] = None
+        # config.keymap['rollback'] = None
+        # config.keymap['rollforward'] = None
+        config.keymap['self_voicing'] = None
+        config.keymap['clipboard_voicing'] = None
+        config.keymap['debug_voicing'] = None
+        config.keymap['launch_editor'] = None
+        # config.keymap['reload_game'] = None
+        config.keymap['inspector'] = None
+        config.keymap['full_inspector'] = None
+        config.keymap['performance'] = None
+        config.keymap['progress_screen'] = None
+        config.keymap['help'] = None
+
+        config.keymap['quit'] = []
+
+# Llamar la función en init
+init python:
+    block_input()
 
 ################################################################################
 ## Estilos

@@ -123,6 +123,61 @@ transform mani_left:
     pause 0.2
     slide_out_right_fast
 
+transform pos_left_slight2:
+    xanchor 0.5 yanchor 1.0
+    xpos 190 ypos 1080
+
+transform pos_center_slight2:
+    xanchor 0.5 yanchor 1.0
+    xpos 500 ypos 1080
+
+transform pos_right_slight2:
+    xanchor 0.5 yanchor 1.0
+    xpos 780 ypos 1080
+
+transform slide_left_slight2:
+    xanchor 0.5 yanchor 1.0
+    ease 0.4 xpos 190
+    pos_left_slight2
+
+transform slide_center_slight2:
+    xanchor 0.5 yanchor 1.0  
+    ease 0.4 xpos 500
+    pos_center_slight2
+
+transform slide_right_slight2:
+    xanchor 0.5 yanchor 1.0
+    ease 0.4 xpos 780
+    pos_right_slight2
+
+transform pos_in_left_fast2:
+    xanchor 0.5 yanchor 1.0
+    xpos 1150 ypos 1080
+
+transform pos_in_left_slight:
+    xanchor 0.5 yanchor 1.0
+    xpos 1420 ypos 1080
+
+transform pos_in_left_slight2:
+    xanchor 0.5 yanchor 1.0
+    xpos 1680 ypos 1080
+
+transform slide_in_left_fast2:
+    xanchor 0.5 yanchor 1.0
+    xpos 2500 ypos 1080
+    easein 0.3 xpos 1150
+    pos_in_left_fast2
+
+transform slide_in_left_slight:
+    xanchor 0.5 yanchor 1.0
+    xpos 2500 ypos 1080
+    easein 0.4 xpos 1420
+    pos_in_left_slight
+
+transform slide_in_left_slight2:
+    xanchor 0.5 yanchor 1.0
+    xpos 2500 ypos 1080
+    easein 0.4 xpos 1680
 
 ##### PARPADEO
 
@@ -196,24 +251,30 @@ transform left:
     xpos 400 ypos 1080
     xanchor 0.5 yanchor 1.0
 
+transform left5:
+    xpos 460 ypos 1080
+    xanchor 0.5 yanchor 1.0
+
 transform left_littemove:
     xanchor 0.5 yanchor 1.0
     xpos 400 ypos 1080
-    easein 0.3 xpos 450
+    easein 0.3 xpos 350
 
 transform left_littemove1:
     xanchor 0.5 yanchor 1.0
-    xpos 450 ypos 1080
-    easein 0.3 xpos 400
+    xpos 350 ypos 1080
+    easein 0.3 xpos 460
 
 transform left_littemoveon:
     flip
-    pause 0.5
+    boo
+    pause 1.5
     left_littemove
 
 transform left_littemoveoff:
-    flip_off
+    flip_off 
     pause 0.5
+    boo
     left_littemove1
 
 transform center:
@@ -584,6 +645,7 @@ define radio_interference = "audio/radio-interference.mp3"
 define drop = "audio/drop.ogg"
 define keylock = "audio/key-lock-sound.wav"
 define phone_quiet = "audio/phone_quiet.ogg"
+define slam = "audio/slam.ogg"
 
 ## Music
 define bgm1 = "<from 0 to 198.425 loop 11.339>bgm/nude.ogg"

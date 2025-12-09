@@ -243,7 +243,8 @@ init python:
                         "neutral", "neutralt",
                         "serio", "seriot", "serio2", "serio2t", "serio3", "serio3t",
                         "surprise", "surpriset",
-                        "sonriente", "sonrientet", "sonriente2t"]
+                        "sonriente", "sonrientet", "sonriente2t",
+                        "estres", "estrest", "estres2t"]
     for base in jeremy_bases:
         for expr in jeremy_expressions:
             renpy.image(

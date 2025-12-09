@@ -635,10 +635,10 @@ label dark_scene:
             l_thought "Nada es realmente problema de nadie excepto mío."
 
     if rutaCanon == 1:
-        call rutacanon_choice1
+        call rutacanon_choice1 from _call_rutacanon_choice1
 
     if rutaSuicida == 1:
-        call rutasuicida_choice1
+        call rutasuicida_choice1 from _call_rutasuicida_choice1
 
     jump dark_scene_afterchoice1
     return   

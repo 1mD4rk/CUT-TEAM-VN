@@ -7,10 +7,10 @@ label start:
     stop music fadeout 4.0 
     scene black with Dissolve(5.0)
 
-    call day1
+    call day1 from _call_day1
     $ renpy.pause(10.0, hard=True)
 
-    call day2
+    call day2 from _call_day2
     $ renpy.pause(10.0, hard=True)
 
 
