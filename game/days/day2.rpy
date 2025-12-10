@@ -1810,10 +1810,10 @@ label reunionconsejo_day2:
     "Se acerca a Jeremy para entregarle el reporte."
     show jeremy 1juzga2t
     $ enfocar("jeremy")
-    je "¿Mejor?"
+    je "¿Y ahora pretendes... bufon?"
     show dark 1juzga2
     show jeremy 1felizt
-    je "Hoy te paraste con ganas de contar unos chistes buenos. Esos sí risa dan."
+    je "¿Hoy si despertar con ansias de ser?{w} Felicidades, por fin dijiste un chiste con gracia."
     show jeremy 1feliz
     $ normal("jeremy")
     show dark 2desafiantet
