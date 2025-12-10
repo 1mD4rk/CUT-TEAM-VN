@@ -213,6 +213,37 @@ transform slide_left_move2:
     pos_left_move2 
 
 
+transform pos_of_left_to_center_fast:
+    xanchor 0.5 yanchor 1.0
+    xpos 500 ypos 1080
+
+transform slide_of_left_to_center_fast:
+    xanchor 0.5 yanchor 1.0
+    xpos 1150 ypos 1080
+    easein 0.2 xpos 500
+    pos_of_left_to_center_fast
+
+transform pos_left_move:
+    xanchor 0.5 yanchor 1.0
+    xpos 820 ypos 1080
+
+transform slide_left_move:
+    xanchor 0.5 yanchor 1.0
+    xpos 500 ypos 1080
+    easein 0.2 xpos 820
+    pos_left_move
+
+transform pos_left_move2:
+    xanchor 0.5 yanchor 1.0
+    xpos 1150 ypos 1080
+
+transform slide_left_move2:
+    xanchor 0.5 yanchor 1.0
+    xpos 780 ypos 1080
+    easein 0.2 xpos 1150
+    pos_left_move2 
+
+
 ##### PARPADEO
 
 image blink = "images/blink/blink.png"

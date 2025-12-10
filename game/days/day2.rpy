@@ -1568,6 +1568,7 @@ label reunionconsejo_day2:
         hide screen red_effect2 with Dissolve(0.5)
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     l "No me queda de otra...{w} ¿Verdad?"
     show jeremy 1serio2t
     $ enfocar("jeremy")
@@ -1577,6 +1578,9 @@ label reunionconsejo_day2:
     "Suspiro, derrotada."
     $ renpy.pause(2.5, hard=True)
     "Asiento. Tomamos nuestras mochilas y empezamos el camino."
+=======
+    l "No me queda de otra...{w} ¿O si?"
+>>>>>>> Stashed changes
 =======
     l "No me queda de otra...{w} ¿O si?"
 >>>>>>> Stashed changes
@@ -1734,6 +1738,7 @@ label reunionconsejo_day2:
     show dark 1distraido2
     $ normal("dark")
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     "Rebusca en su bolsillo y saca mi reporte, un poco descuidado."
     show jeremy 2serio2:
         left_littemoveon
@@ -1744,6 +1749,11 @@ label reunionconsejo_day2:
     "Rebusca en su bolsillo y saca mi reporte, arrugado como si hubiera sobrevivido a una guerra." 
     show jeremy 2serio2:
         left_littemoveon
+=======
+    "Rebusca en su bolsillo y saca mi reporte, arrugado como si hubiera sobrevivido a una guerra." 
+    show jeremy 2serio2:
+        left_littemoveon
+>>>>>>> Stashed changes
     "Jeremy se acerca a un cajón metálico que parece contener los expedientes de toda la escuela."
     $ renpy.pause(2.8, hard=True)
     "Lo abre, revisa con velocidad sorprendente y murmura:"
@@ -2185,6 +2195,9 @@ label reunionconsejo_day2:
     show dark 2desafiante
     "Extiende el brazo y pone una mano amistosa en el hombro de Mani, pero su sonrisa tiene ese dejo de picardía."
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 return
