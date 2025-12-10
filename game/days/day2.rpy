@@ -1432,7 +1432,7 @@ label reunionconsejo_day2:
     show blaze 2desinteresada2
     show jeremy 1seriot
     $ enfocar("jeremy")
-    je "Dark, por una vez en tu vida, callate."
+    je "Dark, por una vez. Silencio."
     show jeremy 1serio
     $ normal("jeremy")
     show blaze 2desinteresadat
@@ -1470,24 +1470,37 @@ label reunionconsejo_day2:
 
     l_thought "Pensé que sentiría alivio al no salir... Y hablar sobre cosas que no quiero. Pero no, me siento extraña."
     l "No viene."
-    "Mi voz sale densa. Casi cortante. No era mi intención"
-    l_thought "¿Y qué más da? Al final, todos se cansan de cargar conmigo."
-    if (rutaCanon-rutaSuicida)<=-1: 
+    l_thought "¿Y qué más da? Al final, todos se cansan de mí."
+
+    if (rutaCanon-rutaSuicida)>=0:
+        "Mi voz sale densa. casi afilada. No buscaba sonar así."
+        show dark 2distraidot
+        $ enfocar("dark")
+        d "Vaya..."
+        show dark 1felit
+        d "Esperaba un “¡Bien!” o un “¡Mierda!”"
+        show dark 2desafiantet
+        extend " Pero supongo que “nada” también cuenta."
+        show dark 1distraido2
+        $ normal("dark")
+
+    else:
+        "Mi voz suena cortante, pero firme."
         show screen red_effect2
-        nobody "{sc=3}Exactamente.{/sc}"
+        nobody "{sc=3}Exacto.{/sc}"
         nobody "{sc=3}Hoy fue él, mañana será Blaze.{/sc}"
         nobody "{sc=3}Pasado mañana hasta ese idiota de Dark.{/sc}"
-        nobody "{sc=3}La pregunta no es si te abandonarán, sino cuándo.{/sc}"
+        nobody "{sc=3}Aquí No se trata de un “si”...{/sc}"
+        nobody "{sc=5}Sino de un “cuando”.{/sc}"
         hide screen red_effect2 with Dissolve(0.5)
         l_thought "Maldita sea, cállate por una puta buena vez."
+        l_thought "Sólo...{w} Cállate"
+        show dark 2distraidot
+        $ enfocar("dark")
+        d "Vaya. Esperaba algo más {i}dramático{/i} de parte tuya, pero el vacío también cuenta."
+        show dark 1distraido2
+        $ normal("dark")
 
-    show dark 2distraidot
-    $ enfocar("dark")
-    d "Vaya..."
-    show dark 1distraido2t
-    d "Esperaba un “¡Bien!” o un “¡Mierda!”, pero cualquier otra reacción sirve."
-    show dark 1distraido2
-    $ normal("dark")
     "Blaze se acerca y me pone la mano en el hombro."
     show blaze 2preocupadat
     $ enfocar("blaze")
@@ -1503,8 +1516,8 @@ label reunionconsejo_day2:
         nobody "{sc=3}Pero sigue mintiendo, es lo único que se te da bien.{/sc}"
         hide screen red_effect2 with Dissolve(0.5)
 
-    "Mi voz sale cortante, pero más firme."
-    l_thought "Mentira. ¿Por qué carajos me importa? ¿Acaso quería que viniera?"
+    "Mi voz sale cortante, pero firme."
+    l_thought "Mentira. ¿Por qué carajos me importa? ¿De verdad quería que viniera?"
 
     if (rutaCanon-rutaSuicida)<=-1: 
         show screen red_effect2
@@ -1514,17 +1527,28 @@ label reunionconsejo_day2:
         nobody "{sc=6}Despierta.{/sc}"
         hide screen red_effect2 with Dissolve(0.5)
 
+    show jeremy 1juzga
+    "Jeremy solo levantaba la ceja, como si hubiera estado esperando su turno para hablar"
     show jeremy 2juzgat
     $ enfocar("jeremy")
-    je "Que casualidad...{w} Ya que tienes extra tiempo..."
+    je "Vaya casualidad...{w} Ya que tienes extra tiempo..."
     show jeremy 1seriot
-    je "Tu reporte necesita la firma del consejo. Podrías acelerar ese último proceso si ayudas."
+    je "Tu reporte necesita firma del consejo. Podéis a...{nw=0.2}"
+    window show
+    show jeremy 2serio3 
+    $ renpy.pause(1.5, hard=True)
+    show jeremy 1seriot
+    extend " Avanzar si ponéis pilas."
     show jeremy 1serio
     $ normal("jeremy")
-    l_thought "Ah, perfecto. Intercambia una tortura por otra. Al menos esta viene con la ilusión de productividad."
+    l_thought "Fantástico. Cambiamos de una tortura por otra. Al menos esto finge ser productivo."
+    show dark 2juzga2 at shake
+    "Dark solo ladea la cabeza no muy convencido de las palabras de Jeremy."
     show dark 2desafiantet
     $ enfocar("dark")
-    d "Una clásica extorsión, Laila. Donde tus problemas se resuelven creándote más trabajo."
+    d "Es la clásica extorsión administrativa, Laila. Solucionas problemas... Creando mas problemas."
+    show dark 1felit
+    d "Hermoso, ¿no?"
     show dark 2desafiante
     $ normal("dark")
     l "¿A qué hora cierran esta prisión?"
@@ -1540,8 +1564,11 @@ label reunionconsejo_day2:
         nobody "{sc=3}Para caer. Para fracasar.{/sc}"
         nobody "{sc=3}Para recorrer este camino una y otra vez...{/sc}"
         nobody "{sc=5}Hasta que te rindas por completo.{/sc}"
+        "Intento ignorar por completo lo que sea que me acaba de decir y continuo hablando."
         hide screen red_effect2 with Dissolve(0.5)
 
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
     l "No me queda de otra...{w} ¿Verdad?"
     show jeremy 1serio2t
     $ enfocar("jeremy")
@@ -1551,9 +1578,25 @@ label reunionconsejo_day2:
     "Suspiro, derrotada."
     $ renpy.pause(2.5, hard=True)
     "Asiento. Tomamos nuestras mochilas y empezamos el camino."
+=======
+    l "No me queda de otra...{w} ¿O si?"
+>>>>>>> Stashed changes
+=======
+    l "No me queda de otra...{w} ¿O si?"
+>>>>>>> Stashed changes
 
     if (rutaCanon-rutaSuicida)>=0:
-        "Dark me ofrece su brazo exageradamente."
+        show jeremy 1serio2t
+        $ enfocar("jeremy")
+        je "Si deseáis y encantar retrasar ese reporte hasta que te boten, entonces sí, tienes otra salida."
+        show jeremy 1seriot
+        je "Pero si deseáis... Evitar problemas {i}—problemas reales—{/i}, mejor ven ahora y terminamos esto."
+        show jeremy 1serio
+        $ normal("jeremy")
+        "Suspiro, derrotada."
+        $ renpy.pause(2.5, hard=True)
+        "Asiento. Tomamos nuestras mochilas y empezamos a caminar."
+        "Dark se adelanta...{w} Y extiende su brazo como si fuera un mayordomo barato."
         show dark 2desafiantet
         $ enfocar("dark")
         d "¿Su carruaje, señorita Problemática? Acompañémonos al infierno de la burocracia escolar."
@@ -1585,24 +1628,37 @@ label reunionconsejo_day2:
         $ normal("dark")
         show jeremy 1serio2t
         $ enfocar("jeremy")
-        je "Dark, por el amor a Dios, basta. Ya vamos."
+        je "Dark, suficiente. No es momento para eso."
         show jeremy 1serio
         $ normal("jeremy")
-        "Jeremy lo corta con sequedad casi inconfundible, desviando la mirada."
-        show dark 1metiche
+        show dark 1metiche at shake
+        "Interrumpe la frase de Dark con enojo, dándole un golpe en la cabeza con el fin que se le acomoden las ideas."
+        "Lo corta con esa sequedad casi inconfundible, desviando la mirada."
         extend " Dark esboza una sonrisa de satisfacción, al parecer su pequeño plan funcionó."
         show dark 1sarcasmo
         "Guarda sus manos en su bolsillo y alza los hombros con indiferencia. Fingiendo un aire de derrota."
         show dark 1sarcasmot
         $ enfocar("dark")
-        d "Ella lo rechazó..."
+        d "Lo intenté."
         show dark 2desafiantet
-        extend "Luego no digan que la caballerosidad está muerta."
+        extend " Luego no digan que la caballerosidad está muerta."
         show dark 2desafiante
         $ normal("dark")
 
     else:
-        "Dark camina frente a mí, sin voltear."
+        show jeremy 1serio2t
+        $ enfocar("jeremy")
+        je "Si deseáis retrasar ese reporte hasta la graduación, entonces sí, tenéis otra fácil salida."
+        show jeremy 1seriot
+        show blaze 2preocupada
+        show dark 1distraido
+        je "Pero... Estar claro que vosotros no queremos hacer eso a último momento."
+        show jeremy 1serio
+        $ normal("jeremy")
+        "Suspiro, no tengo ni siquiera energía para pelearle."
+        $ renpy.pause(2.5, hard=True)
+        "Asiento. Tomamos nuestras mochilas y salimos."
+        "Dark toma la delantera pero no se molestó en mirarme."
         $ enfocar("dark")
         show dark 1distraido2t
         d "Vamos, Problemática."
@@ -1617,16 +1673,19 @@ label reunionconsejo_day2:
         nobody "{sc=5}Como todos.{/sc}"
         hide screen red_effect2 with Dissolve(0.5)
 
-    scene black with Dissolve(3.0)
+    scene black with Dissolve(4.0)
     $ renpy.pause(2.5, hard=True)
-    "Salimos del aula y empezamos nuestra caminata."
+
+    if (rutaCanon-rutaSuicida)>=0:
+        "Salimos del aula y empezamos nuestra caminata con ellos 2 peleando mientras intento seguir con mis pensamientos mientras los oigo reír."
+
     play sound closet_close
     $ renpy.pause(2.5, hard=True)
     "En los pasillos quedan algunos que otros estudiantes.{w} Yo solo me limito a caminar al lado de Blaze y desconectarme."
     $ renpy.pause(7.5, hard=True)
-    "Subimos al segundo piso y vamos al final del pasillo, donde se ve una puerta que arriba dice “Salón del Consejo”{w}, realmente no queda tan lejos de donde está el director."
+    "Subimos al segundo piso y caminamos hasta el final del pasillo, donde una puerta con el letrero “Salón del Consejo” nos espera.{w} Y curiosamente...{w} Está a ciertos pasos de la sala del director."
     play sound keylock
-    "Jeremy saca las famosas llaves y abre el aula. Y entramos."
+    "Jeremy saca sus llaves, esas que todo el mundo menciona. Abre la puerta y entramos."
     play sound closet_open
     $ renpy.pause(1.8, hard=True)
     scene consejo_afternoon at afternoon_filter
@@ -1640,24 +1699,29 @@ label reunionconsejo_day2:
         center2
         afternoon_character
     with fade
-    "Es como alguien se lo espera. La sala del consejo, mesas llenas de papeles, pizarrones con diagramas, y un aire de caos controlado."
-    l_thought "Vaya. Esto parece el cuarto de limpieza de una oficina de correos. ¿Y se supone que aquí toman decisiones importantes?"
+    "Y para sorpresa de nadie, la sala es algo genérica si me lo preguntan, mesas hundidas bajo pilas y pilas de papeles... pizarrones holográficos que parpadea de vez en cuando, carpetas apiladas como si fueran murallas improvisadas y bueno..."
+    "Es un caos que de algun modo, les parece funcionar..."
+    l_thought "Esto parece el cuarto de limpieza... Pero de una oficina de correos. ¿Es en serio que aquí toman las “decisiones” importantes?"
     show dark 1desafiante at sigh_animation
-    "Dark toma aire exageradamente."
+    "Dark llena sus pulmones como si se tratara de una obra de arte."
     show jeremy 1juzga
     show blaze 1neutral
     show dark 1desafiantet
     $ enfocar("dark")
-    d "Ahhh... El olor a papel y al abuso de poder. Dulce segundo hogar."
+    d "Ahhh... El olor a papel viejo y el abuso de poder. Dulce segundo hogar."
     show dark 1desafiante
     $ normal("dark")
     show jeremy 2seriot
     $ enfocar("jeremy")
-    je "Por Dios, Dark... No ser tan exagerado. Solo vinimos a firmar el reporte de Laila y ponerlo en su expediente"
+    je "Dios me ampare, Dark... No drama-{w}...{nw=0.2}"
+    show jeremy 2serio2
+    $ renpy.pause(1.8, hard=True)
+    show jeremy 1seriot
+    je "Hemos venido a estampar firma de Laila y archivar a su escrito."
     show jeremy 2serio
     $ normal("jeremy")
-    l_thought "Expediente... Eso ya debe parecer un caso para llevarme a algún juzgado."
-    "Blaze toca suavemente mi brazo."
+    l_thought "Expediente... Eso ya debe parecer un caso para llevarme juicio."
+    "Blaze me toca el brazo con suavidad y habla con una voz suave para relajar mis nervios que empezaban a sobresalir."
     show blaze 1compadecert
     $ enfocar("blaze")
     b "No te preocupes, es solo papeleo. Una firma y nos vamos."
@@ -1665,7 +1729,7 @@ label reunionconsejo_day2:
     $ normal("blaze")
     show jeremy 1juzgat
     $ enfocar("jeremy")
-    je "¿Y tienes el reporte, Dark?"
+    je "Y bueno... ¿Traer el escrito, Dark?{w} No pienso aguardar todo el día."
     show jeremy 1juzga
     $ normal("jeremy")
     show dark 1distraido2t
@@ -1673,8 +1737,14 @@ label reunionconsejo_day2:
     d "Sí, sí. Lo busqué cuando me escapé de clases de Matemáticas."
     show dark 1distraido2
     $ normal("dark")
+<<<<<<< HEAD
     "Rebusca en su bolsillo y saca mi reporte, un poco descuidado." 
     "Jeremy busca en un cajón donde al parecer tienen los expedientes de toda la escuela."
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+    "Rebusca en su bolsillo y saca mi reporte, un poco descuidado."
+>>>>>>> 51f5df4302ba19067c0957fef8d11f7c5ddf4763
     show jeremy 2serio2:
         left_littemoveon
     $ renpy.pause(2.8, hard=True)
@@ -1694,6 +1764,37 @@ label reunionconsejo_day2:
     $ normal("blaze")
     l "Ya estoy aquí. Que más da."
 
+<<<<<<< HEAD
+=======
+=======
+    "Rebusca en su bolsillo y saca mi reporte, arrugado como si hubiera sobrevivido a una guerra." 
+    show jeremy 2serio2:
+        left_littemoveon
+=======
+    "Rebusca en su bolsillo y saca mi reporte, arrugado como si hubiera sobrevivido a una guerra." 
+    show jeremy 2serio2:
+        left_littemoveon
+>>>>>>> Stashed changes
+    "Jeremy se acerca a un cajón metálico que parece contener los expedientes de toda la escuela."
+    $ renpy.pause(2.8, hard=True)
+    "Lo abre, revisa con velocidad sorprendente y murmura:"
+    show jeremy 1seriot
+    $ enfocar("jeremy")
+    je "El expediente de Jackson...{w} Laila Jackson."
+    show jeremy 1serio
+    $ normal("jeremy")
+    show blaze 1preocupada
+    "Saca una carpeta {b}GRUESA{/b}, mi nombre completo mira de frente como una acusación silenciosa pero mortal."
+    l_thought "Un álbum de todos mis desastres escolares en un solo año."
+    show blaze 1preocupadat
+    show dark 2juzga2
+    $ enfocar("blaze")
+    b "Oye... ¿En serio estás bien? No tienes que hacer esto si no quieres. Podemos decir que te sentías mal."
+    show blaze 1preocupada
+    $ normal("blaze")
+    l "Ya estoy aquí. Que más da."
+
+>>>>>>> 51f5df4302ba19067c0957fef8d11f7c5ddf4763
     if (rutaCanon-rutaSuicida)>=0:
         l_thought "Su preocupación debería sentirse bien. Debería ser un alivio..."
         l_thought "Entonces ¿Por qué se siente como otra cadena? ¿Otra persona a la que defraudar?"
@@ -1716,12 +1817,22 @@ label reunionconsejo_day2:
         left5
     $ normal("dark")
     show blaze 3desinteresada2
+<<<<<<< HEAD
     "Jeremy gira lentamente la cabeza hacia Dark, sus ojos reducidos a finas líneas de desaprobación."
     show jeremy 2seriot
     $ enfocar("jeremy")
     je "Tu cinismo es tan constante como innecesario."
     show jeremy 1juzgat
     extend " ¿O acaso crees que alguien aquí encuentra gracia en tus comentarios?"
+=======
+    "Jeremy gira lentamente la cabeza hacia Dark, sus ojos reducidos a finas líneas de desaprobación..."
+    "Parecía un búho volteando a su presa...{w} Pero con la diferencia que este búho casi ahorca a su amigo."
+    show jeremy 2seriot
+    $ enfocar("jeremy")
+    je "Tu cinismo...{w} Seguido e inutil, que de verdad me... Preguntar:"
+    show jeremy 1juzgat
+    extend " ¿Cómo una persona... Encontrad gracia a tus chistes...?{w} Ya te pareceis a cierta persona que conozco."
+>>>>>>> 51f5df4302ba19067c0957fef8d11f7c5ddf4763
     show jeremy 1juzga
     $ normal("jeremy")
     "Dark se inclina hacia Jeremy con una sonrisa que no llega a sus ojos."
@@ -1731,7 +1842,11 @@ label reunionconsejo_day2:
     show dark 1felit
     extend " Alguien tiene que contrarrestar tanta..."
     show dark 1distraidot
+<<<<<<< HEAD
     extend " Dulzura empalagosa."
+=======
+    extend " Dulzura que da diabetes."
+>>>>>>> 51f5df4302ba19067c0957fef8d11f7c5ddf4763
     show dark 2desafiante
     $ normal("dark")
     show blaze 3desinteresada2 at sigh_animation
@@ -1743,12 +1858,20 @@ label reunionconsejo_day2:
     $ normal("blaze")
     show jeremy 1juzga2
     show dark 1distraido2
+<<<<<<< HEAD
     l "Por favor, apoyo la moción."
+=======
+    l "Por favor, apoyo totalmente lo que dijo."
+>>>>>>> 51f5df4302ba19067c0957fef8d11f7c5ddf4763
     show dark 1distraidot
     $ enfocar("dark")
     d "Ok, ok..."
     show dark 1distraido2t
+<<<<<<< HEAD
     extend " Le quitan la chispa a lo mejor de este grupo."
+=======
+    extend " Le quitan la chispa a lo mejor del grupo."
+>>>>>>> 51f5df4302ba19067c0957fef8d11f7c5ddf4763
     show dark 1distraido
     $ normal("dark")
     "Se acerca a Jeremy para entregarle el reporte."
@@ -2018,6 +2141,110 @@ label reunionconsejo_day2:
     st "Parece que llegamos justo para la parte aburrida. Papeles y más papeles."
     show strike 1distraido
     $ normal("strike")
+<<<<<<< HEAD
     
+=======
+    "Mani, ignorando por completo la tensión"
+    show mani 2feliz:
+        boo
+        pause 0.2
+        slide_of_left_to_center_fast
+    pause 0.25
+    show jeremy 1serio2
+    show dark 1neutral:
+        boo2
+        flip
+        slide_left_move
+    show blaze 1neutral:
+        boo2
+        flip_off
+        slide_left_move2
+    show steve 1juzga
+    show strike 1juzga
+    extend ", se acerca saltando a Jeremy."
+    show mani 2felizt
+    $ enfocar("mani")
+    ma "¡Pero Jeremy, escucha!{w} Podríamos tener una batalla de baile entre equipos de superhéroes!"
+    show mani 2felizt:
+        boo2
+    show jeremy 1incomodo2
+    extend " ¡Y el premio podría ser... Una pizza gratis!"
+    show mani 2feliz
+    $ normal("mani")
+    show dark 1distraido
+    show blaze 3sonriente
+    "Blaze parece dividida entre la exasperación y la risa"
+    show jeremy 2estres
+    extend ", mientras Jeremy cierra los ojos como si rezara por paciencia."
+    show jeremy 1estres2t
+    $ enfocar("jeremy")
+    je "Manuel."
+    show jeremy 1estrest
+    extend " Por última vez."
+    show jeremy 1seriot
+    extend " No."
+    show jeremy 1serio
+    $ normal("jeremy")
+    show mani 1triste
+    show steve 2remedar
+    show blaze 1juzga2
+    show strike 1distraido
+
+    if (rutaCanon-rutaSuicida)>=0:
+
+        l_thought "Esto es como un circo de tres pistas.{w} Dark disfrutando del caos, Jeremy al borde de un colapso nervioso, Blaze tratando de mantener la cordura..."
+        l_thought "Y yo en medio, firmando mi vida mientras un terremoto humano llamado Mani lo saca todo de proporción. Es casi...{w} Divertido."
+
+    else:
+        l_thought "Más ruido. Más caos.{w} Más personas fingiendo normalidad."
+        show screen red_effect2
+        nobody "{sc=3}Cuantos más testigos...{/sc}"
+        nobody "{sc=3}Más grande será el alivio cuando finalmente desaparezcas.{/sc}"
+        nobody "{sc=3}Todos estos rostros...{w} Todos estos ojos que algún día recordarán:{/sc}"
+        nobody "{sc=5}“Ah, sí, esa chica. Qué bueno que ya no está”.{/sc}"
+        hide screen red_effect2 with Dissolve(0.5)
+        l_thought "¿Por qué todo tiene que ser tan...{w} abrumador?"
+    
+    show mani 1tristet
+    $ enfocar("mani")
+    ma "Vamoooossss JeEeEeEeERrRreEeEmMmMmMYyYyY..."
+    show mani 1desanimadot
+    extend " Aceptaste la solicitud de los clubes."
+    show mani 1tristepinguin
+    $ normal("mani")
+    "Pone ojos de cachorro."
+    show dark 2desafiante
+    "Dark se recuesta contra la mesa, cruzando los brazos."
+    show mani 3juzgapinguin:
+        boo2
+        pause 0.2
+        flip_off
+    show dark 2juzgat
+    $ enfocar("dark")
+    d "Tengo una idea mucho mejor..."
+    show steve 1juzga
+    show strike 1juzga
+    show blaze 1preocupada
+    show jeremy 1juzga
+    show dark 2felit
+    extend " Ayúdanos a escribir ese informe para el director.{w} Ya que tú fuiste el que sugirió la idea de integrar los clubes."
+    show dark 2desafiante
+    $ normal("dark")
+    show dark 2feli
+    "Pone una gran sonrisa y se acerca a Mani."
+    show dark 1felit
+    $ enfocar("dark")
+    d "Y así nos ahorras el trabajo a nosotros."
+    show mani 2feliz
+    show dark 1feli
+    $ normal("dark")
+    show dark 2desafiante
+    "Extiende el brazo y pone una mano amistosa en el hombro de Mani, pero su sonrisa tiene ese dejo de picardía."
+
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+>>>>>>> 51f5df4302ba19067c0957fef8d11f7c5ddf4763
 
 return

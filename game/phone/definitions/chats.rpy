@@ -38,11 +38,7 @@ label chat_dad_day2:
     d "Apuesto a que se olvidó. Diez a uno."
     show dark 2desafiante
     $ normal("dark")
-    show jeremy 2seriot
-    $ enfocar("jeremy")
-    je "Callate."
-    show jeremy 2serio
-    $ normal("jeremy")
+    "Jeremy solo se queda callado mirándole con el fin de que dejara sus comentarios fuera de lugar.{w} Pero no tuvo tanto éxito."
     "Hablan en voz baja, aun así los escucho."
     l_thought "Jajajaja. Mejor así, no seré una carga para él por hoy."
     show blaze 2compadecert
@@ -54,9 +50,11 @@ label chat_dad_day2:
     $ renpy.pause(2.5, hard=True)
 
     phone discussion "dad_chat":
-        "dad" "Emergencia en el trabajo. No podremos ir hoy. Hablamos de eso en casa. Quédate con Blaze."
-        "dad" "Las paso recogiendo más tarde. En tal caso que no pueda, váyanse a casa ustedes solas."
-   
+        "dad" "Cambio de planes, me llamaron de una emergencia de trabajo, no podremos ir hoy. Lo hablaremos en casa. Quédate con Blaze."
+        "dad" "Si se complica y no puedo pasar por ustedes, vayanse caminando a casa. No esperen."
+    
+    "Mis dedos se detienen, dejan de temblar y solo me quedo mirando fijamente a la pantalla vacía... Realmente no siento nada."
+
     if (rutaCanon-rutaSuicida)>=0:
         l_thought "¿Emergencia? ¿O es solo otra excusa? ¿O... quizás un alivio?"
 

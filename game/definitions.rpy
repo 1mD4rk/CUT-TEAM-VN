@@ -123,6 +123,8 @@ transform mani_left:
     pause 0.2
     slide_out_right_fast
 
+<<<<<<< Updated upstream
+=======
 transform pos_left_slight2:
     xanchor 0.5 yanchor 1.0
     xpos 190 ypos 1080
@@ -171,13 +173,76 @@ transform slide_in_left_fast2:
 transform slide_in_left_slight:
     xanchor 0.5 yanchor 1.0
     xpos 2500 ypos 1080
-    easein 0.4 xpos 1420
+    easein 0.4 xpos 500
     pos_in_left_slight
 
 transform slide_in_left_slight2:
     xanchor 0.5 yanchor 1.0
     xpos 2500 ypos 1080
     easein 0.4 xpos 1680
+>>>>>>> Stashed changes
+
+transform pos_of_left_to_center_fast:
+    xanchor 0.5 yanchor 1.0
+    xpos 500 ypos 1080
+
+transform slide_of_left_to_center_fast:
+    xanchor 0.5 yanchor 1.0
+    xpos 1150 ypos 1080
+    easein 0.2 xpos 500
+    pos_of_left_to_center_fast
+
+transform pos_left_move:
+    xanchor 0.5 yanchor 1.0
+    xpos 820 ypos 1080
+
+transform slide_left_move:
+    xanchor 0.5 yanchor 1.0
+    xpos 500 ypos 1080
+    easein 0.2 xpos 820
+    pos_left_move
+
+transform pos_left_move2:
+    xanchor 0.5 yanchor 1.0
+    xpos 1150 ypos 1080
+
+transform slide_left_move2:
+    xanchor 0.5 yanchor 1.0
+    xpos 780 ypos 1080
+    easein 0.2 xpos 1150
+    pos_left_move2 
+
+
+transform pos_of_left_to_center_fast:
+    xanchor 0.5 yanchor 1.0
+    xpos 500 ypos 1080
+
+transform slide_of_left_to_center_fast:
+    xanchor 0.5 yanchor 1.0
+    xpos 1150 ypos 1080
+    easein 0.2 xpos 500
+    pos_of_left_to_center_fast
+
+transform pos_left_move:
+    xanchor 0.5 yanchor 1.0
+    xpos 820 ypos 1080
+
+transform slide_left_move:
+    xanchor 0.5 yanchor 1.0
+    xpos 500 ypos 1080
+    easein 0.2 xpos 820
+    pos_left_move
+
+transform pos_left_move2:
+    xanchor 0.5 yanchor 1.0
+    xpos 1150 ypos 1080
+
+transform slide_left_move2:
+    xanchor 0.5 yanchor 1.0
+    xpos 780 ypos 1080
+    easein 0.2 xpos 1150
+    pos_left_move2 
+
 
 ##### PARPADEO
 
