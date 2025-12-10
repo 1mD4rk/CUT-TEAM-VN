@@ -719,9 +719,9 @@ label receso_day2:
             l_thought "Ella no lo entiende. No es hambre lo que me falta, es la capacidad de tragar algo que no sea una amargura constante."
 
     if (rutaCanon-rutaSuicida)>=0:
-        call rutacanon_choice2 from _call_rutacanon_choice2
+        call rutacanon_choice2
     else:
-        call rutasuicida_choice2 from _call_rutasuicida_choice2
+        call rutasuicida_choice2
 
     jump receso_day2_afterchoice
     return
@@ -1466,7 +1466,7 @@ label reunionconsejo_day2:
     "Saco mi celular y abro la app de mensajes, mis dedos tiemblan, trago saliva, pero es necesario."
     $ renpy.pause(1.5, hard=True)
 
-    call chat_dad_day2 from _call_chat_dad_day2
+    call chat_dad_day2
 
     l_thought "Pensé que sentiría alivio al no salir... Y hablar sobre cosas que no quiero. Pero no, me siento extraña."
     l "No viene."
@@ -1567,23 +1567,7 @@ label reunionconsejo_day2:
         "Intento ignorar por completo lo que sea que me acaba de decir y continuo hablando."
         hide screen red_effect2 with Dissolve(0.5)
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-    l "No me queda de otra...{w} ¿Verdad?"
-    show jeremy 1serio2t
-    $ enfocar("jeremy")
-    je "Si deseas seguir estirando ese reporte hasta la graduación, sí te queda de otra. Pero si quieres evitar una suspensión..."
-    show jeremy 1serio
-    $ normal("jeremy")
-    "Suspiro, derrotada."
-    $ renpy.pause(2.5, hard=True)
-    "Asiento. Tomamos nuestras mochilas y empezamos el camino."
-=======
     l "No me queda de otra...{w} ¿O si?"
->>>>>>> Stashed changes
-=======
-    l "No me queda de otra...{w} ¿O si?"
->>>>>>> Stashed changes
 
     if (rutaCanon-rutaSuicida)>=0:
         show jeremy 1serio2t
@@ -1737,44 +1721,15 @@ label reunionconsejo_day2:
     d "Sí, sí. Lo busqué cuando me escapé de clases de Matemáticas."
     show dark 1distraido2
     $ normal("dark")
-<<<<<<< HEAD
-    "Rebusca en su bolsillo y saca mi reporte, un poco descuidado." 
-    "Jeremy busca en un cajón donde al parecer tienen los expedientes de toda la escuela."
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
     "Rebusca en su bolsillo y saca mi reporte, un poco descuidado."
->>>>>>> 51f5df4302ba19067c0957fef8d11f7c5ddf4763
     show jeremy 2serio2:
         left_littemoveon
-    $ renpy.pause(2.8, hard=True)
-    show jeremy 1seriot
-    $ enfocar("jeremy")
-    je "El expediente de Jackson...{w} Laila Jackson."
-    show jeremy 1serio
-    $ normal("jeremy")
-    show blaze 1preocupada
-    "Saca una carpeta algo gruesa, que al frente dice mi nombres y apellidos completos."
-    l_thought "Un pequeño recuerdo de toda la mierda que cause en un año..."
-    show blaze 1preocupadat
-    show dark 2juzga2
-    $ enfocar("blaze")
-    b "Oye... ¿En serio estás bien? No tienes que hacer esto si no quieres. Podemos decir que te sentías mal."
-    show blaze 1preocupada
-    $ normal("blaze")
-    l "Ya estoy aquí. Que más da."
+        
+    "Jeremy busca en un cajón donde al parecer tienen los expedientes de toda la escuela."
 
-<<<<<<< HEAD
-=======
-=======
     "Rebusca en su bolsillo y saca mi reporte, arrugado como si hubiera sobrevivido a una guerra." 
     show jeremy 2serio2:
         left_littemoveon
-=======
-    "Rebusca en su bolsillo y saca mi reporte, arrugado como si hubiera sobrevivido a una guerra." 
-    show jeremy 2serio2:
-        left_littemoveon
->>>>>>> Stashed changes
     "Jeremy se acerca a un cajón metálico que parece contener los expedientes de toda la escuela."
     $ renpy.pause(2.8, hard=True)
     "Lo abre, revisa con velocidad sorprendente y murmura:"
@@ -1794,7 +1749,6 @@ label reunionconsejo_day2:
     $ normal("blaze")
     l "Ya estoy aquí. Que más da."
 
->>>>>>> 51f5df4302ba19067c0957fef8d11f7c5ddf4763
     if (rutaCanon-rutaSuicida)>=0:
         l_thought "Su preocupación debería sentirse bien. Debería ser un alivio..."
         l_thought "Entonces ¿Por qué se siente como otra cadena? ¿Otra persona a la que defraudar?"
@@ -1817,14 +1771,6 @@ label reunionconsejo_day2:
         left5
     $ normal("dark")
     show blaze 3desinteresada2
-<<<<<<< HEAD
-    "Jeremy gira lentamente la cabeza hacia Dark, sus ojos reducidos a finas líneas de desaprobación."
-    show jeremy 2seriot
-    $ enfocar("jeremy")
-    je "Tu cinismo es tan constante como innecesario."
-    show jeremy 1juzgat
-    extend " ¿O acaso crees que alguien aquí encuentra gracia en tus comentarios?"
-=======
     "Jeremy gira lentamente la cabeza hacia Dark, sus ojos reducidos a finas líneas de desaprobación..."
     "Parecía un búho volteando a su presa...{w} Pero con la diferencia que este búho casi ahorca a su amigo."
     show jeremy 2seriot
@@ -1832,7 +1778,6 @@ label reunionconsejo_day2:
     je "Tu cinismo...{w} Seguido e inutil, que de verdad me... Preguntar:"
     show jeremy 1juzgat
     extend " ¿Cómo una persona... Encontrad gracia a tus chistes...?{w} Ya te pareceis a cierta persona que conozco."
->>>>>>> 51f5df4302ba19067c0957fef8d11f7c5ddf4763
     show jeremy 1juzga
     $ normal("jeremy")
     "Dark se inclina hacia Jeremy con una sonrisa que no llega a sus ojos."
@@ -1842,11 +1787,7 @@ label reunionconsejo_day2:
     show dark 1felit
     extend " Alguien tiene que contrarrestar tanta..."
     show dark 1distraidot
-<<<<<<< HEAD
-    extend " Dulzura empalagosa."
-=======
     extend " Dulzura que da diabetes."
->>>>>>> 51f5df4302ba19067c0957fef8d11f7c5ddf4763
     show dark 2desafiante
     $ normal("dark")
     show blaze 3desinteresada2 at sigh_animation
@@ -1858,20 +1799,12 @@ label reunionconsejo_day2:
     $ normal("blaze")
     show jeremy 1juzga2
     show dark 1distraido2
-<<<<<<< HEAD
-    l "Por favor, apoyo la moción."
-=======
     l "Por favor, apoyo totalmente lo que dijo."
->>>>>>> 51f5df4302ba19067c0957fef8d11f7c5ddf4763
     show dark 1distraidot
     $ enfocar("dark")
     d "Ok, ok..."
     show dark 1distraido2t
-<<<<<<< HEAD
-    extend " Le quitan la chispa a lo mejor de este grupo."
-=======
     extend " Le quitan la chispa a lo mejor del grupo."
->>>>>>> 51f5df4302ba19067c0957fef8d11f7c5ddf4763
     show dark 1distraido
     $ normal("dark")
     "Se acerca a Jeremy para entregarle el reporte."
@@ -2141,9 +2074,6 @@ label reunionconsejo_day2:
     st "Parece que llegamos justo para la parte aburrida. Papeles y más papeles."
     show strike 1distraido
     $ normal("strike")
-<<<<<<< HEAD
-    
-=======
     "Mani, ignorando por completo la tensión"
     show mani 2feliz:
         boo
@@ -2241,10 +2171,5 @@ label reunionconsejo_day2:
     show dark 2desafiante
     "Extiende el brazo y pone una mano amistosa en el hombro de Mani, pero su sonrisa tiene ese dejo de picardía."
 
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
->>>>>>> 51f5df4302ba19067c0957fef8d11f7c5ddf4763
 
 return
