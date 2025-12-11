@@ -1810,7 +1810,7 @@ label reunionconsejo_day2:
     "Se acerca a Jeremy para entregarle el reporte."
     show jeremy 1juzga2t
     $ enfocar("jeremy")
-    je "¿Y ahora pretendes... bufon?"
+    je "¿Y ahora pretendes... bufón?"
     show dark 1juzga2
     show jeremy 1felizt
     je "¿Hoy si despertar con ansias de ser?{w} Felicidades, por fin dijiste un chiste con gracia."
@@ -2092,7 +2092,8 @@ label reunionconsejo_day2:
     show steve 1juzga
     show strike 1juzga
     extend ", se acerca saltando a Jeremy."
-    show mani 2felizt
+    show mani 2felizt:
+        pos_of_left_to_center_fast
     $ enfocar("mani")
     ma "¡Pero Jeremy, escucha!{w} Podríamos tener una batalla de baile entre equipos de superhéroes!"
     show mani 2felizt:
@@ -2101,8 +2102,10 @@ label reunionconsejo_day2:
     extend " ¡Y el premio podría ser... Una pizza gratis!"
     show mani 2feliz
     $ normal("mani")
-    show dark 1distraido
-    show blaze 3sonriente
+    show dark 1distraido:
+        pos_left_move
+    show blaze 3sonriente:
+        pos_left_move2
     "Blaze parece dividida entre la exasperación y la risa"
     show jeremy 2estres
     extend ", mientras Jeremy cierra los ojos como si rezara por paciencia."
@@ -2165,11 +2168,163 @@ label reunionconsejo_day2:
     show dark 1felit
     $ enfocar("dark")
     d "Y así nos ahorras el trabajo a nosotros."
-    show mani 2feliz
+    show mani 2expectante
     show dark 1feli
     $ normal("dark")
     show dark 2desafiante
+    show steve 1neutral
     "Extiende el brazo y pone una mano amistosa en el hombro de Mani, pero su sonrisa tiene ese dejo de picardía."
+    show mani 2expectantet
+    $ enfocar("mani")
+    ma "¿En serio?"
+    show mani 2felizt:
+        boo2
+    ma "¡Sí! ¡Puedo hacerlo! ¡Será el mejor informe de la historia!"
+    show mani 2feliz
+    $ normal("mani")
+    show jeremy 2surprise
+    "Jeremy abre los ojos de par en par, claramente horrorizado ante la perspectiva."
+    show jeremy 2surpriset
+    $ enfocar("jeremy")
+    je "Dark, no."
+    show jeremy 1seriot
+    extend " Absolutamente no."
+    show jeremy 1serio
+    $ normal("jeremy")
+    show blaze 1juzga
+    show strike 1seriot
+    $ enfocar("strike")
+    st "No. Es la peor idea que has tenido."
+    show strike 1serio
+    $ normal("strike")
+    show steve 1triste2t
+    $ enfocar("steve")
+    tv "Eh..."
+    show steve 2neutralt
+    extend " Tal vez no sea mala idea."
+    show steve 2remedar2t
+    extend " Al menos lo mantendrá ocupado."
+    show steve 2rizz
+    $ normal("steve")
+    show strike 1juzgat
+    $ enfocar("strike")
+    st "Que quieras mantener a Mani ocupado no hará que vayas a hablar con Laila, Junior."
+    show strike 1juzga
+    $ normal("strike")
+    show steve 1amargadot
+    $ enfocar("steve")
+    tv "No todo se trata sobre eso, Struke." 
+    show steve 2remedart
+    extend " Ya pareces mi vieja."
+    show steve 1amargado
+    $ normal("steve")
+    l_thought ".{w} .{w} .{w}"
+    l_thought "Mejor no diré nada al respecto.{w} Creo que solo me queda ignorarlo."
+    show jeremy 1serio3
+    "Jeremy mira a Dark con algo de desconfianza{nw}"
+    show jeremy 1estres at sigh_animation
+    extend " y suspira."
+    show jeremy 1seriot
+    $ enfocar("jeremy")
+    je "¿Qué estás tramando, Dark?"
+    show jeremy 1serio
+    $ normal("jeremy")
+    show dark 1felit
+    $ enfocar("dark")
+    d "¿Yo? Nada."
+    show dark 2desafiantet
+    extend " Solo...{w} Delegando responsabilidades. Es lo que hacen los buenos líderes, ¿no?"
+    show dark 2desafiante
+    $ normal("dark")
+    show blaze 1desinteresadat
+    $ enfocar("blaze")
+    b "Dark, no uses a Mani como distracción."
+    show blaze 2desinteresada3t
+    extend " Aunque..."
+    show blaze 1juzgat
+    extend " No sé si es brillante{nw=0.1}"
+    show blaze 2desinteresadat
+    extend " o aterrador."
+    show blaze 1juzga
+    $ normal("blaze")
+    show strike 1enojado:
+        xzoom -1.0
+        parallel:
+            linear 0.3 yzoom 1.03 xzoom -0.99
+            pause 0.2
+            linear 0.5 yzoom 1.0 xzoom -1.0 yoffset 0
+    "Strike resopla. Harto."
+    show dark 2juzga2:
+        flip_off
+    show blaze 2desinteresada3
+    show steve 2remedar2
+    show strike 1enojadot
+    $ enfocar("strike")
+    st "Eso es pasarle la bomba a alguien que ni siquiera sabe que está encendida."
+    show strike 1enojado
+    $ normal("strike")
+    show jeremy 2serio2
+    show mani 1tristepinguin
+    $ renpy.pause(2.5, hard=True)
+    show dark 1felit
+    $ enfocar("dark")
+    d "¡Y eso es lo divertido, Strike!"
+    show dark 2juzgat
+    extend " ¿Hablas por experiencia?"
+    show dark 2desafiantet
+    d "¿O Acaso todavía duele que el consejo rechazara tu “rebelión” para expulsar gente?"
+    show dark 2desafiante
+    $ normal("dark")
+    "Dark lo dice sarcástico, pero hay veneno en su voz."
+    show strike 1serio at shake
+    "Strike ni se inmuta, pero sus dedos se tensan levemente."
+    l_thought "¿”Rebelión”?{w} ¿Strike intentó expulsar gente antes?"
+    l_thought "..."
+    l_thought "Creo escuchar un caso de algún alumno abusando de poder o algo así..."
+    extend " No recuerdo y realmente no me importa."
+    $ renpy.pause(2.5, hard=True)
+    show strike 1sarcasmot
+    $ enfocar("strike")
+    st "Cuidado con lo que insinuas, Dark... Algunos aprendemos de nuestros errores."
+
+    if (rutaCanon-rutaSuicida)>=0:
+        show dark 2serio2
+        show strike 1curiosot
+        st "Aunque no es bueno guardarse los rencores, ¿sabías?"
+        show strike 1serio
+        $ normal("strike")
+        show dark 1distraido
+        $ enfocar("dark")
+        d "Mhpm."
+        $ normal("dark")
+
+    else:
+        "Sus ojos se deslizan hacia mi por un instante."
+        show strike 1seriot
+        st "Otros... siguen tropezando con la misma piedra."
+        show strike 1serio
+        $ normal("strike")
+        l_thought "..."
+        extend " Supongo que se refiere a mi..."
+        extend " Auch."
+
+    l_thought "E-Eso es extraño..."
+    extend " Pensé que se llevarian bien. Al parecer tienen historia."
+    $ renpy.pause(2.5, hard=True)
+    show jeremy 1incomodo2t
+    $ enfocar("jeremy")
+    je "De todas formas..."
+    show jeremy 1incomodo2
+    $ normal("jeremy")
+    "Jeremy intenta decir algo para quitar la tensión que se formó entre los dos."
+    show mani 3pinguino at shake
+    "Pero Mani ya está rebuscando en sus bolsillos.{nw=0.9}"
+    show mani 2feliz at boo2
+    extend " Sacando pedazos de papel arrugado y un lápiz mordisqueado."
+
+
+
+
 
 
 return

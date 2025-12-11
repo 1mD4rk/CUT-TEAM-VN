@@ -327,7 +327,8 @@ init python:
                         "enojado", "enojado2", "enojadot", "enojado2t",
                         "juzga", "juzgat", 
                         "serio", "seriot",
-                        "sarcasmo", "sarcasmot"]
+                        "sarcasmo", "sarcasmot",
+                        "curiosot"]
     for base in strike_bases:
         for expr in strike_expressions:
             renpy.image(
@@ -349,7 +350,8 @@ init python:
                         "nervioso", "nervioso2", "nervioso3", "nerviosot", "nervioso3t",
                         "desanimado", "desanimadot",
                         "triste", "tristepinguin", "tristet",
-                        "cansado"]
+                        "cansado",
+                        "expectante", "expectantet"]
     for base in mani_bases:
         for expr in mani_expressions:
             renpy.image(
