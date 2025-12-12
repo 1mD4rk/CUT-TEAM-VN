@@ -95,6 +95,32 @@ init python:
                 renpy.sound.queue(f"audio/sounds/strike_sounds/strike{randosound}.wav", channel="sound", loop=True, relative_volume=preferences.text_sound_volume)
         elif event == "end" or event == "slow_done":
             renpy.sound.stop(channel="sound")
+
+    def jeremy_sound(event, interact=False, **kwargs):
+        if event == "show": # 
+            what = renpy.store._last_say_what 
+            if what:
+                sound_count = len(what)
+            else:
+                sound_count = 5
+            for _ in range(sound_count):
+                randosound = renpy.random.randint(1, 11)
+                renpy.sound.queue(f"audio/sounds/jeremy_sounds/jas{randosound}.wav", channel="sound", loop=True, relative_volume=preferences.text_sound_volume)
+        elif event == "end" or event == "slow_done":
+            renpy.sound.stop(channel="sound")
+    
+    def mani_sound(event, interact=False, **kwargs):
+        if event == "show": # 
+            what = renpy.store._last_say_what 
+            if what:
+                sound_count = len(what)
+            else:
+                sound_count = 5
+            for _ in range(sound_count):
+                randosound = renpy.random.randint(1, 11)
+                renpy.sound.queue(f"audio/sounds/mani_sounds/mani{randosound}.wav", channel="sound", loop=True, relative_volume=preferences.text_sound_volume)
+        elif event == "end" or event == "slow_done":
+            renpy.sound.stop(channel="sound")
 ##############################################################################
 
 
@@ -134,7 +160,8 @@ define je = Character("Jeremy",
     who_bold=True,
     who_outlines=[(4, "#2A70A4", 0, 0)],  
     what_outlines = [(2, "#2A70A4", 3, 3)],
-    color="#ffffff")
+    color="#ffffff",
+    callback=jeremy_sound)
 
 define b = Character("Blaze", 
     who_bold=True,
@@ -169,19 +196,22 @@ define ma = Character("Mani",
     who_bold=True,  
     who_outlines = [(4, "#414249", 0, 0)],
     what_outlines = [(2, "#414249", 3, 3)],
-    color="#ffffff")
+    color="#ffffff",
+    callback=mani_sound)
 
 define ma1 = Character("Manuel", 
     who_bold=True,  
     who_outlines = [(4, "#414249", 0, 0)],
     what_outlines = [(2, "#414249", 3, 3)],
-    color="#ffffff")
+    color="#ffffff",
+    callback=mani_sound)
 
 define ma2 = Character("Manu", 
     who_bold=True,  
     who_outlines = [(4, "#414249", 0, 0)],
     what_outlines = [(2, "#414249", 3, 3)],
-    color="#ffffff")
+    color="#ffffff",
+    callback=mani_sound)
 
 define ptod = Character("Prof. Todd", 
     who_bold=True,  

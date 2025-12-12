@@ -171,7 +171,7 @@ transform slide_in_left_fast2:
 transform slide_in_left_slight:
     xanchor 0.5 yanchor 1.0
     xpos 2500 ypos 1080
-    easein 0.4 xpos 500
+    easein 0.4 xpos 1420
     pos_in_left_slight
 
 transform slide_in_left_slight2:

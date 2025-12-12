@@ -1342,7 +1342,7 @@ label reunionconsejo_day2:
     "Cada uno guarda sus cosas lentamente, dejando que hasta la última alma de aquí se vaya."
     $ renpy.pause(4.0, hard=True)
     "Dark es el primero en levantarse y estirarse."
-    play music bgm1
+    play music bgm1 volume 0.75
     show jeremy 2juzga
     show blaze 3neutral
     show dark 1desafiantet
@@ -1721,16 +1721,10 @@ label reunionconsejo_day2:
     d "Sí, sí. Lo busqué cuando me escapé de clases de Matemáticas."
     show dark 1distraido2
     $ normal("dark")
-    "Rebusca en su bolsillo y saca mi reporte, un poco descuidado."
     show jeremy 2serio2:
         left_littemoveon
-        
-    "Jeremy busca en un cajón donde al parecer tienen los expedientes de toda la escuela."
-
     "Rebusca en su bolsillo y saca mi reporte, arrugado como si hubiera sobrevivido a una guerra." 
-    show jeremy 2serio2:
-        left_littemoveon
-    "Jeremy se acerca a un cajón metálico que parece contener los expedientes de toda la escuela."
+    "Jeremy busca en un cajón donde al parecer tienen los expedientes de toda la escuela."
     $ renpy.pause(2.8, hard=True)
     "Lo abre, revisa con velocidad sorprendente y murmura:"
     show jeremy 1seriot
@@ -1852,7 +1846,7 @@ label reunionconsejo_day2:
     $ normal("jeremy")
     show dark 2desafiantet
     $ enfocar("dark")
-    d "Dos reacciones idénticas. Casi como si estuvieran... coordinados. O algo más."
+    d "Dos reacciones idénticas. Casi como si estuvieran...{w} Coordinados.{w} O algo más."
     show dark 1felit
     d "Me deberían pagar por labores de cupido."
     show dark 2desafiante
@@ -2092,6 +2086,11 @@ label reunionconsejo_day2:
     show steve 1juzga
     show strike 1juzga
     extend ", se acerca saltando a Jeremy."
+    show dark 1neutral:
+        pos_left_move
+    show blaze 1neutral:
+        flip_off
+        pos_left_move2 
     show mani 2felizt:
         pos_of_left_to_center_fast
     $ enfocar("mani")
@@ -2321,7 +2320,22 @@ label reunionconsejo_day2:
     "Pero Mani ya está rebuscando en sus bolsillos.{nw=0.9}"
     show mani 2feliz at boo2
     extend " Sacando pedazos de papel arrugado y un lápiz mordisqueado."
-
+    show mani 2felizt
+    $ enfocar("mani")
+    ma "¡Tengo ideas anotadas aquí! ¡Y aquí!"
+    show mani 3nervioso3t
+    extend " Y... espera..."
+    show mani 3nerviosot
+    extend " Esto es un código que hacía..."
+    show mani 3nervioso
+    $ normal("mani")
+    show dark 1distraido
+    show blaze 1desinteresada2
+    show steve 2remedar
+    show strike 1juzga
+    show jeremy 1incomodo2
+    l_thought "Código..."
+    extend " ¿Él? ¿Haciendo un código? ¿Primero sobre qué?"
 
 
 

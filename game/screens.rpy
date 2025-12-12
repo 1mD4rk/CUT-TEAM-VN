@@ -526,13 +526,15 @@ screen changelog():
                         text "  • Día 2 Completo" style "changelog_item"
                         text "  • Diseño Padre de Laila (dejó de ser un placeholder)" style "changelog_item"
                         text "  • Diseño Strike (dejó de ser un placeholder)" style "changelog_item"
+                        text "  • Diseño Jeremy" style "changelog_item"
                         text "  • Diseño Mani" style "changelog_item"
-
+                        text "  • Voces para Jeremy y Mani" style "changelog_item"
+                        
 
                         null height 10
 
                         text "Mejoras:" style "changelog_category"
-                        text "  • Nuevo sistema de elección" style "changelog_item"
+                        text "  • Nuevo sistema de elección por tiempo" style "changelog_item"
                         text "  • Mejora de Rutas + Dialogo de c/u" style "changelog_item"
                         text "  • Nuevos Dialogos por ruta en Día 1" style "changelog_item"
 
