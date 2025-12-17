@@ -240,6 +240,45 @@ transform slide_left_move2:
     easein 0.2 xpos 1150
     pos_left_move2 
 
+transform pos_center_to_left_move3:
+    xanchor 0.5 yanchor 1.0
+    xpos 525 ypos 1080
+
+transform slide_center_to_left_move3:
+    xanchor 0.5 yanchor 1.0
+    xpos 820 ypos 1080
+    easein 0.2 xpos 525
+    pos_center_to_left_move3
+
+transform pos_of_left_to_center:
+    xanchor 0.5 yanchor 1.0
+    xpos 850 ypos 1080
+
+transform slide_of_left_to_center:
+    xanchor 0.5 yanchor 1.0
+    xpos 500 ypos 1080
+    easein 0.2 xpos 850
+    pos_of_left_to_center
+
+transform pos_of_left_to_center3:
+    xanchor 0.5 yanchor 1.0
+    xpos 1150 ypos 1080
+
+transform slide_of_left_to_center3:
+    xanchor 0.5 yanchor 1.0
+    xpos 835 ypos 1080
+    easein 0.2 xpos 1150
+    pos_of_left_to_center3
+
+transform pos_of_center_to_left2:
+    xanchor 0.5 yanchor 1.0
+    xpos 840 ypos 1080
+
+transform slide_of_center_to_left2:
+    xanchor 0.5 yanchor 1.0
+    xpos 1000 ypos 1080
+    easein 0.2 xpos 840
+    pos_of_center_to_left2
 
 ##### PARPADEO
 
@@ -708,6 +747,7 @@ define drop = "audio/drop.ogg"
 define keylock = "audio/key-lock-sound.wav"
 define phone_quiet = "audio/phone_quiet.ogg"
 define slam = "audio/slam.ogg"
+define bus_arrive = "audio/bus-arrival.ogg"
 
 ## Music
 define bgm1 = "<from 0 to 198.425 loop 11.339>bgm/nude.ogg"
@@ -722,6 +762,7 @@ define bgm72 = "<from 98.863 to 209.976 loop 98.863>bgm/illwind.ogg"
 define bgm8 = "<from 0 to 172.839 loop 130.263>bgm/presenttense.ogg"
 define bgm82 = "<from 172.839 to 260.818 loop 180.981>bgm/presenttense.ogg"
 define bgm9 = "<from 0 to 146.213 loop 12.346>bgm/setmyselfonfire.ogg"
+define bgm10 = "<from 0 to 231.849 loop 126.526>bgm/thenumbers.ogg"
 
 ## Ambient
 define ext_day = "<loop 3.090>ambient/ext_day.ogg"
