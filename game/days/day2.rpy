@@ -572,13 +572,13 @@ label aula_day2:
 
 #### RECESO MOMENT ####
 label receso_day2:
-    "Después de una agonizante hora de clase con la de Literatura..."
+    "Después de una interminable hora de Literatura —una disección lenta y cruel de textos que nadie pidió analizar—..."
     play audio bell
     $ renpy.pause(3.0, hard=True)
-    "Por fin sonó la campana del receso."
+    "La campana del receso sonó como un indulto."
     scene class3A with dissolve_scene_full2
     show screen pulse_black
-    "Todos mis “compañeros” salen apresurados por la puerta.{w} Dejándonos a nosotros 4 en el salón."
+    "Mis “compañeros” salieron disparados por la puerta, riendo, empujándose.{w} Mientras nosotros cuatro nos quedamos atrás, varados en el salón como restos olvidados."
 
     show blaze 1sonriente:
         center2 
@@ -590,7 +590,7 @@ label receso_day2:
     with Dissolve(0.5)
 
     $ renpy.pause(3.0, hard=True)
-    "Dark es el primero en levantarse."
+    "Dark es el primero en ponerse de pie, estirándose un poco y por fin habla."
     show dark 1desafiantet
     show blaze 1juzga
     show jeremy 1juzga
@@ -601,11 +601,11 @@ label receso_day2:
     show dark 1desafiante
     $ normal("dark")
     play music bgm2
-    show jeremy 2seriot
+    show jeremy 2serio2t
     $ enfocar("jeremy")
-    je "Tu drama es... cómo decir...{w} inútil, sí..."
+    je "Si que eres un dramático."
     show jeremy 1felizt
-    je "Pero bien, necesito combustible."
+    je "Pero si tengo hambre. Estar rodeado de idiotas si drena calorías"
     show jeremy 1incomodot
     extend " Mi cerebro se cansa con tanto... “cinismo constante”, como dicen ahora."
     show jeremy 1feliz
@@ -618,14 +618,14 @@ label receso_day2:
     b "Podemos sentarnos en la mesa de atrás del comedor, donde no hay tanta gente."
     show blaze 1compadecer
     $ normal("blaze")
-    l_thought "No, no tengo ganas de hacer nada en estos momentos.{w} Ya todo me está sobrellevando."
+    l_thought "No, no quiero moverme, no tengo ganas de hablar siquiera en estos momentos.{w} Ya todo me pesa."
     l "Vayan...{w} Yo...{w} Luego."
     show blaze 1preocupada
     show dark 2juzga2
     show jeremy 1juzga
-    "Logro sacar una voz ronca, apenas audible.{w} Siento cada músculo de mi cuerpo pesado, tanto que ni me puedo mover."
-    l_thought "Realmente esta clase me agotó, no tengo nada de energía."
-    extend " Realmente solo quiero pegarme aquí y nunca más moverme."
+    "Sale una voz rota, casi irreconocible, apenas con aire.{w} Siento cada músculo de mi cuerpo pesado, tanto que ni me puedo mover."
+    l_thought "Realmente esta clase me drenó por completo."
+    extend " Lo único que pido es quedarme aquí y desaparecer"
     "El dolor de cabeza empieza a llegar, siento como mareo.{w} Siento como tengo un vacío en el estómago por no haber comido durante días."
     show dark 2juzga2t
     $ enfocar("dark")
@@ -656,15 +656,23 @@ label receso_day2:
         show dark 1distraido2
         "Dark no dice nada. Simplemente me mira. Como si yo fuera insignificante.{w} {i}Nada.{/i}"
         "Su mirada no es de preocupación, es de desinterés.{w} Como si mi existencia en este estado fuera un inconveniente personal para él."
+        "Jeremy no desea decir aglo, no después de mi incómoda presentación hacia el, pero mira por unos segundos el rostro de Blaze, "
+        show jeremy 2estres at sigh_animation
+        extend ", solo suspiró con desgano y habla."
         show jeremy 1juzgat
         $ enfocar("jeremy")
-        je " Por motivos... incorrectos. El cerebro sin comida... trabaja mal."
+        je "A ver si te empeñas... no comed, será una mala idea."
+        show jeremy 1seriot
+        je "Y tu hermana va a pagar parte del resultado y no es bonito ni de lejos."
         show jeremy 1juzga
         $ normal("jeremy")
+        show blaze 2desinteresada3
+        "Blaze ignora la forma como lo dijo pero toma la intención de ese mismo, ahora tomando la plática."
 
     show blaze 1preocupadat
-    b "Laila, tienes que comer o te desmayarás"
+    b "Laila, tienes que comer o te desmayarás."
     show blaze 1preocupada
+    "Cómo por arte de magia, las palabras de ese Jeremy se cumplen, y empieza a empeorar como me siento."
     "El dolor de cabeza persiste.{w} No digo nada.{w} No tengo nada que decir."
     $ renpy.pause(2.0, hard=True)
     show blaze 1preocupada at sigh_animation
@@ -691,11 +699,8 @@ label receso_day2:
     "Levanta un poco su voz y me pone la bolsa en mis manos."
     l_thought "Ella nunca alza la voz. Nunca.{w} ¿Qué he hecho? ¿En qué me he convertido para que MI hermana, la que siempre habla en susurros, me grite?"
     "Mis manos tiemblan al tomar la bolsa. La veo abrirse paso entre mis dedos entumecidos."
-    show jeremy 2seriot
-    $ enfocar("jeremy")
-    je "Sí. A veces la autoridad... Es necesaria en casos de emergencia médica."
-    show jeremy 2serio
-    $ normal("jeremy")
+    show jeremy 1incomodo2
+    "Jeremy solo se queda en completo silencio cruzando de brazos un poco extrañado al verle a Blaze de esa forma."
     show blaze 1seriat
     b "No me mires así, Laila. Te conozco."
     show blaze 1compadecert
@@ -735,7 +740,7 @@ label receso_day2_afterchoice:
     show dark 1feli
     $ normal("dark")
     show jeremy 1serio
-    "Jeremy le da una mirada enojada a Dark. Dándole a entender que no es un buen momento."
+    "eremy le lanza una mirada bastante inconforme por el comentario de Dark.{w} Y aunque él esté de acuerdo con su comentario, no era un “momento” adecuado para hacer eso."
     show blaze 1desinteresada2t
     $ enfocar("blaze")
     b"Sí, ya vamos..."
@@ -754,10 +759,10 @@ label receso_day2_afterchoice:
         "El panqueque se siente como una roca en mi estómago. Siento como mi pecho se aprieta."
         l_thought "Ellos piensan que me ayudaron.{w} No entienden que solo agregué “decepcionarlos” a mi lista interminable."
         show screen red_effect2
-        nobody "{sc=4}Mira el esfuerzo que hacen por ti.{/sc}"
+        nobody "{sc=4}Mira todo ese esfuerzo que hacen por ti.{/sc}"
         nobody "{sc=}Tu padre cocinando hasta tarde.{/sc}"
         nobody "{sc=6}Blaze rogándote...{/sc}"
-        nobody "{sc=4}¿Cuándo dejarás de defraudarlos?{/sc}"
+        nobody "{sc=4}¿Cuándo dejarás de decepcionarlos tan seguido?{/sc}"
         "Tengo ganas de vomitar.{w} Más por lo que yo misma me digo.{w} Pero me aguanto.{w} Me aguanto para no decepcionar más a Blaze."
         hide screen red_effect2 with Dissolve(0.5)
         $ renpy.pause(2.5, hard=True)
@@ -2770,7 +2775,7 @@ label final_day2:
         nobody "{sc=3}¿Ganar? Quizás gane puntos en su conciencia.{/sc}"
         nobody "{sc=3}Pero tal vez solo está siendo parte de un guión que le entregaron como:{/sc}"
         nobody "{sc=3}“La buena hermana”.{/sc}"
-        nobody "{sc=4}pero sabes que hasta los buenos actores se cansan de sus papeles.{/sc}"
+        nobody "{sc=4}Pero sabes que hasta los buenos actores se cansan de sus papeles.{/sc}"
         l_thought "Papá no vino. El reporte está firmado, sellado, archivado. Una mancha más en mi expediente y por fin el día terminó."
         l_thought "¿Y ahora qué? ¿Será otro día igual que mañana? ¿Acaso será una nueva promesa rota, una decepción distinta, o solo será una excusa diferente?"
         nobody "{sc=3}Las promesas son fáciles de elaborar.{/sc}"
@@ -2844,7 +2849,7 @@ label final_day2:
     $ enfocar("blaze")
     b "¿Sí, papá?"
     b "Sí, ya salimos..."
-    extend "No, tranquilo, llegaremos bien..."
+    extend " No, tranquilo, llegaremos bien..."
     show blaze 1desinteresada3
     $ normal("blaze")
     $ renpy.pause(1.5, hard=True)
@@ -2910,6 +2915,230 @@ label final_day2:
     $ renpy.pause(1.8, hard=True)
     play ambient bus fadein(2.0)
     $ renpy.pause(8.5, hard=True)
+    stop ambient fadeout(1.5)
+    play ambient ext_night fadein(2.0)
+    "El transporte público nos lleva a la parada, solo  bajamos y se puede ver qué ya está todo oscuro, solo se aprecian las luces que emanan las farolas mientras el ruido urbano estaba de fondo."
+    $ renpy.pause(2.8, hard=True)
+    "Caminamos por un largo tramo hasta llegar a casa finalmente, dentro de mi ya estaba feliz de que había llegado a mi gran zona de confort. "
+    l "¿No sabes a qué hora llegará papá?"
+    b "Ni idea. No me lo dijo en la llamada."
+    "La puerta está cerrada.{w} Blaze busca las llaves en su mochila, tengo las manos temblorosas por el frío o por otra cosa que no quiero nombrar."
+    play sound keylock
+    "La cerradura cede con un clic seco, demasiado ruidoso en la calle vacía."
+    play sound closet_open
+    "Entramos."
+    stop ambient fadeout(1.5)
+    $ renpy.pause(1.6, hard=True)
+    play ambient int_night fadein(2.0)
+    scene livingroom_n
+    show blaze 1desinteresada3:
+        night_purple
+        center
+    with Fade(0.5, 0.5, 0.5)    
+    play sound closet_close
+    "La casa está a oscuras. No hay luz en ninguna parte del hogar, ni la televisión encendida, ni sonido de platos desde la cocina. Solo el zumbido bajo y constante del refrigerador y la iluminación de la luna llena que pegaba por una ventana con sus cortinas abiertas."
+    "Solo un silencio que pesaba mucho más que cualquier grito de horror."
+    play sound light_switch
+    scene livingroom_l
+    show blaze 1sonriente:
+        center
+    "Blaze enciende la luz."
+    "Camino a la cocina para beber un vaso con agua."
+    scene kitchen
+    with Fade(0.5, 0.5, 0.5)  
+    "Veo una nota.{w} Un rectángulo blanco clavado con un imán en la puerta de la nevera.{w} La letra de papá, firme, apresurada, impersonal."
+    show blaze 1seria with Dissolve(0.3):
+        center
+    "Blaze se acerca y la lee en silencio. Sus hombros, que ya estaban encorvados, parecen hundirse un poco más."
+    "Yo me quedo donde estoy como si cruzar el umbral significa admitir que esto es real."
+    $ renpy.pause(1.5, hard=True)
+    play sound pageflip
+    $ renpy.pause(1.5, hard=True)
+    show blaze 2seriat
+    $ enfocar("blaze")
+    b "Laila, Blaze: Hay comida en el refrigerador. Calienten lo que quieran. Mañana hablamos. Cuídense."
+    show blaze 2desinteresada3t
+    extend " – Papá."
+    show blaze 2seria
+    $ normal("blaze")
+    "Su voz es plana al leerlo. No hay sorpresa. Solo confirmación."
+    show blaze 2desinteresada2 at sigh_animation
+    "Ella suelta un suspiro que parece sacado de lo más hondo."
+    show blaze 2enojada2
+    "Se gira hacia mí, y por un segundo veo algo en sus ojos —algo que se parece al enfado, a la frustración—..."
+    show blaze 2compadecer
+    "Antes de que su expresión habitual, la de la hermana comprensiva, vuelva a cubrirlo todo como una manta."
+    show blaze 2compadecert
+    $ enfocar("blaze")
+    b "Voy a calentar algo.{w=0.2} ¿Comes?"
+    show blaze 2compadecer
+    $ normal("blaze")
+    $ renpy.pause(2.5, hard=True)
+    "La pregunta flota en el aire entre nosotras. Yo miro hacia la nevera, imaginando los recipientes de plástico con comida recalentada, preparados con prisa esta mañana.{w} Niego con la cabeza."
+    l "No tengo hambre. Voy arriba."
+    show blaze 3seria
+    "Mis palabras caen al suelo como piedras. Ella me mira, y esa mirada lo dice todo. Sabe que es mentira."
+    l_thought "Insistir es inútil. Es una danza que hemos bailado demasiadas veces."
+    extend "  Ella ofrece, yo rechazo."
+    extend "  Ella se preocupa, yo me encierro."
+    $ renpy.pause(1.8, hard=True)
+    show blaze 2desinteresada2
+    "Asiente, un gesto pequeño y derrotado."
+    show blaze 2compadecert
+    $ enfocar("blaze")
+    b "Está bien...{w} Buenas noches, Laila."
+    show blaze 2compadecer
+    $ normal("blaze")
 
+    if (rutaCanon-rutaSuicida)>=0:
+        l "Buenas noches, Blaze."
+        "Intento darle una sonrisa conmovedora. Solo fallando en el intento, igual no es...{w} Lo mejor que he hecho."
+
+    scene black with dissolve
+    "Doy media vuelta, salgo de la cocina y empiezo a subir las escaleras."
+    play sound microwave volume 0.05
+    "El ruido del microondas encendiéndose abajo me sigue unos peldaños."
+    $ renpy.pause(3.5, hard=True)
+    stop sound
+    "Luego se apaga, absorbido por el silencio."
+    $ renpy.pause(1.8, hard=True)
+    "Arriba, la oscuridad es lo que más abunda.{w}  Al igual que abajo, la iluminación de la luna se filtra por la ventana, dibujando un rectángulo pálido en el suelo recordando que al menos lo único bello en esta casa es está iluminación. Camino a través de él."
+    play sound closet_open
+    "Empujo la puerta para entrar a la habitación."
+    scene lailaroom_n with Fade(0.3, 0.3, 0.3)
+    play sound closet_close
+    extend " Y cierro sin pensarlo."
+    $ renpy.pause(1.8, hard=True)
+    "Dejo que el peso me venza. Tiro mi mochila y camino hacia la cama y me desplomo alli mismo."
+    "Respiro hondo, pero el aire parece espeso, difícil de tragar, por fin llegué a mi refugio."
+    $ renpy.pause(3.1, hard=True)
+
+    if (rutaCanon-rutaSuicida)>=0:
+        l_thought "Un día menos, es otro día que he sobrevivido."
+        extend " Eso es todo lo que puedo anotar en mi diario mental"
+        extend ": sobreviví."
+        l_thought "Blaze sigue aquí. Abajo, comiendo sola."
+        extend " Aún después de mis gritos, de mi vergüenza, de mi rechazo."
+        l_thought "¿Qué es lo que la mantiene aquí? ¿Debería sentirme acaso, agradecida o asustada de ese peso?"
+        $ renpy.pause(2.5, hard=True)
+        l_thought "Papá..."
+        extend " Al menos dejó una nota."
+        extend " “Mañana hablamos”."
+        extend " Palabras."
+        extend " Solo palabras que él mismo diría pero son más de las que he llegado a recibir."
+        l_thought "Cuatro líneas en un imán de nevera. Es algo."
+        extend " ¿No?"
+        show screen red_effect2
+        nobody "{sc=3}Es lo mínimo.{/sc}"
+        nobody "{sc=3}Lo máximo de decir: “Cuídense”.{/sc}"
+        nobody "{sc=3}Pero no será un “las quiero”.{/sc}"
+        nobody "{sc=3}No será de un “lo siento de verdad”.{/sc}"
+        nobody "{sc=3}Pero será lo que se escribe cuando no sabes qué más poner.{/sc}"
+        hide screen red_effect2 with Dissolve(0.3)
+        l_thought "Firmé el reporte."
+        extend " Es solo un papel."
+        extend " Uno más en la colección de mi expediente, junto a todos los otros."
+        extend " Una recopilación de mis fracasos, archivada y olvidada por todos excepto por mí."
+        l_thought "Ese “mañana”... “sin falta”."
+        extend " “Si tú quieres”."
+        extend " Las dos condiciones y excusas que están..."
+        extend " Preparadas."
+        l_thought "Una para él si falla, otra para mí si decido no querer más esto."
+        show screen red_effect2
+        nobody "{sc=3}¿Y qué quieres, Laila?{/sc}"
+        nobody "{sc=3}¿De verdad quieres esa salida, esa conversación forzada, ese intento más?{/sc}"
+        nobody "{sc=3}Pero no será un “las quiero”.{/sc}"
+        nobody "{sc=3}No será de un “lo siento de verdad”.{/sc}"
+        nobody "{sc=3}O sólo quieres que la promesa se rompa de una vez para poder decir:{/sc}"
+        nobody "{sc=3}“Te lo dije”.{/sc}"
+        nobody "{sc=3}Para solo hundirte en paz.{/sc}"
+        hide screen red_effect2 with Dissolve(0.3)
+        l_thought "Sólo quiero dormir."
+        extend " Que este zumbido en mi cabeza pare."
+        extend " Que el vacío en mi estómago se calme."
+        l_thought "Cerrar los ojos y que, por unas horas, deje de ser Laila la Problemática, Laila la Decepción, Laila la Hermana Rota."
+        show screen red_effect2
+        nobody "{sc=3}Dormir no es un escape, es un ensayo.{/sc}"
+        nobody "{sc=3}Un ensayo para el gran silencio.{/sc}"
+        nobody "{sc=5}Ya lo haces muy bien.{/sc}"
+        hide screen red_effect2 with Dissolve(0.3)
+
+    else:
+        l_thought "Un día más."
+        extend " Otro día añadido a la cadena."
+        extend " Otro eslabón de horas vacías y promesas rotas que me han hecho."
+        l_thought "Blaze sigue aquí."
+        extend " Pero no es por mí, es por inercia, por esa lealtad hacia un fantasma—el fantasma de la hermana que alguna vez fui, o que ella creyó que volvería a ser."
+        l_thought "Esta cenando sola abajo, aliviada quizás de no tener que fingir por unas horas."
+        show screen red_effect2
+        nobody "{sc=3}Deberías de sentirte aliviada...{/sc}"
+        nobody "{sc=3}Tú eres el trabajo extra que nadie pidió.{/sc}"
+        nobody "{sc=3}El turno nocturno sin paga.{/sc}"
+        hide screen red_effect2 with Dissolve(0.3)
+        $ renpy.pause(2.5, hard=True)
+        l_thought "La nota que Papá..."
+        extend " Esas cuatro líneas."
+        extend " “Mañana hablamos”."
+        extend " No es el: “hablemos”, solo es “hablamos”."
+        extend " Es una declaración."
+        l_thought "Otro sermón que me espera en el calendario, entre una emergencia real y la siguiente."
+        $ renpy.pause(1.8, hard=True)
+        l_thought "“Cuídense”."
+        extend " Un mandato irónico."
+        extend " ¿Cómo carajo espera que me cuide?"
+        extend " ¿Cómo cuidas algo que realmente está dañado?"
+        l_thought "Solo lo guardas en una caja, se etiqueta “frágil” y lo abandonas en el ático."
+        show screen red_effect2
+        nobody "{sc=3}Exactamente.{w} Ese es tu lugar.{/sc}"
+        nobody "{sc=3}El ático de sus vidas.{/sc}"
+        nobody "{sc=3}Sólo bajan a buscarte cuando el polvo de tu ausencia les hace estornudar.{/sc}"
+        hide screen red_effect2 with Dissolve(0.3)
+        $ renpy.pause(1.8, hard=True)
+        l_thought "Firmé el reporte."
+        extend " Un trámite que marcó mi deterioro constante."
+        extend " Y pronto habrá más."
+        extend " Más informes."
+        extend "  Más carpetas con mi nombre."
+        l_thought "Me estoy convirtiendo en papel."
+        extend " En un caso."
+        extend " En un problema a gestionar."
+        show screen red_effect2
+        nobody "{sc=3}¿Apenas te enteras de eso?{/sc}"
+        nobody "{sc=3}Solo es el comienzo, te estás convirtiendo en algo “oficial”.{/sc}"
+        nobody "{sc=3}No solo serás la vergüenza de la escuela...{/sc}"
+        nobody "{sc=3}Tal vez seas incluso lo serás a nivel estatal.{/sc}"
+        nobody "{sc=3}Solo es cuestión que  ni siquiera necesitarán mirarte a los ojos.{/sc}"
+        nobody "{sc=5}Bastará con leer tu archivo.{/sc}"
+        hide screen red_effect2 with Dissolve(0.3)
+        l_thought "Mañana..."
+        extend " “sin falta”."
+        extend " Las palabras más gastadas de tantas que hay en el diccionario. Una emergencia “de verdad” siempre aparecerá."
+        extend "  Siempre hay una."
+        extend " Yo nunca seré la emergencia para él."
+        extend " Solo soy la falla de fondo, el ruido estático en su línea clara."
+        $ renpy.pause(1.8, hard=True)
+        l_thought "Yo no quiero dormir."
+        extend " Dormir implica despertar."
+        extend " Y despertar es encontrarme con esa decepción de que nada ha cambiado, excepto que soy un día más vieja, un día más cansada, un día más cerca del momento en que ya no pueda resistir más."
+        show screen red_effect2
+        nobody "{sc=3}Ese momento se acerca más y más.{/sc}"
+        nobody "{sc=3} Lo sientes, ¿verdad?{/sc}"
+        $ renpy.pause(1.8, hard=True)
+        nobody "{sc=5}No seas una cobarde y acaba de una vez por todas con tu cruel realidad.{/sc}"
+        hide screen red_effect2 with Dissolve(0.3)
+        l_thought "Cierro los ojos, pero no contra la oscuridad."
+        extend " La oscuridad ya está aquí, dentro."
+        extend " Solo cierro los ojos contra mañana."
+   
+    $ renpy.pause(3.0, hard=True)
+    "No me cambio. No me lavo la cara. Solo me quito los zapatos."
+    "Desde aquí, veo la mochila en el suelo, la silueta oscura contra la luz de la ventana.{w} Dentro está el desayuno, intacto.{w} Los restos del día."
+    $ renpy.pause(2.5, hard=True)
+    "Afuera, un coche pasa veloz, su luz barriendo fugazmente el techo antes de desaparecer. Luego, otra vez la oscuridad.{w} Y el silencio."
+    "No es un silencio pacífico.{w}  Es el silencio de una casa que contiene demasiados ruidos ahogados.{w} El silencio de las palabras no dichas en la nota de la nevera."
+    "El silencio de los pasos que no resonaron en la entrada.{w} El silencio de mi propio cuerpo, que ya ni siquiera tiene lágrimas que ofrecer."
+    scene black
+    stop ambient fadeout 6.5
+    with Dissolve(5.0)
 
 return

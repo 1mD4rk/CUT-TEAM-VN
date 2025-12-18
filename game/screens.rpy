@@ -384,6 +384,16 @@ screen navigation():
                 activate_sound "audio/select.ogg"
                 action ShowMenu("preferences")
 
+        if main_menu:
+            textbutton _("Changelog"):
+                hover_sound "audio/hover.ogg"
+                activate_sound "audio/select.ogg"
+                action ShowMenu("changelog")
+
+            textbutton _("Créditos"):
+                hover_sound "audio/hover.ogg"
+                activate_sound "audio/select.ogg"
+                action ShowMenu("credits")
 
         if _in_replay:
 
@@ -392,35 +402,27 @@ screen navigation():
                 activate_sound "audio/select.ogg"
                 action EndReplay(confirm=True)
 
-        elif not main_menu:
+        elif not main_menu: 
 
             textbutton _("Menú principal"):
                 hover_sound "audio/hover.ogg"
                 activate_sound "audio/select.ogg"
                 action MainMenu()
 
-            textbutton _("Acerca de"):
-                hover_sound "audio/hover.ogg"
-                activate_sound "audio/select.ogg"
-                action ShowMenu("about")
-
-        textbutton _("Changelog"):
+        textbutton _("Acerca de"):
             hover_sound "audio/hover.ogg"
             activate_sound "audio/select.ogg"
-            action ShowMenu("changelog")
+            action ShowMenu("about")
 
-        textbutton _("Créditos"):
-            hover_sound "audio/hover.ogg"
-            activate_sound "audio/select.ogg"
-            action ShowMenu("credits")
+        
 
-        if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
+        # if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
-            ## La ayuda no es necesaria ni relevante en dispositivos móviles.
-            textbutton _("Ayuda"):
-                hover_sound "audio/hover.ogg"
-                activate_sound "audio/select.ogg"
-                action ShowMenu("help")
+        #     ## La ayuda no es necesaria ni relevante en dispositivos móviles.
+        #     # textbutton _("Ayuda"):
+        #     #     hover_sound "audio/hover.ogg"
+        #     #     activate_sound "audio/select.ogg"
+        #     #     action ShowMenu("help")
 
         if renpy.variant("pc"):
 

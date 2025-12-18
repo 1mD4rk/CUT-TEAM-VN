@@ -748,6 +748,8 @@ define keylock = "audio/key-lock-sound.wav"
 define phone_quiet = "audio/phone_quiet.ogg"
 define slam = "audio/slam.ogg"
 define bus_arrive = "audio/bus-arrival.ogg"
+define pageflip = "audio/pageflip.ogg"
+define microwave = "<loop 3.191>sfx/microwave.ogg"
 
 ## Music
 define bgm1 = "<from 0 to 198.425 loop 11.339>bgm/nude.ogg"

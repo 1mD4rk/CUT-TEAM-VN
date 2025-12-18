@@ -115,7 +115,7 @@ return
 label rutacanon_choice2:
         "Con movimientos torpes, abro la bolsa."
         $ renpy.pause(2.0, hard=True)
-        " El olor a... Panqueques... Simple, casero, hecha por papá.{w} Me golpea como una bofetada.{w} Un recordatorio de otra persona a la que estoy defraudando."
+        "El olor a... Panqueques... Simple, casero, hecha por papá.{w} Me golpea como una bofetada.{w} Un recordatorio de otra persona a la que estoy defraudando."
         show dark 2enojao
         show jeremy 1juzga
         l "No...{w} No pongas esa cara. No es para tanto."
@@ -151,7 +151,7 @@ label rutacanon_choice2:
         show blaze 1compadecer
         show jeremy 1sonrientet
         $ enfocar("jeremy")
-        je "Eso pasa rápido. Pero si quieres seguir sufriendo, vale. No juzgar."
+        je "Va a pasar rápido. Pero si quieres seguir así, vale. No... juzgar."
         show jeremy 1sonriente
         $ normal("jeremy")
         "Blaze gira la silla del puesto de Dark y se sienta al frente mio."
@@ -187,7 +187,6 @@ label rutacanon_choice2:
         $ normal("blaze")
         l_thought "“Por mí”.{w} Las dos palabras más pesadas del universo."
         l_thought "Porque significan que mi dolor ya no es solo mío.{w} Significa que cada vez que elijo el vacío, elijo herirla a ella también."
-        "Jeremy solo me da una sonrisa. Sin decir nada."
 return
 
 label rutasuicida_choice2:
@@ -206,9 +205,11 @@ label rutasuicida_choice2:
         show blaze 1preocupada
         show jeremy 1serio2t
         $ enfocar("jeremy")
-        je "“Para después” suele convertirse en “para nunca”."
+        je "Créedme que él “después”... Es hábito de nunca."
         show jeremy 1serio2
         $ normal("jeremy")
+        "Jeremy solo sale con un sermón barato de que debo de cumplir con lo que digo..."
+        l_thought "¿Acaso le pregunté su opinión?"
         show dark 2seriot
         $ enfocar("dark")
         d "Vamos, no seas dramática."
@@ -270,9 +271,11 @@ label rutasuicida_nochoice2:
         show blaze 1preocupada
         show jeremy 1serio2t
         $ enfocar("jeremy")
-        je "“Para después” suele convertirse en “para nunca”."
+        je "Créedme que él “después”... Es hábito de nunca."
         show jeremy 1serio2
         $ normal("jeremy")
+        "Jeremy solo sale con un sermón barato de que debo de cumplir con lo que digo..."
+        l_thought "¿Acaso le pregunté su opinión?"
         show dark 2seriot
         $ enfocar("dark")
         d "Vamos, no seas dramática."
