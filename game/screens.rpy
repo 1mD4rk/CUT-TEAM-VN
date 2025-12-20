@@ -635,9 +635,9 @@ screen credits():
                     vbox:
                         spacing 6
                         text "Composición:" style "credits_item"
-                        text "- Nombre Apellido" style "credits_name"
+                        text "- Wretched Team" style "credits_name"
                         text "Efectos de sonido:" style "credits_item"
-                        text "- Nombre Apellido" style "credits_name"
+                        text "- https://pixabay.com/es/sound-effects/" style "credits_name"
 
                 # Celda (0,1): Agradecimientos (debajo de Desarrollo)
                 vbox:
@@ -651,9 +651,9 @@ screen credits():
 
                     vbox:
                         spacing 6
-                        text "• Persona 1" style "credits_name"
-                        text "• Persona 2" style "credits_name"
-                        text "• Persona 3" style "credits_name"
+                        text "• idk_val (Apoyo en el guión del dia 1)" style "credits_name"
+                        # text "• Persona 2" style "credits_name"
+                        # text "• Persona 3" style "credits_name"
 
                 # Celda (1,1): Herramientas (debajo de Música)
                 vbox:
