@@ -6,14 +6,14 @@ init offset = -1
 
 init python:
     def block_input():
-        # config.keymap['game_menu'] = None
-        # config.keymap['rollback'] = None
-        # config.keymap['rollforward'] = None
+        config.keymap['game_menu'] = None
+        config.keymap['rollback'] = None
+        config.keymap['rollforward'] = None
         config.keymap['self_voicing'] = None
         config.keymap['clipboard_voicing'] = None
         config.keymap['debug_voicing'] = None
         config.keymap['launch_editor'] = None
-        # config.keymap['reload_game'] = None
+        config.keymap['reload_game'] = None
         config.keymap['inspector'] = None
         config.keymap['full_inspector'] = None
         config.keymap['performance'] = None
@@ -353,8 +353,8 @@ screen navigation():
         if main_menu:
 
             textbutton _("Iniciar"):
-                hover_sound "audio/hover.ogg"
-                activate_sound "audio/select.ogg"
+                # hover_sound "audio/hover.ogg"
+                # activate_sound "audio/select.ogg"
                 action Show("fade_to_game")
 
             #textbutton _("Calendario"):
@@ -365,53 +365,53 @@ screen navigation():
         else:
 
             textbutton _("Historial"):
-                hover_sound "audio/hover.ogg"
-                activate_sound "audio/select.ogg"
+                # hover_sound "audio/hover.ogg"
+                # activate_sound "audio/select.ogg"
                 action ShowMenu("history")
 
             textbutton _("Guardar"):
-                hover_sound "audio/hover.ogg"
-                activate_sound "audio/select.ogg"
+                # hover_sound "audio/hover.ogg"
+                # activate_sound "audio/select.ogg"
                 action ShowMenu("save")
 
         textbutton _("Cargar"):
-                hover_sound "audio/hover.ogg"
-                activate_sound "audio/select.ogg"
+                # hover_sound "audio/hover.ogg"
+                # activate_sound "audio/select.ogg"
                 action ShowMenu("load")
 
         textbutton _("Opciones"):
-                hover_sound "audio/hover.ogg"
-                activate_sound "audio/select.ogg"
+                # hover_sound "audio/hover.ogg"
+                # activate_sound "audio/select.ogg"
                 action ShowMenu("preferences")
 
         if main_menu:
             textbutton _("Changelog"):
-                hover_sound "audio/hover.ogg"
-                activate_sound "audio/select.ogg"
+                # hover_sound "audio/hover.ogg"
+                # activate_sound "audio/select.ogg"
                 action ShowMenu("changelog")
 
             textbutton _("Créditos"):
-                hover_sound "audio/hover.ogg"
-                activate_sound "audio/select.ogg"
+                # hover_sound "audio/hover.ogg"
+                # activate_sound "audio/select.ogg"
                 action ShowMenu("credits")
 
         if _in_replay:
 
             textbutton _("Finaliza repetición"):
-                hover_sound "audio/hover.ogg"
-                activate_sound "audio/select.ogg"
+                # hover_sound "audio/hover.ogg"
+                # activate_sound "audio/select.ogg"
                 action EndReplay(confirm=True)
 
         elif not main_menu: 
 
             textbutton _("Menú principal"):
-                hover_sound "audio/hover.ogg"
-                activate_sound "audio/select.ogg"
+                # hover_sound "audio/hover.ogg"
+                # activate_sound "audio/select.ogg"
                 action MainMenu()
 
         textbutton _("Acerca de"):
-            hover_sound "audio/hover.ogg"
-            activate_sound "audio/select.ogg"
+            # hover_sound "audio/hover.ogg"
+            # activate_sound "audio/select.ogg"
             action ShowMenu("about")
 
         
@@ -429,8 +429,8 @@ screen navigation():
             ## El botón de salida está prohibido en iOS y no es necesario en
             ## Android y Web.
             textbutton _("Salir"):
-                hover_sound "audio/hover.ogg"
-                activate_sound "audio/select.ogg"
+                # hover_sound "audio/hover.ogg"
+                # activate_sound "audio/select.ogg"
                 action Quit(confirm=not main_menu)
 
 
@@ -856,8 +856,8 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
 
     textbutton _("Volver"):
         style "return_button"
-        hover_sound "audio/hover.ogg"
-        activate_sound "audio/select.ogg"
+        # hover_sound "audio/hover.ogg"
+        # activate_sound "audio/select.ogg"
         action Return()
 
     label title
@@ -1541,13 +1541,13 @@ screen confirm(message, yes_action, no_action):
                 spacing 150
 
                 textbutton _("Sí"):
-                    hover_sound "audio/hover.ogg"
-                    activate_sound "audio/select.ogg"
+                    # hover_sound "audio/hover.ogg"
+                    # activate_sound "audio/select.ogg"
                     action yes_action
 
                 textbutton _("No"):
-                    hover_sound "audio/hover.ogg"
-                    activate_sound "audio/select.ogg"
+                    # hover_sound "audio/hover.ogg"
+                    # activate_sound "audio/select.ogg"
                     action no_action
 
     ## Clic derecho o escape responden "no".

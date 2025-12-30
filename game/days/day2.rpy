@@ -740,7 +740,7 @@ label receso_day2_afterchoice:
     show dark 1feli
     $ normal("dark")
     show jeremy 1serio
-    "eremy le lanza una mirada bastante inconforme por el comentario de Dark.{w} Y aunque él esté de acuerdo con su comentario, no era un “momento” adecuado para hacer eso."
+    "Jeremy le lanza una mirada bastante inconforme por el comentario de Dark.{w} Y aunque él esté de acuerdo con su comentario, no era un “momento” adecuado para hacer eso."
     show blaze 1desinteresada2t
     $ enfocar("blaze")
     b"Sí, ya vamos..."
