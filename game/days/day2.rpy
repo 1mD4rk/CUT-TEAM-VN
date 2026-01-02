@@ -724,9 +724,9 @@ label receso_day2:
             l_thought "Ella no lo entiende. No es hambre lo que me falta, es la capacidad de tragar algo que no sea una amargura constante."
 
     if (rutaCanon-rutaSuicida)>=0:
-        call rutacanon_choice2
+        call rutacanon_choice2 from _call_rutacanon_choice2
     else:
-        call rutasuicida_choice2
+        call rutasuicida_choice2 from _call_rutasuicida_choice2
 
     jump receso_day2_afterchoice
     return
@@ -1471,7 +1471,7 @@ label reunionconsejo_day2:
     "Saco mi celular y abro la app de mensajes, mis dedos tiemblan, trago saliva, pero es necesario."
     $ renpy.pause(1.5, hard=True)
 
-    call chat_dad_day2
+    call chat_dad_day2 from _call_chat_dad_day2
 
     l_thought "Pensé que sentiría alivio al no salir... Y hablar sobre cosas que no quiero. Pero no, me siento extraña."
     l "No viene."
