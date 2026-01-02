@@ -65,13 +65,13 @@ label day1:
     show ptod tieso at center
     $ enfocar("ptod")
     ptod "Espero que su 'perro' no se haya comido {i}convenientemente{/i} su tarea."
-    ptod "Como al tan conocido {i}{outlinecolor=#039dda}Presidente del Consejo Estudiantil{/outlinecolor}{/i}. Como esa vez dando el ejemplo."
+    ptod "Como al tan conocido {i}{outlinecolor=#039dda}Presidente del Consejo Estudiantil{/outlinecolor}{/i}. Esa vez dando el ejemplo."
 
     $ normal("ptod")
     play sound teens_laugh volume 0.5
     pause 0.5
 
-    l_thought "No desaprovecho la oportunidad de hacer un chiste tan malo."
+    l_thought "No desaprovechó la oportunidad de hacer un chiste tan malo."
     "Toda el aula se rie, obviamente él lo dijo con esa intención."
 
     show blaze 1neutral at right2, fade_in
@@ -114,7 +114,7 @@ label day1:
     l "En tal caso de ser sordo, puede ser que no."
 
     $ enfocar("ptod")
-    ptod "Jackson, cámbiale el rumbo a esa actitud. Ahora."
+    ptod "Jackson, cambie el rumbo de esa actitud. Ahora."
     $ normal("ptod")
 
     "Su voz empezó a tomar un tono más fuerte, más autoritario."

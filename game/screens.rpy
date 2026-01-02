@@ -651,7 +651,7 @@ screen credits():
 
                     vbox:
                         spacing 6
-                        text "• idk_val (Apoyo en el guión del dia 1)" style "credits_name"
+                        text "• idk_val (Apoyo en el guión del dia 1 y Correciones ortográficas)" style "credits_name"
                         # text "• Persona 2" style "credits_name"
                         # text "• Persona 3" style "credits_name"
 
