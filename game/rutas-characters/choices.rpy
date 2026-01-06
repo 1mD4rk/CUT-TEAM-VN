@@ -158,7 +158,7 @@ label rutacanon_choice2:
         show blaze 1preocupada
         extend " Con una mirada... Triste."
         show blaze 1preocupadat
-        b "Papá...{w} se quedó hasta tarde anoche haciéndolos. Dijo que eran tus favoritos."
+        b "Papá...{w} Se levantó temprano para poder hacerlos. Dijo que eran tus favoritos."
         show blaze 1preocupada
         l_thought "Otra daga.{w} Otra persona a la que estoy defraudando con mi miseria silenciosa."
         extend " ¿Por qué no pueden entender que a veces el vacío es más seguro que llenarlo con expectativas?"
