@@ -121,6 +121,19 @@ init python:
                 renpy.sound.queue(f"audio/sounds/mani_sounds/mani{randosound}.wav", channel="sound", loop=True, relative_volume=preferences.text_sound_volume)
         elif event == "end" or event == "slow_done":
             renpy.sound.stop(channel="sound")
+
+    def nobody_sound(event, interact=False, **kwargs):
+        if event == "show": 
+            what = renpy.store._last_say_what
+            if what:
+                sound_count = len(what)
+            else:
+                sound_count = 5
+            for _ in range(sound_count): 
+                randosound = renpy.random.randint(1, 11)
+                renpy.sound.queue(f"audio/sounds/nobody_sounds/laila{randosound}.wav", channel="sound", loop=True, relative_volume=preferences.text_sound_volume)
+        elif event == "end" or event == "slow_done":
+            renpy.sound.stop(channel="sound")
 ##############################################################################
 
 
@@ -146,7 +159,8 @@ define nobody = Character(
     what_bold=True,
     who_outlines=[(4, "#ffffff", 0, 0)],  
     what_outlines = [(5, "#000000", 0, 0)],
-    color="#1a1a1aff"
+    color="#1a1a1aff",
+    callback=nobody_sound
 )
 
 define d = Character("Dark", 

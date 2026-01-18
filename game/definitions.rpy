@@ -523,6 +523,8 @@ image lailaroom_n = "images/bg/laila_house/lailaroom_night.png"
 image intersection_night = "images/bg/intersection_night.jpg"
 image intersection_day = "images/bg/intersection_day.jpg"
 image intersection_afternoon = "images/bg/intersection_afternoon.jpg"
+image bus = "images/bg/bus.png"
+image sky = "images/bg/sky_bg.png"
 
 ### School
 
@@ -571,6 +573,26 @@ image pasillo_walk:
     repeat
 
 image pasillo_walking = Composite((1920, 1080), (0, 0), "pasillo_walk")
+
+image bus_mask:
+    "sky"
+    xtile 2 subpixel True
+    xoffset 0
+    linear 15.0 xoffset -3840
+    repeat
+
+image bus_mask_sky = Composite((1920, 1080), (0, 0), "bus_mask")
+
+image bus_shake:
+    "bus"
+    shake_bus
+
+transform shake_bus:
+    linear 0.1 xoffset -1 yoffset 2
+    linear 0.1 xoffset 3 yoffset 0
+    linear 0.1 xoffset -1 yoffset 2
+    linear 0.1 xoffset 0 yoffset 0
+    repeat
 
 ###################### EFECTOS ###############################
 
@@ -681,9 +703,22 @@ screen red_effect2():
 transform semiblack_trans():
     alpha 0.0   
     easein 1.5 alpha 0.75
+
+transform semiblack_trans2():
+    alpha 0.0   
+    easein 1.5 alpha 1.0
+
+transform semiblack_trans3():
+    alpha 5.0
     
 screen semiblack():
     add "#000000" at semiblack_trans
+
+screen vignette_screen():
+    add "vignette" 
+
+screen vignette_screen2():
+    add "vignette" at semiblack_trans3
 
 transform night_effect:
     matrixcolor TintMatrix("#4A6FC3") * BrightnessMatrix(-0.15) * SaturationMatrix(0.7)

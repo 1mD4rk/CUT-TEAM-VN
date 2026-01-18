@@ -1165,12 +1165,19 @@ label director:
     hide dirc
     "En el camino me pregunto qué clase de sermón me dirá esta vez mientras cada paso hacia su oficina es una losa más sobre mí."
     $ renpy.pause(2.0, hard=True)
-    scene despacho_dirc with dissolve
-    $ renpy.pause(1.5, hard=True)
-    show screen semiblack
+    show screen vignette_screen2
+    scene despacho_dirc 
+    show dirc tieso
+    $ inac("dirc")
+    with fade
+    $ renpy.pause(1.0, hard=True)
     "Resumidamente: sí, me dieron un reporte por mi “comportamiento”. Y además tuve que tragarme el sermón del director."
     "¿Quieren saber cómo suena? Es siempre lo mismo, un discurso reciclado, palabras que ya tienen polvo de tanto usarlas."
-    dirc "“Debes aprender a comportarte… piensa en tu futuro… no puedes seguir siendo un ejemplo negativo para los demás…”"
+    show dirc cintura
+    $ enfocar("dirc")
+    dirc "“Debes aprender a comportarte... piensa en tu futuro... no puedes seguir siendo un ejemplo negativo para los demás...”"
+    show dirc tieso
+    $ inac("dirc")
     "Ya ni siquiera me sorprende. Ni siquiera debería recordarlo con tanta claridad, pero ahí está, repitiéndose como un cassette roto."
     "Ni siquiera me molesto en escuchar. Son palabras vacías que flotan en el aire hasta que las barro mentalmente."
     "Intento convencerme:"
@@ -1186,19 +1193,21 @@ label director:
     "Porque la promesa se rompe antes de nacer."
     extend " Porque yo misma la arruino."
     "Y ahí, en medio del silencio que ni el director llena, escucho esa voz. Esa que me desgasta, esa que se clava con palabras que duelen más que cualquier castigo."
+    $ renpy.music.set_audio_filter("music", [af.Reverb(0.0), af.Lowpass(22000)], replace=True)
+    $ apply_filter_with_fade("music", [af.Reverb(0.5), af.Lowpass(440)], duration=1.5)
     show screen red_effect2
-    nobody "{sc=3}“Eres una basura humana. El pedazo que nadie quiere, que nadie usa.”{/sc}"
-    nobody "{sc=3}“Lo que queda después de que todos ya eligieron lo bueno.”{/sc}"
-    nobody "{sc=3}“Te pones tu máscara dura, pero en el fondo lo sabes:”{/sc}"
-    nobody "{sc=3}“¿Para qué carajos sigues acá?”{/sc}"
-    nobody "{sc=3}“Nadie te aguanta. Nadie te quiere. TODOS te desprecian.”{/sc}"
-    nobody "{sc=3}“Cheryl, Blaze, tu vieja amiga Arain...”{/sc}"
-    nobody "{sc=3}“Todas ellas lo piensan.”{/sc}"
-    nobody "{sc=6}“Y tu padre... Tu padre está decepcionado. Siempre lo estuvo.”{/sc}"
-    nobody "{sc=6}“Siempre lo estará.”{/sc}"
-    nobody "{sc=3}“Nada de lo que perdiste va a volver.”{/sc}"
-    nobody "{sc=4}“¿Sabés por qué? Porque tu vida es una maldición.”{/sc}"
-    nobody "{sc=4}“Porque naciste para ser esto: un error, un 'qué pena'. Nada más.”{/sc}"
+    nobody "{sc=3}Eres una basura humana. El pedazo que nadie quiere, que nadie usa.{/sc}"
+    nobody "{sc=3}Lo que queda después de que todos ya eligieron lo bueno.{/sc}"
+    nobody "{sc=3}Te pones tu máscara dura, pero en el fondo lo sabes:{/sc}"
+    nobody "{sc=3}¿Para qué carajos sigues acá?{/sc}"
+    nobody "{sc=3}Nadie te aguanta. Nadie te quiere. TODOS te desprecian.{/sc}"
+    nobody "{sc=3}Cheryl, Blaze, tu vieja amiga Arain...{/sc}"
+    nobody "{sc=3}Todas ellas lo piensan.{/sc}"
+    nobody "{sc=6}Y tu padre... Tu padre está decepcionado. Siempre lo estuvo.{/sc}"
+    nobody "{sc=6}Siempre lo estará.{/sc}"
+    nobody "{sc=3}Nada de lo que perdiste va a volver.{/sc}"
+    nobody "{sc=4}¿Sabés por qué? Porque tu vida es una maldición.{/sc}"
+    nobody "{sc=4}Porque naciste para ser esto: un error, un 'qué pena'. Nada más.{/sc}"
     "Las oigo."
     "Las palabras me atraviesan, y cada palabra arde como si me grabaran en la piel con hierro caliente."
     extend " No puedo tapar mis oídos porque no vienen de afuera, vienen de mí misma. Es mi propia voz disfrazada, escupiendo lo que más temo."
@@ -1207,13 +1216,15 @@ label director:
     extend" Le creo. Me aplastan. Me quiebran. Me reducen a pedazos."
     "Y lo más devastador es que duele precisamente porque sé que es verdad."
     extend " O al menos... eso es lo que siento."
-    nobody "{sc=3}“¿Sabes? No debería de contártelo nuevamente...”{/sc}"
-    nobody "{sc=3}“Tú misma ya lo sabes. Solo quiero que recuerdes algo.”{/sc}"
-    nobody "{sc=6}“Siempre voy a estar ahí.”{/sc}"
+    nobody "{sc=3}¿Sabes? No debería de contártelo nuevamente...{/sc}"
+    nobody "{sc=3}Tú misma ya lo sabes. Solo quiero que recuerdes algo.{/sc}"
+    nobody "{sc=6}Siempre voy a estar ahí.{/sc}"
     $ renpy.pause(1.3, hard=True)
-    hide screen red_effect2 with Dissolve(1.0)
-    hide screen semiblack with Dissolve(1.0)
-    show dirc tieso with Dissolve(0.2)
+    $ renpy.music.set_audio_filter("music", None, replace=True)
+    hide screen red_effect2
+    hide screen semiblack
+    hide screen vignette_screen2
+    with Dissolve(0.8)
     "De repente, la voz se corta como si alguien hubiera desconectado un cable en mi cerebro, y la reemplaza la del director."
     "Recién entonces me doy cuenta de que las lágrimas han estado cayendo sin parar, dibujando caminos salados en mis mejillas."
     "Él coloca una hoja sobre la mesa, junto con una pluma."

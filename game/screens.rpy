@@ -6,14 +6,14 @@ init offset = -1
 
 init python:
     def block_input():
-        config.keymap['game_menu'] = None
-        config.keymap['rollback'] = None
-        config.keymap['rollforward'] = None
+        # config.keymap['game_menu'] = None
+        # config.keymap['rollback'] = None
+        # config.keymap['rollforward'] = None
         config.keymap['self_voicing'] = None
         config.keymap['clipboard_voicing'] = None
         config.keymap['debug_voicing'] = None
         config.keymap['launch_editor'] = None
-        config.keymap['reload_game'] = None
+        # config.keymap['reload_game'] = None
         config.keymap['inspector'] = None
         config.keymap['full_inspector'] = None
         config.keymap['performance'] = None
@@ -274,11 +274,11 @@ screen quick_menu():
             #    action ShowMenu('history')
 
             textbutton _("Saltar"):
-                activate_sound "audio/select.ogg"
+                # activate_sound "audio/select.ogg"
                 action Skip() alternate Skip(fast=True, confirm=True)
 
             textbutton _("Auto"):
-                activate_sound "audio/select.ogg"
+                # activate_sound "audio/select.ogg"
                 action Preference("auto-forward", "toggle")
 
             #textbutton _("Guardar"):
@@ -521,24 +521,35 @@ screen changelog():
                 spacing 30
 
                 vbox:
+
+                    
                     label "[config.version!t]" style "changelog_version"
                     vbox:
                         spacing 5
                         text "Nuevas características:" style "changelog_category"
-                        text "  • Día 2 Completo" style "changelog_item"
-                        text "  • Diseño Padre de Laila (dejó de ser un placeholder)" style "changelog_item"
-                        text "  • Diseño Strike (dejó de ser un placeholder)" style "changelog_item"
-                        text "  • Diseño Jeremy" style "changelog_item"
-                        text "  • Diseño Mani" style "changelog_item"
-                        text "  • Voces para Jeremy y Mani" style "changelog_item"
-                        
+                        text "  • " style "changelog_item"
 
                         null height 10
-
                         text "Mejoras:" style "changelog_category"
-                        text "  • Nuevo sistema de elección por tiempo" style "changelog_item"
-                        text "  • Mejora de Rutas + Dialogo de c/u" style "changelog_item"
-                        text "  • Nuevos Dialogos por ruta en Día 1" style "changelog_item"
+                        text "  • " style "changelog_item"
+
+                    vbox:
+                        text "---------------------------------------------------------------------"
+                        label "v0.5 - Alpha" style "changelog_version"
+                        vbox:
+                            spacing 5
+                            text "Nuevas características:" style "changelog_category"
+                            text "  • Día 2 Completo" style "changelog_item"
+                            text "  • Nuevo sistema de elección por tiempo" style "changelog_item"
+                            text "  • Diseño Jeremy" style "changelog_item"
+                            text "  • Diseño Mani" style "changelog_item"
+                            text "  • Voces para Jeremy y Mani" style "changelog_item"
+                            null height 10
+                            text "Mejoras:" style "changelog_category"
+                            text "  • Diseño Strike (dejó de ser un placeholder)" style "changelog_item"
+                            text "  • Diseño Padre de Laila (dejó de ser un placeholder)" style "changelog_item"
+                            text "  • Mejora de Rutas + Dialogo de c/u" style "changelog_item"
+                            text "  • Nuevos Dialogos por ruta en Día 1" style "changelog_item"
 
                 vbox:
                     text "---------------------------------------------------------------------"
@@ -675,6 +686,8 @@ screen credits():
                         text "  Timed Choice Menu" style "credits_asset"
                         text "- Bamboo Calculator:" style "credits_name2"
                         text "  Randomized and Continuous text sounds" style "credits_asset"
+                        text "- Lezalith: " style "credits_name2"
+                        text "  RenPy-Discord-Presence" style "credits_asset"
                         text "- min-chi.material.jp" style "credits_name2"
 
             null height 20

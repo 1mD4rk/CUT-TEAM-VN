@@ -207,11 +207,23 @@ init -950 python in discord:
     @presence_disabled
     def close():
         print_important("Closing DRP connection.")
-
+        
         global presence_object
-        presence_object.close()
-
-        print_important("Successfully closed.")
+        try:
+            # Intentar limpiar primero
+            presence_object.clear()
+            # Esperar un momento
+            import time
+            time.sleep(0.1)
+            # Cerrar la conexión
+            presence_object.close()
+            print_important("Successfully closed.")
+            
+        except Exception as e:
+            print_important(f"Error closing DRP: {e}")
+        
+        # Asegurarse de que presence_object sea None
+        presence_object = None
 
     # Subclass of NoRollback, this holds the non-rollbackable variable of properties.
     class RenPyDiscord(NoRollback):
