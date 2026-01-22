@@ -673,7 +673,7 @@ label dark_scene_afterchoice1:
     d "Solo por ser hermanastra de Blaze."
     show dark 1incomodo
     $ normal("dark")
-    l "¿Te pregunte?"
+    l "¿Te pregunté?"
     "Evita responder a mi provocación."
     show dark 1desafiantet
     $ enfocar("dark")
