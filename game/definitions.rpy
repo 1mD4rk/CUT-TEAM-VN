@@ -1,3 +1,4 @@
+
 ########################### Variables ###########################
 
 #default persistent.day = 0
@@ -6,6 +7,23 @@ default rutaSuicida = 0
 define contador = 0 
 
 define gui.dialogue_text_outlines = [ (3, "#000005", 0, 0) ]
+
+########################### Desbloqueo Extras ###########################
+
+# Rutas Alternativas
+default persistent.unlocked_paralela1 = False
+default persistent.unlocked_a_orange = False
+default persistent.unlocked_a_yellow = False
+default persistent.unlocked_a_green = False
+default persistent.unlocked_a_blue = False
+
+# Rutas Paralelas
+default persistent.unlocked_red = False
+default persistent.unlocked_orange = False
+default persistent.unlocked_yellow = False
+default persistent.unlocked_green = False
+default persistent.unlocked_blue = False
+
 
 ######################## Animaciones y Pantalla #############################
 
@@ -839,6 +857,53 @@ transform fade_transform:
         linear 0.2 alpha 1.0
     on idle:
         linear 0.2 alpha 0.7
+
+screen unlock_notification(message):
+    modal True
+    zorder 200
+    
+    add Solid("#000000B0")
+    
+    # Frame exterior para el borde
+    frame:
+        xalign 0.5
+        yalign 0.5
+        background "#7a2ccc"  # Color del borde
+        xpadding 3  # Grosor del borde
+        ypadding 3
+        
+        # Frame interior para el contenido
+        frame:
+            background "#2c2c2c"
+            xpadding 40
+            ypadding 30
+            
+            vbox:
+                spacing 20
+                xalign 0.5
+                
+                text "¡DESBLOQUEO!":
+                    size 40
+                    color "#ffcc00"
+                    bold True
+                    xalign 0.5
+                
+                text _(message):
+                    size 28
+                    color "#ffffff"
+                    xalign 0.5
+                    text_align 0.5
+                    xmaximum 500
+                
+                textbutton "OK":
+                    xalign 0.5
+                    action Hide("unlock_notification")
+                    background "#5b1e99"
+                    hover_background "#7a2ccc"
+                    text_color "#ffffff"
+                    padding (30, 10)
+    
+    # timer 5.0 action Hide("unlock_notification")  # Se cierra automáticamente después de 5 segundos
 
 ######### SE USARAN DESPUES ################################
 

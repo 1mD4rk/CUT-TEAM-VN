@@ -2080,7 +2080,20 @@ label final_day1:
     with Dissolve(5.0)
     stop ambient fadeout(1.5)
     scene black with Fade(1.0, 1.0, 1.0)
+    $ renpy.pause(3.0, hard=True)
+    if(rutaCanon-rutaSuicida)==1:
+        call unlock_paralela1
+    
     return
+
+label unlock_paralela1:
+
+    $ persistent.unlocked_paralela1 = True  
+    show screen unlock_notification("¡Has desbloqueado la ruta Azul Paralela!\n\nAhora puedes acceder a este contenido desde el menú Extras.")
+    $ renpy.pause()
+    
+    return
+
 
     #if persistent.day < 1:
     #    $ persistent.day = 1

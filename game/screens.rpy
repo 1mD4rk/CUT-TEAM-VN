@@ -385,6 +385,9 @@ screen navigation():
                 action ShowMenu("preferences")
 
         if main_menu:
+            textbutton _("Extras") action ShowMenu("route_paralela")
+
+        if main_menu:
             textbutton _("Changelog"):
                 # hover_sound "audio/hover.ogg"
                 # activate_sound "audio/select.ogg"
@@ -688,6 +691,8 @@ screen credits():
                         text "  Randomized and Continuous text sounds" style "credits_asset"
                         text "- Lezalith: " style "credits_name2"
                         text "  RenPy-Discord-Presence" style "credits_asset"
+                        text "- Zeil Learnings" style "credits_name2"
+                        text "  Image Gallery Template V2" style "credits_asset"
                         text "- min-chi.material.jp" style "credits_name2"
 
             null height 20
