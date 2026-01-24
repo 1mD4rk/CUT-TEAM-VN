@@ -10,20 +10,21 @@ define gui.dialogue_text_outlines = [ (3, "#000005", 0, 0) ]
 
 ########################### Desbloqueo Extras ###########################
 
-# Rutas Alternativas
-default persistent.unlocked_paralela1 = False
-default persistent.unlocked_a_orange = False
-default persistent.unlocked_a_yellow = False
-default persistent.unlocked_a_green = False
-default persistent.unlocked_a_blue = False
-
 # Rutas Paralelas
-default persistent.unlocked_red = False
-default persistent.unlocked_orange = False
-default persistent.unlocked_yellow = False
-default persistent.unlocked_green = False
-default persistent.unlocked_blue = False
+default persistent.unlocked_paralela1 = False
+default persistent.unlocked_paralela2 = False
+default persistent.unlocked_paralela3 = False
+default persistent.unlocked_paralela4 = False
+default persistent.unlocked_paralela5 = False
+default persistent.unlocked_paralela6 = False
 
+# Rutas Alternativas
+default persistent.unlocked_alternativa1 = False
+default persistent.unlocked_alternativa2 = False
+default persistent.unlocked_alternativa3 = False
+default persistent.unlocked_alternativa4 = False
+default persistent.unlocked_alternativa5 = False
+default persistent.unlocked_alternativa6 = False
 
 ######################## Animaciones y Pantalla #############################
 
