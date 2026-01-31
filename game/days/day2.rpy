@@ -712,13 +712,13 @@ label receso_day2:
     menu (time=5, timeout='rutasuicida_nochoice2'):
         l_thought "..."
 
-        "Ceder y comer algo.":
+        "Ceder y comer.":
             $ rutaCanon += 3
             l_thought "“Por favor”. Esa palabra duele más que la orden. Porque significa que le importa."
             l_thought "Significa que he logrado asustarla de verdad."
 
         "Rechazar rotundamente.":
-            $ rutaSuicida += 3
+            $ rutaSuicida += 5
             l_thought "“Por favor”. ¿En serio? Ni siquiera mis intentos por desaparecer les dan paz."
             l_thought "Soy una carga incluso en mi silencio."
             l_thought "Ella no lo entiende. No es hambre lo que me falta, es la capacidad de tragar algo que no sea una amargura constante."
