@@ -87,12 +87,12 @@ define config.intra_transition = dissolve
 
 ## Transición tras la carga de una partida.
 
-define config.after_load_transition = None
+define config.after_load_transition = Dissolve(1.5)
 
 
 ## Transición de acceso al menú principal tras finalizar el juego.
 
-define config.end_game_transition = None
+define config.end_game_transition = Dissolve(1.5)
 
 ## No existe la variable que ajusta la transición cuando el juego comienza. Para
 ## ello se usa la sentencia 'with' al mostrar la escena inicial.

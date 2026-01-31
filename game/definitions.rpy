@@ -11,20 +11,35 @@ define gui.dialogue_text_outlines = [ (3, "#000005", 0, 0) ]
 ########################### Desbloqueo Extras ###########################
 
 # Rutas Paralelas
-default persistent.unlocked_paralela1 = False
-default persistent.unlocked_paralela2 = False
-default persistent.unlocked_paralela3 = False
-default persistent.unlocked_paralela4 = False
-default persistent.unlocked_paralela5 = False
-default persistent.unlocked_paralela6 = False
+default persistent.paralela1 = False
+default persistent.paralela2 = False
+default persistent.paralela3 = False
+default persistent.paralela4 = False
+default persistent.paralela5 = False
+default persistent.paralela6 = False
+
+default persistent.paralela1_complete = False
+default persistent.paralela2_complete = False
+default persistent.paralela3_complete = False
+default persistent.paralela4_complete = False
+default persistent.paralela5_complete = False
+default persistent.paralela6_complete = False
+
 
 # Rutas Alternativas
-default persistent.unlocked_alternativa1 = False
-default persistent.unlocked_alternativa2 = False
-default persistent.unlocked_alternativa3 = False
-default persistent.unlocked_alternativa4 = False
-default persistent.unlocked_alternativa5 = False
-default persistent.unlocked_alternativa6 = False
+default persistent.alternativa1 = False
+default persistent.alternativa2 = False
+default persistent.alternativa3 = False
+default persistent.alternativa4 = False
+default persistent.alternativa5 = False
+default persistent.alternativa6 = False
+
+default persistent.alternativa1_complete = False
+default persistent.alternativa2_complete = False
+default persistent.alternativa3_complete = False
+default persistent.alternativa4_complete = False
+default persistent.alternativa5_complete = False
+default persistent.alternativa6_complete = False
 
 ######################## Animaciones y Pantalla #############################
 
@@ -777,7 +792,6 @@ define dissolve_scene_full2 = MultipleTransition([
     Solid("#000"), Dissolve(0.5),
     True])
 
-
 ######### AUDIOS Y MUSICA ################################
 
 ## Audio
@@ -906,8 +920,10 @@ screen unlock_notification(message):
     
     # timer 5.0 action Hide("unlock_notification")  # Se cierra automáticamente después de 5 segundos
 
-######### SE USARAN DESPUES ################################
+image route1 = ParameterizedText(size=30, color='#ffffff', text_align=0.5)
 
-image struke = "images/characters/struke.png"
-#image counter = "images/characters/counter.png"
-image jasper1 = "images/characters/jasper.png"
+image bg_bz:
+    Solid("#da7603")
+    alpha 0.6
+
+######### SE USARAN DESPUES ################################

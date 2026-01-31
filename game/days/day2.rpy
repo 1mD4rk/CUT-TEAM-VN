@@ -4,7 +4,7 @@ label day2:
 
     #$ phone.system.date = datetime.date(2066, 2, 16)
     
-    $ persistent.quick_menu_visible = True
+    $ quick_menu = True
     show screen phone_button
     with Dissolve(0.5)
     
@@ -187,7 +187,7 @@ label day2:
     window show
     "Este no había llegado, así que se lo dejé con su secretaria."
     "Me fui al aula, ignorando nuevamente a todos, simplemente queriendo llegar y despejarme."
-    $ persistent.quick_menu_visible = False
+    $ quick_menu = False
     hide screen phone_button
     with Dissolve(2.5)
     jump aula_day2
@@ -200,7 +200,7 @@ label day2:
 #### JEREMY MOMENT ####
 label aula_day2:
     $ renpy.pause(5.0, hard=True)
-    $ persistent.quick_menu_visible = True
+    $ quick_menu = True
     show screen phone_button
     with Dissolve(1.5)
     scene class3A with dissolve_scene_full2

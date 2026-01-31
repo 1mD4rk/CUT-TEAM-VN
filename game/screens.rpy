@@ -332,13 +332,13 @@ style quick_button_text:
 
 transform fade_to_black:
     alpha 0.0
-    linear 0.8 alpha 1.0
+    linear 1.5 alpha 1.0
 
 screen fade_to_game:
     modal True
     zorder 200
     add "#000" at fade_to_black
-    timer 1.0 action [Hide("fade_to_game"), Start()]
+    timer 1.5 action [Hide("fade_to_game"), Start()]
 
 screen navigation():
 

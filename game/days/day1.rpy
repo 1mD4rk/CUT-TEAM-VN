@@ -7,7 +7,7 @@ label day1:
 
     play music classroom fadeout 1.0 fadein 3.5
     pause 4.0 
-    $ persistent.quick_menu_visible = True 
+    $ quick_menu = True 
     with Dissolve(0.5)
     show screen phone_button with Dissolve(0.5)
     idk1 "Se... Jac..."
@@ -712,7 +712,7 @@ label dark_scene_afterchoice1:
     "Siento como mi pecho se aprieta, solo por no cumplir el castigo el cual merezco. "
     "Ignoro el dolor y aumento la velocidad de mis pasos, avanzando hacia mi destino. Mientras continuó la charla en mis pensamientos."
     stop music fadeout 1.8
-    $ persistent.quick_menu_visible = False
+    $ quick_menu = False
     scene black with Fade(1.0, 1.0, 1.0)
     pause 2.0
     jump azotea
@@ -723,7 +723,7 @@ label azotea:
 
     play audio bell
     $ renpy.pause(3.0, hard=True)
-    $ persistent.quick_menu_visible = True 
+    $ quick_menu = True 
     with Dissolve(0.5)
     "Después de ese encuentro... inesperado, con al parecer el {i}{outlinecolor=#da0303}Vicepresidente del Consejo Estudiantil{/outlinecolor}{/i}. El receso empezó.{w} Me salvé por ahora."
     "Decidí irme a la azotea... un lugar donde al menos nadie viene y casi siempre está solo."
@@ -1286,13 +1286,13 @@ label director:
     scene black with dissolve
     "Me acuesto en mis brazos, como cuando inicio el día. E intento dormirme creyendo que este día fue un mal sueño."
     stop music fadeout 1.8
-    $ persistent.quick_menu_visible = False
+    $ quick_menu = False
     jump whatremainsofday1
     return
 
 label whatremainsofday1:
     $ renpy.pause(6.0, hard=True)
-    $ persistent.quick_menu_visible = True
+    $ quick_menu = True
     with Dissolve(0.5)
     play music bgm3
     "Hay algo que siempre me ha gustado hacer... aunque suene patético: recapitular mi día."
@@ -1786,13 +1786,13 @@ label whatremainsofday1:
     "La sonrisa de Blaze sigue ahí, pero ahora la miro buscando grietas, buscando el destello de falsedad que la voz me promete que está allí."
     l_thought "..."
     l_thought "¿P-Por qué no puedo simplemente aceptarlo?"
-    $ persistent.quick_menu_visible = False
+    $ quick_menu = False
     jump final_day1
     return
 
 label final_day1:
     $ renpy.pause(4.0, hard=True)
-    $ persistent.quick_menu_visible = True
+    $ quick_menu = True
     "Volteo mi mirada hacia la ventana y empiezo a observar que llegamos a un vecindario reconocido."
     stop ambient fadeout(0.5)
     $ renpy.pause(5.0, hard=True)
@@ -2075,7 +2075,7 @@ label final_day1:
     "¿Eso es normal?"
     show parpadeo_on
     "Una vez esa charla, intento dormir, esperando al siguiente día."
-    $ persistent.quick_menu_visible = False
+    $ quick_menu = False
     hide screen phone_button
     with Dissolve(5.0)
     stop ambient fadeout(1.5)
