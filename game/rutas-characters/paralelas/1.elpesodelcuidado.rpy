@@ -17,6 +17,7 @@ label elpesodelcuidado:
     $renpy.pause (1.0, hard=True)
 
     $ quick_menu = True
+    with Dissolve(0.5)
 
     "..." 
     "(W.I.P)."
