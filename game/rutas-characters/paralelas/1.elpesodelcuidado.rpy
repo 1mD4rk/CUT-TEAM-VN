@@ -2,7 +2,8 @@ label elpesodelcuidado:
     $ discord.set(details="El Peso del Cuidado", state="Parallel Route 1")
     stop music fadeout 4.0 
     $ quick_menu = False
-    scene black with Dissolve(5.0)
+    scene black with Dissolve(5.0)    
+    $renpy.pause (5.0, hard=True)
   
     scene pasillo2
     with Dissolve(3.0)
