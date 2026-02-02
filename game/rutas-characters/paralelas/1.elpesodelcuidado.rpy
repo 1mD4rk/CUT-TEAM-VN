@@ -21,7 +21,7 @@ label elpesodelcuidado:
     with Dissolve(0.5)
 
     "..." 
-    "(W.I.P) Se viene cositas."
+    "(W.I.P) Se viene cositas"
 
     scene black 
     $ quick_menu = False
