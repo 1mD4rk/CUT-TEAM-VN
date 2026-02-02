@@ -920,7 +920,10 @@ screen unlock_notification(message):
     
     # timer 5.0 action Hide("unlock_notification")  # Se cierra automáticamente después de 5 segundos
 
-image route1 = ParameterizedText(size=30, color='#ffffff', text_align=0.5)
+style blaze_text:
+    font "gui/fonts/Blaze.ttf"
+
+image route1 = ParameterizedText(style="blaze_text", size=30, color='#ffffff', text_align=0.5)
 
 image bg_bz:
     Solid("#da7603")
