@@ -1,3 +1,5 @@
+######################## Day 1 #############################
+
 label rutacanon_choice1:
         l 'Pues... Tuve un pequeño "problema" con el Profesor Todd...'
         "La culpa me sigue invadiendo, haciéndome sentir pequeña y expuesta."
@@ -111,6 +113,8 @@ label rutasuicida_nochoice1:
         l_thought "Wow, viniendo de ti, eso casi suena a proyección."
         jump dark_scene_afterchoice1
 return
+
+######################## Day 2 #############################
 
 label rutacanon_choice2:
         "Con movimientos torpes, abro la bolsa."
@@ -251,7 +255,9 @@ label rutasuicida_choice2:
         show dark 2serio
         $ normal("dark")
         l_thought "Ahora tengo a un psicólogo profesional, no, gracias. No quiero cita para hoy."
-
+        $ renpy.pause(5.0, hard=True)
+        hide screen pulse_black
+        jump receso_day2_afterchoice
 return
 
 label rutasuicida_nochoice2:
@@ -320,4 +326,148 @@ label rutasuicida_nochoice2:
         $ renpy.pause(5.0, hard=True)
         hide screen pulse_black
         jump receso_day2_afterchoice
+return
+
+######################## Day 3 #############################
+
+label rutacanon_choice3:
+        "Luego, sin decidirlo del todo, mis dedos se cierran alrededor de la porcelana."
+        "Por un momento, solo siento el frío. El contraste.{w} El “todavía puedo apartarme”."
+        "Pero luego el calor comienza a filtrarse, lento, persistente."
+        "No quema.{w} No lastima.{w} Solo existe.{w} Como {i}ella{/i}."
+        "Como este recuerdo que no pedí pero tampoco rechazo."
+        show black with Fade(0.5, 0.5, 0.5)
+        $ renpy.pause(0.9, hard=True)
+        "Una imagen: ella en esta misma cocina, inclinada sobre su taza."
+        "Me sonreía por encima del borde, sus ojos entrecerrados por el sueño o la felicidad{w}—nunca supe cuál."
+        "“Buenos días, mi niña”, decía siempre."
+        "Como un mantra que creí olvidado y que ahora vuelve sin permiso. como un mantra que creí olvidado."
+        $ renpy.pause(0.9, hard=True)
+        dad "Disculpa por ayer."
+        hide black with Fade(0.5, 0.5, 0.5)
+        "La voz de papá me devuelve al presente. Pero esta vez no suena como un intruso. Suena como alguien que también está aprendiendo."
+        show counter 1compadecert
+        $ enfocar("counter")
+        dad "La emergencia en el trabajo fue..."
+        show counter 1distraido2t
+        extend " Más larga de lo esperado."
+        show counter 1compadecer
+        $ normal("counter")
+        $ renpy.pause(1.2, hard=True)
+        "Pausa."
+        show counter 1seriot
+        $ enfocar("counter")
+        dad "No era mi intención dejarte plantada."
+        show counter 1compadecer
+        $ normal("counter")
+        "No espera respuesta. No pide perdón abiertamente.{w} No sabe hacerlo. Pero lo intenta. A su manera."
+        "Y eso, de alguna forma, es más sincero que cualquier “lo siento” ensayado."
+        show counter 1enojao2
+        "Su mandíbula, siempre tensa como un resorte a punto de saltar, se relaja apenas visiblemente. La veo. Él no sabe que la veo."
+        "Tomo un sorbo.{w} El café está amargo.{w} Exactamente como a {i}ella{/i} le gustaba. No como a mí."
+        "Pero hoy el amargor no me parece un castigo. Me sabe a verdad. A algo auténtico. A {i}ella{/i}."
+        l_thought "Las manos calientes...{w} Quizás tenía razón."
+        l_thought "Quizás algunas batallas se libran mejor con una taza entre las manos."
+        $ renpy.pause(2.0, hard=True)
+        "Mis dedos aún sienten el calor. No es un triunfo. Es solo un gesto.{w} Una pequeña rendición. Pero es algo."
+        $ renpy.pause(5.0, hard=True)
+        "Mientras tomo otro sorbo, mis ojos encuentran algo en el borde de la mesa."
+        show counter 1distraido
+        "Una pequeña flor seca.{w} Amarillenta.{w} Frágil.{w} Pegada con cinta adhesiva transparente a la madera."
+        "Una de las margaritas que ma—..."
+        extend " {i}Ella{/i} coleccionaba en primavera."
+        "Papá no la ha retirado. Ni siquiera la ha movido."
+        l_thought "La ve todos los días. Cada mañana. Cada desayuno. Y no la tira."
+        l_thought "¿O solo es otro fantasma que aprendió a vivir?"
+        $ renpy.pause(2.0, hard=True)
+        l_thought "No es un fantasma. Es una decisión. Una pequeña. Insignificante para cualquiera. Pero para él..."
+        l_thought "Es todo lo que le queda de ella."
+        $ renpy.pause(4.0, hard=True)
+        "Termino el café y dejo la taza vacía en el fregadero.{w} El tintineo de la porcelana contra el acero es el único sonido en la cocina."
+        "Papá ya se está preparando para irse. Dobla el periódico con movimientos precisos, como si cada pliegue fuera una orden. Lo deja en la mesa. Recoge su portafolios."
+        show counter 1seriot
+        $ enfocar("counter")
+        dad "Ya sabes, Laila. Nos vemos después de la escuela."
+        show counter 1serio
+        $ normal("counter")
+        l_thought "¿Después? ¿Hoy sí?"
+        "No lo dice como una pregunta. Es una afirmación. Una promesa. Y por alguna razón, esta vez quiero creerle."
+        l "S-Sí, claro."
+        show counter 1distraido at outwalk_right5
+        $ renpy.pause(8.0, hard=True)
+        "Papá ya se fue. El motor del auto se pierde en la distancia. Pero la cocina aún guarda su presencia."
+        "El periódico doblado con precisión militar. La silla está empujada perfectamente bajo la mesa. Y ahora, esta taza vacía que acepté."
+        l_thought "Una taza de café. Una flor seca. Una promesa frágil."
+        hide counter
+        l_thought "No es mucho. Pero es más de lo que tuve ayer."
+return
+
+label rutasuicida_choice3:
+        l "No—"
+        show counter 1surprise
+        "La palabra sale más áspera de lo que pretendía. La taza se tambalea y se voltea la taza, el café oscuro se derrama."
+        "El periódico abierto es la pobre víctima, manchando titulares sobre cosas que no me interesan pero que a papá le importan más que esta escena."
+        "Una mancha marrón se expande sobre el periodico."
+        "Me quedo mirando al café derramado, sin saber que hacer."
+        show screen red_effect2
+        nobody "{sc=3}¿Ves? Hasta rechazas la ayuda de tu padre.{/sc}"
+        nobody "{sc=5}Y para rematar, la cagas.{/sc}"
+        hide screen red_effect2
+        $ renpy.pause(0.5, hard=True)
+        show counter 1serio
+        "Lo miro. Papá no dice nada. Su mandíbula se tensa de nuevo."
+        $ renpy.pause(6.0, hard=True)
+        "Guarda el periódico con movimientos precisos, como si cada doblez fuera una represión calculada.{w} Recoge su portafolio del suelo, el cuero gastado crujiendo bajo su agarre."
+        "Se levanta. Su sombra me cubre por un instante."
+        show counter 1distraido2t
+        $ enfocar("counter")
+        dad "Ya sabes, Laila. Nos vemos después de la escuela."
+        show counter 1serio
+        $ normal("counter")
+        "No es una sugerencia. Es una orden fría, disfrazada de despedida."
+        show counter 1serio at outwalk_right5
+        "Da media vuelta y se va, sus pasos resonando en el pasillo hasta que la puerta principal se cierra con un clic definitivo."
+        $ renpy.pause(7.0, hard=True)
+        "Quedo sola en la cocina, el aroma a café ahora me parece agresivo, un recordatorio de lo que rechacé."
+        "Del puente que volví a quemar."
+        $ renpy.pause(1.0, hard=True)
+        "Suspiro."
+        hide counter
+        l_thought "Siempre igual. Yo rechazo, él se va."
+        extend " Un baile perfecto de distancias."
+return
+
+label rutasuicida_nochoice3:
+        l "No—"
+        show counter 1surprise
+        "La palabra sale más áspera de lo que pretendía. La taza se tambalea y se voltea la taza, el café oscuro se derrama."
+        "El periódico abierto es la pobre víctima, manchando titulares sobre cosas que no me interesan pero que a papá le importan más que esta escena."
+        "Una mancha marrón se expande sobre el periodico."
+        "Me quedo mirando al café derramado, sin saber que hacer."
+        show screen red_effect2
+        nobody "{sc=3}¿Ves? Hasta rechazas la ayuda de tu padre.{/sc}"
+        nobody "{sc=5}Y para rematar, la cagas.{/sc}"
+        hide screen red_effect2
+        $ renpy.pause(0.5, hard=True)
+        show counter 1serio
+        "Lo miro. Papá no dice nada. Su mandíbula se tensa de nuevo."
+        $ renpy.pause(6.0, hard=True)
+        "Guarda el periódico con movimientos precisos, como si cada doblez fuera una represión calculada.{w} Recoge su portafolio del suelo, el cuero gastado crujiendo bajo su agarre."
+        "Se levanta. Su sombra me cubre por un instante."
+        show counter 1distraido2t
+        $ enfocar("counter")
+        dad "Ya sabes, Laila. Nos vemos después de la escuela."
+        show counter 1serio
+        $ normal("counter")
+        "No es una sugerencia. Es una orden fría, disfrazada de despedida."
+        show counter 1serio at outwalk_right5
+        "Da media vuelta y se va, sus pasos resonando en el pasillo hasta que la puerta principal se cierra con un clic definitivo."
+        $ renpy.pause(7.0, hard=True)
+        "Quedo sola en la cocina, el aroma a café ahora me parece agresivo, un recordatorio de lo que rechacé."
+        "Del puente que volví a quemar."
+        $ renpy.pause(1.0, hard=True)
+        "Suspiro."
+        hide counter
+        l_thought "Siempre igual. Yo rechazo, él se va."
+        extend " Un baile perfecto de distancias."
 return

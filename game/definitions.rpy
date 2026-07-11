@@ -68,6 +68,12 @@ transform sigh_animation:
     pause 0.2
     linear 0.5 yzoom 1.0 xzoom 1.0 yoffset 0
 
+transform sigh_animation_flipped:
+    xzoom -1.0
+    linear 0.3 yzoom 1.03 xzoom -0.99
+    pause 0.2
+    linear 0.5 yzoom 1.0 xzoom -1.0 yoffset 0
+
 transform shake:
     linear 0.1 xoffset -2 yoffset 0
     linear 0.1 xoffset 4 yoffset 0
@@ -80,6 +86,12 @@ transform shake1:
     linear 0.1 xoffset -5 yoffset 0
     linear 0.1 xoffset 0 yoffset 0
     repeat 3
+
+transform shake2:
+    linear 0.1 xoffset -1 yoffset 0
+    linear 0.1 xoffset 3 yoffset 0
+    linear 0.1 xoffset -1 yoffset 0
+    linear 0.1 xoffset 0 yoffset 0
 
 transform hug_on:
         linear 0.4 zoom 1.9 xalign 0.5 yalign 0.45
@@ -314,6 +326,19 @@ transform slide_of_center_to_left2:
     easein 0.2 xpos 840
     pos_of_center_to_left2
 
+transform asentir:
+    yoffset 0
+    linear 0.1 yoffset 4
+    linear 0.1 yoffset 0
+
+transform slide_in_left_fast_to_center:
+    xanchor 0.5 yanchor 1.0
+    xpos -400 ypos 1080       
+    easein 0.25 xpos 965   
+    easeout 0.1 xpos 960      
+    easein 0.05 xpos 965     
+    easeout 0.05 xpos 960
+
 ##### PARPADEO
 
 image blink = "images/blink/blink.png"
@@ -483,6 +508,18 @@ transform outwalk_right4:
             repeat 11
         yoffset 0
 
+transform outwalk_right5:
+    xpos 960 ypos 1080 
+    xanchor 0.5 yanchor 1.0
+    parallel:
+        ease 6.0 xpos 2500 
+    parallel:
+        block:
+            ease 0.6 yoffset 15
+            ease 0.31 yoffset 0
+            repeat 11
+        yoffset 0        
+
 transform inwalk_left_toright:
     xanchor 0.5 yanchor 1.0 
     xpos -300 ypos 1080 
@@ -527,6 +564,59 @@ transform walking_center:
             repeat
         yoffset 0
 
+transform outwalk_right6:
+    xpos 960 ypos 1080 
+    xanchor 0.5 yanchor 1.0
+    parallel:
+        ease 10.0 xpos -400
+    parallel:
+        block:
+            ease 0.6 yoffset 15
+            ease 0.31 yoffset 0
+            repeat 11
+        yoffset 0
+
+transform outwalk_right7:
+    xpos 400 ypos 1080 
+    xanchor 0.5 yanchor 1.0
+    parallel:
+        ease 8.0 xpos -400
+    parallel:
+        block:
+            ease 0.6 yoffset 15
+            ease 0.31 yoffset 0
+            repeat 11
+        yoffset 0   
+
+transform right5_to_center:
+    xpos 1555 ypos 1080
+    xanchor 0.5 yanchor 1.0
+    linear 0.3 xpos 995
+    center2
+
+transform outwalk_right8:
+    xpos 995 ypos 1080  
+    xanchor 0.5 yanchor 1.0
+    parallel:
+        ease 5.0 xpos -400
+    parallel:
+        block:
+            ease 0.5 yoffset 15
+            ease 0.21 yoffset 0
+            repeat 11
+        yoffset 0
+
+transform outwalk_left_fast:
+    xpos 960 ypos 1080 
+    xanchor 0.5 yanchor 1.0
+    parallel:
+        ease 4.0 xpos -400
+    parallel:
+        block:
+            ease 0.5 yoffset 15
+            ease 0.21 yoffset 0
+            repeat 11
+        yoffset 0
 
 ######################## CBG ###############################
 
@@ -551,6 +641,8 @@ image livingroom_n = "images/bg/laila_house/livingroom_dark.png"
 image lailaroom_d = "images/bg/laila_house/lailaroom_day.png"
 image lailaroom_l = "images/bg/laila_house/lailaroom_lights.png"
 image lailaroom_n = "images/bg/laila_house/lailaroom_night.png"
+image lailaroom_dream = "images/bg/laila_house/lailaroom_dream.png"
+image bathroom = "images/bg/laila_house/bathroom.png"
 
 ### City
 
@@ -559,6 +651,12 @@ image intersection_day = "images/bg/intersection_day.jpg"
 image intersection_afternoon = "images/bg/intersection_afternoon.jpg"
 image bus = "images/bg/bus.png"
 image sky = "images/bg/sky_bg.png"
+image park_day = "images/bg/park_day.jpg"
+image park_afternoon = "images/bg/park_afternoon.jpg"
+image park_night = "images/bg/park_night.jpg"
+image park_night_nolight = "images/bg/park_night2.jpg"
+image garden = "images/bg/garden.png"
+image street_coffee = "images/bg/street_coffee.png"
 
 ### School
 
@@ -571,6 +669,15 @@ image azotea_stairs = "images/bg/escalerasazotea.png"
 image despacho_dirc = "images/bg/principals_office.png"
 image consejo_day = "images/bg/consejo_day.jpg"
 image consejo_afternoon = "images/bg/consejo_afternoon.jpg"
+image school_entrance_day = "images/bg/school_entrance_day.jpg"
+image school_entrance_afternoon = "images/bg/school_entrance_afternoon.jpg"
+image school_entrance_night = "images/bg/school_entrance_night.jpg"
+image library = "images/bg/library.png"
+image library_back = "images/bg/library_back.png"
+image cafeteria = "images/bg/cafeteria.png"
+
+### Extra
+image house_dream = "images/bg/houseold_night.jpg"
 
 
 image pasillo-blur:
@@ -628,6 +735,9 @@ transform shake_bus:
     linear 0.1 xoffset 0 yoffset 0
     repeat
 
+image screenblack:
+    Solid("#000000")
+
 ###################### EFECTOS ###############################
 
 init python:
@@ -679,6 +789,25 @@ init python:
 
 image vignette:
     "images/vignette.png"
+
+transform latido_corazon:
+    alpha 1.0
+    # Primer golpe (lub) - más fuerte
+    easein 0.1 alpha 0.85
+    easeout 0.1 alpha 1.0
+    # Pequeña pausa entre latidos
+    pause 0.05
+    # Segundo golpe (dub) - más suave
+    easein 0.1 alpha 0.92
+    easeout 0.1 alpha 1.0
+    # Pausa larga hasta el siguiente ciclo
+    pause 2.5
+    repeat
+
+transform latido_con_aparicion:
+    alpha 0.0
+    linear 0.3 alpha 4.5
+    latido_corazon
 
 init python:
     def apply_filter_with_fade(channel="music", target_filters=None, duration=2.0):
@@ -780,6 +909,9 @@ transform afternoon_filter:
 transform afternoon_character:
     matrixcolor TintMatrix("#FFA94D") * BrightnessMatrix(-0.08) * SaturationMatrix(0.85)
 
+transform afternoon_character2:
+    matrixcolor TintMatrix("#FFA94D") * BrightnessMatrix(0.08) * SaturationMatrix(1.65)    
+
 define dissolve_scene_full = MultipleTransition([
     False, Dissolve(1.0),
     Solid("#000"), Pause(1.0),
@@ -791,6 +923,12 @@ define dissolve_scene_full2 = MultipleTransition([
     Solid("#000"), Pause(1.0),
     Solid("#000"), Dissolve(0.5),
     True])
+
+define dissolve_scene_full3 = MultipleTransition([
+    False, Dissolve(5.0),
+    Solid("#000"), Pause(1.0),
+    Solid("#000"), Dissolve(0.5),
+    True])    
 
 ######### AUDIOS Y MUSICA ################################
 
@@ -818,6 +956,10 @@ define slam = "audio/slam.ogg"
 define bus_arrive = "audio/bus-arrival.ogg"
 define pageflip = "audio/pageflip.ogg"
 define microwave = "<loop 3.191>sfx/microwave.ogg"
+define toc1 = "audio/toc1.ogg"
+define toc2 = "audio/toc2.ogg"
+define vortex_breathing = "audio/vortex-breathing.wav"
+define flesh_background = "audio/flesh-background.mp3"
 
 ## Music
 define bgm1 = "<from 0 to 198.425 loop 11.339>bgm/nude.ogg"
@@ -833,6 +975,15 @@ define bgm8 = "<from 0 to 172.839 loop 130.263>bgm/presenttense.ogg"
 define bgm82 = "<from 172.839 to 260.818 loop 180.981>bgm/presenttense.ogg"
 define bgm9 = "<from 0 to 146.213 loop 12.346>bgm/setmyselfonfire.ogg"
 define bgm10 = "<from 0 to 231.849 loop 126.526>bgm/thenumbers.ogg"
+define bgm11 = "bgm/01_opus_20.ogg"
+define bgm12 = "bgm/akiko_shina_bgm.mp3"
+define bgm13 = "bgm/pictures_of_serenity.ogg"
+define bgm14 = "<from 0 to 211.525 loop 20.337>bgm/codex.ogg"
+define bgm142 = "<from 0 to 246.079 loop 93.560>bgm/codex.ogg"
+define bgm15 = "<from 0 to 158.864 loop 96.136>bgm/allineed.ogg"
+define bgm152 = "<from 158.864 to 345.920 loop 313.660>bgm/allineed.ogg"
+define bgm16 = "bgm/mss.ogg"
+define bgm17 = "bgm/serenity.ogg"
 
 ## Ambient
 define ext_day = "<loop 3.090>ambient/ext_day.ogg"
@@ -845,11 +996,14 @@ define wind = "<loop 2.069>ambient/wind.ogg"
 define clifftop = "<loop 0.000>ambient/clifftop.ogg"
 define rain_ext = "<loop 2.094>ambient/rain_ext.ogg"
 define rain_int = "<loop 2.102>ambient/rain_int.ogg"
+define school_hallway = "<from 71.5 loop 71.5 to 113.0>ambient/hshallway.ogg"
+define school_cafeteria = "<loop 63.623 to 176.008>ambient/school_cafeteria.ogg"
 
 
 init python:
     renpy.music.register_channel("heartbeat", "sfx", loop=True)
     renpy.music.register_channel("ambient", "ambient", True)
+    renpy.music.register_channel("audio", "sfx", False)
 
 ######### EXTRAS ################################
 
