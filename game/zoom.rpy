@@ -117,8 +117,33 @@ transform walking_a_normal:
     parallel:
         linear 0.1 zoom 1.0 alpha 1.0 yoffset 0
 
+transform walking_ab_normal:
+    anchor (0.5, 1.0)
+    parallel:
+        block:
+            ease 0.5 xoffset -6 yoffset 9
+            ease 0.5 xoffset 0 yoffset -5
+            ease 0.5 xoffset 6 yoffset 9
+            ease 0.5 xoffset 0 yoffset -5
+            repeat
+    parallel:
+        linear 0.1 zoom 1.0 alpha 1.0 yoffset 0
+
+transform walking_a_inactive:
+    anchor (0.5, 1.0)
+    parallel:
+        block:
+            ease 0.35 xoffset -6 yoffset 9
+            ease 0.35 xoffset 0 yoffset -5
+            ease 0.35 xoffset 6 yoffset 9
+            ease 0.35 xoffset 0 yoffset -5
+            repeat
+    parallel:
+        paraguay2
+
 transform walking_b_normal:
     anchor (0.5, 1.0)
+    
     parallel:
         block:
             ease 0.5 xoffset 4 yoffset 5
@@ -128,6 +153,19 @@ transform walking_b_normal:
             repeat
     parallel:
         linear 0.1 zoom 1.0 alpha 1.0 yoffset 0
+
+transform walking_b_inactive:
+    anchor (0.5, 1.0)
+    paraguay
+    parallel:
+        block:
+            ease 0.5 xoffset 4 yoffset 5
+            ease 0.3 xoffset 0 yoffset -2
+            ease 0.5 xoffset -4 yoffset 5
+            ease 0.3 xoffset 0 yoffset -2
+            repeat
+    parallel:
+        paraguay2
 
 transform walking_c_normal:
     anchor (0.5, 1.0)
@@ -140,6 +178,22 @@ transform walking_c_normal:
             repeat
     parallel:
         linear 0.1 zoom 1.0 alpha 1.0 yoffset 0
+
+transform walking_c_inactive:
+    anchor (0.5, 1.0)
+    parallel:
+        block:
+            ease 0.4 xoffset 0 yoffset -3
+            ease 0.4 xoffset -5 yoffset 5
+            ease 0.4 xoffset 0 yoffset -3
+            ease 0.4 xoffset 5 yoffset 5
+            repeat
+    parallel:
+        paraguay2
+
+## scene2_day3.rpy
+transform move_out_right_fast:
+    linear 3.0 xpos -400 
 
 transform jadeo_activo:
     anchor (0.5, 1.0)

@@ -31,6 +31,19 @@ init python:
         elif event == "end" or event == "slow_done": # This stops the text sounds if there is a pause in the dialog or the text has finished displaying
             renpy.sound.stop(channel="sound")
 
+    def lailachild_sound(event, interact=False, **kwargs):
+        if event == "show": # If textbox is shown
+            what = renpy.store._last_say_what # This grabs the text that was most recently spoken on-screen
+            if what:
+                sound_count = len(what)
+            else:
+                sound_count = 5
+            for _ in range(sound_count): # This creates a sound queue based on how many characters are in the dialog block
+                randosound = renpy.random.randint(1, 11) # This generates a random number between 1 and 11 inclusive. Change this based on how many sound files you have
+                renpy.sound.queue(f"audio/sounds/lailachild_sounds/lc{randosound}.wav", channel="sound", loop=True, relative_volume=preferences.text_sound_volume) # Change "popcat" to the name of your sound file
+        elif event == "end" or event == "slow_done": # This stops the text sounds if there is a pause in the dialog or the text has finished displaying
+            renpy.sound.stop(channel="sound")
+
     def dark_sound(event, interact=False, **kwargs):
         if event == "show": 
             what = renpy.store._last_say_what
@@ -67,6 +80,32 @@ init python:
             for _ in range(sound_count): 
                 randosound = renpy.random.randint(1, 11)
                 renpy.sound.queue(f"audio/sounds/counter_sounds/counter{randosound}.wav", channel="sound", loop=True, relative_volume=preferences.text_sound_volume)
+        elif event == "end" or event == "slow_done":
+            renpy.sound.stop(channel="sound")
+    
+    def mom_sound(event, interact=False, **kwargs):
+        if event == "show": 
+            what = renpy.store._last_say_what
+            if what:
+                sound_count = len(what)
+            else:
+                sound_count = 5
+            for _ in range(sound_count): 
+                randosound = renpy.random.randint(1, 11)
+                renpy.sound.queue(f"audio/sounds/mom_sounds/mom{randosound}.wav", channel="sound", loop=True, relative_volume=preferences.text_sound_volume)
+        elif event == "end" or event == "slow_done":
+            renpy.sound.stop(channel="sound")
+
+    def mother_sound(event, interact=False, **kwargs):
+        if event == "show": 
+            what = renpy.store._last_say_what
+            if what:
+                sound_count = len(what)
+            else:
+                sound_count = 5
+            for _ in range(sound_count): 
+                randosound = renpy.random.randint(1, 11)
+                renpy.sound.queue(f"audio/sounds/mother_sounds/mom{randosound}.wav", channel="sound", loop=True, relative_volume=preferences.text_sound_volume)
         elif event == "end" or event == "slow_done":
             renpy.sound.stop(channel="sound")
 
@@ -146,6 +185,13 @@ define l = Character("Laila",
     color="#ffff",
     callback=laila_sound)
 
+define l_child = Character("...", 
+    who_bold=True,
+    who_outlines=[(4, "#b69fd3de", 0, 0)],  
+    what_outlines = [(2, "#b69fd3de", 3, 3)],
+    color="#ffff",
+    callback=lailachild_sound)
+
 define l_thought = Character(
     None,
     what_italic=True,
@@ -184,13 +230,26 @@ define b = Character("Blaze",
     color="#ffffff",
     callback=blaze_sound)
 
-
 define dad = Character("Papá", 
     who_bold=True,
     who_outlines=[(4, "#ffe1c76c", 0, 0)],  
     what_outlines = [(2, "#ffe1c76c", 3, 3)],
     color="#ffff",
     callback=counter_sound)
+
+define mom = Character("...", 
+    who_bold=True,
+    who_outlines=[(4, "#0e701fb6", 0, 0)],  
+    what_outlines = [(2, "#0e701fb6", 3, 3)],
+    color="#ffff",
+    callback=mom_sound)
+
+define mother = Character("...", 
+    who_bold=True,
+    who_outlines=[(4, "#0e701fb6", 0, 0)],  
+    what_outlines = [(2, "#0e701fb6", 3, 3)],
+    color="#ffff",
+    callback=mother_sound)
 
 define tv = Character("Steve", 
     who_bold=True,  
@@ -233,6 +292,12 @@ define ptod = Character("Prof. Todd",
     what_outlines = [(2, "#5e5353", 3, 3)],
     color="#ffffff")
 
+define prandom = Character("Profesor", 
+    who_bold=True,  
+    who_outlines = [(4, "#3b3535", 0, 0)],
+    what_outlines = [(2, "#4d4444", 3, 3)],
+    color="#ffffff")    
+
 define dirc = Character("Director", 
     who_bold=True,  
     who_outlines = [(4, "#5d4037", 0, 0)],
@@ -259,7 +324,7 @@ init python:
     # Configuración para Dark 
     dark_bases = ["1", "2"]
     dark_expressions = ["desafiante", "desafiantet", 
-                        "distraido", "distraidot",  "distraido2", "distraido2t",
+                        "distraido", "distraidot",  "distraido2", "distraido2t", "distraido3",
                         "enojao", 
                         "neutral", "neutral2", "neutralt",
                         "feli", "felit",
@@ -267,7 +332,9 @@ init python:
                         "juzga", "juzgat", "juzga2", "juzga2t", "juzga3",
                         "serio", "seriot", "serio2", "serio2t",
                         "metiche",
-                        "sarcasmo", "sarcasmot"]
+                        "sarcasmo", "sarcasmot",
+                        "blink", "guinio",
+                        "laugh", "laugh1"]
     for base in dark_bases:
         for expr in dark_expressions:
             renpy.image(
@@ -284,7 +351,7 @@ init python:
     jeremy_expressions = ["feliz", "felizt",
                         "incomodo", "incomodot", "incomodo2", "incomodo2t", "incomodo3", "incomodo3t",
                         "juzga", "juzgat", "juzga2", "juzga2t",
-                        "neutral", "neutralt",
+                        "neutral", "neutral2", "neutralt",
                         "serio", "seriot", "serio2", "serio2t", "serio3", "serio3t",
                         "surprise", "surpriset",
                         "sonriente", "sonrientet", "sonriente2t",
@@ -308,10 +375,11 @@ init python:
                         "juzga", "juzga2", "juzgat", "juzga2t",
                         "nerviosa", "nerviosat",
                         "neutral", "neutral2", "neutralt", "neutral2t",
-                        "seria", "seria2", "seriat", "seria2t",
+                        "seria", "seria2", "seriat", "seria2t", "seria3", "seria3t",
                         "sonriente", "sonrientet",
                         "compadecer", "compadecert",
-                        "preocupada", "preocupadat"]
+                        "preocupada", "preocupada2", "preocupadat",
+                        "blink"]
 
     for base in bleis_bases:
         for expr in bleis_expressions:
@@ -326,11 +394,12 @@ init python:
 
     # Configuración para Counter
     counter_bases = ["1"]
-    counter_expressions = ["enojao", "enojaot",
+    counter_expressions = ["enojao", "enojaot", "enojao2",
                         "feliz", "felizt",
-                        "nosurprise", "nosurpriset", "surprise",
+                        "nosurprise", "nosurpriset", "surprise", "surpriset",
                         "serio", "seriot",
-                        "compadecer", "compadecert"]
+                        "compadecer", "compadecert", "compadecer2", "compadecer2t",
+                        "distraido", "distraidot", "distraido2", "distraido2t"]
     for base in counter_bases:
         for expr in counter_expressions:
             renpy.image(
@@ -353,7 +422,11 @@ init python:
                         "triste", "triste2", "triste3", "tristet", "triste2t",
                         "juzga", "juzgat",
                         "enamorao",
-                        "vacilante"]
+                        "vacilante",
+                        "leyendo",
+                        "distraido", "distraidot",
+                        "feliz", "felizt",
+                        "blink"]
     for base in steve_bases:
         for expr in steve_expressions:
             renpy.image(

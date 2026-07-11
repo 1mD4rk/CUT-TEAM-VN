@@ -11,5 +11,8 @@ label start:
 
     call day2 from _call_day2
     $ renpy.pause(10.0, hard=True)
+    
+    call day3 from _call_day3
+    $ renpy.pause(10.0, hard=True)
 
     return

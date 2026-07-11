@@ -387,11 +387,11 @@ screen navigation():
         if main_menu:
             textbutton _("Extras") action ShowMenu("route_paralela")
 
-        if main_menu:
-            textbutton _("Changelog"):
-                # hover_sound "audio/hover.ogg"
-                # activate_sound "audio/select.ogg"
-                action ShowMenu("changelog")
+        # if main_menu:
+        #     textbutton _("Changelog"):
+        #         # hover_sound "audio/hover.ogg"
+        #         # activate_sound "audio/select.ogg"
+        #         action ShowMenu("changelog")
 
             textbutton _("Créditos"):
                 # hover_sound "audio/hover.ogg"
